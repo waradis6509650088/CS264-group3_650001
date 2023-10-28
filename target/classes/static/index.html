@@ -3,15 +3,79 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" context="width=divice-width,intital-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>แบบฟอร์มคำร้องขอทั่วไป</title>
-
 </head>
 
 
 <body>
+<script>
+    function $(name){
+        return document.getElementById(name);
+    }
+
+    //send form to controller when submit is clicked
+    document.addEventListener("submit", (e) => {
+    e.preventDefault();
+        formData = {
+            'date' : $("date").value,
+            'topic' : $("topic").value,
+            'prefix' : $("prefix").value,
+            'studentFirstName' : $("studentFirstName").value,
+            'studentLastName' : $("studentLastName").value,
+            'studentId' : $("studentId").value,
+            'studentYear' : $("studentYear").value,
+            'studyField' : $("studyField").value,
+            'addressNumber' : $("addressNumber").value,
+            'moo' : $("moo").value,
+            'tumbol' : $("tumbol").value,
+            'amphur' : $("amphur").value,
+            'province' : $("province").value,
+            'postalCode' : $("postalCode").value,
+            'mobilePhone' : $("mobilePhone").value,
+            'phone' : $("phone").value,
+            'advisor' : $("advisor").value,
+            'wantTU' : $("wantTU").value,
+            'term' : $("term").value,
+            'year' : $("year").value,
+            'cause' : $("cause").value,
+            'OtherFac' : $("OtherFac").value,
+            'OtherField' : $("OtherField").value,
+            'wantOther' : $("wantOther").value,
+            'FacOther' : $("FacOther").value,
+            'FieldOther' : $("FieldOther").value,
+            'numDebt' : $("numDebt").value,
+
+            //need fix
+            //chose between grade and noGrade
+            //fix database
+            //fix controller
+            'grade' : $("grade").value,
+            'Nograde' : $("Nograde").value,
+
+            'Deferment' : $("Deferment").value,
+            'Defermentmonth' : $("Defermentmonth").value,
+            'OtherOption' : $("OtherOption").value,
+            'OtherOptionTopic' : $("OtherOptionTopic").value,
+            'ฺฺBecause' : $("ฺฺBecause").value
+        }
+
+
+        console.log(JSON.stringify(formData));
+
+        fetch("/saveToDatabase?formString=" + encodeURIComponent(JSON.stringify(formData)),
+        {
+            method : 'GET'
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => console.error('Error:', error));
+    });
+</script>
 <link rel="stylesheet" type="text/css" href="index.css">
-<form id="form">
+<form  id="form">
     <h1 style="text-align: center;">คำร้องทั่วไป</h1>
     <h2 style="text-align: center;">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</h2>
 
@@ -138,7 +202,7 @@
                 <label>(หากไม่มีกรุณา -)</label><br>
                 <label>2.ต้องการเกรดในภาคเรียนที่ยื่นคำร้องลาออกหรือไม่</label>
                 <input type="radio" id="grade" name="choice" value="grade">ต้องการ
-                <input type="radio" id="grade" name="choice" value="Nograde">ไม่ต้องการ
+                <input type="radio" id="Nograde" name="choice" value="Nograde">ไม่ต้องการ
 
             </div>
             <div class="want2">
@@ -181,6 +245,9 @@
         <input type="text" id="ฺฺBecause" name="because">
     </div>
     <button type="submit">ส่งแบบฟอร์ม</button>
+    <label for="additionalFile">เอกสารเพิ่มเติม:</label>
+    <input type="file" id="additionalFile" name="additionalFile" multiple>
+
 </form>
 </body>
 </html>
