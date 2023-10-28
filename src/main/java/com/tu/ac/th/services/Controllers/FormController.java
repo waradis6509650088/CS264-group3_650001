@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tu.ac.th.services.Models.Form;
+//import com.tu.ac.th.services.Models.Form;
 
 @RestController
 public class FormController {
@@ -18,7 +18,7 @@ public class FormController {
         try{
             JSONParser parser = new JSONParser();
             JSONObject studentJson = (JSONObject) parser.parse(formString);
-            Form studentForm = new Form(studentJson);
+            //Form studentForm = new Form(studentJson);
             return studentJson.toString();
         }
         catch(ParseException pe){
