@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html>
-    
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" context="width=divice-width,intital-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>แบบฟอร์มคำร้องขอทั่วไป</title>
-
 </head>
-<header>
-    <div class="">
-        <img src="">
-    </div>
-    <h1 style="text-align: center;">คำร้องทั่วไป</h1>
-    <h2 style="text-align: center;">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</h2>
-
-    <hr>
-</header>
-
-
 
 
 <body>
@@ -26,6 +13,8 @@
     function $(name){
         return document.getElementById(name);
     }
+
+    submitForm = $("form");
 
     //send form to controller when submit is clicked
     document.addEventListener("submit", (e) => {
@@ -72,7 +61,7 @@
             'OtherOptionTopic' : $("OtherOptionTopic").value,
             'ฺฺBecause' : $("ฺฺBecause").value
         }
-        
+
 
         console.log(JSON.stringify(formData));
 
@@ -87,7 +76,10 @@
         .catch(error => console.error('Error:', error));
     });
 </script>
-<form id="form">
+<link rel="stylesheet" type="text/css" href="formStyle.css">
+<form  id="form">
+    <h1 style="text-align: center;">คำร้องทั่วไป</h1>
+    <h2 style="text-align: center;">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</h2>
 
     <div class="size">
         <div class="date">
@@ -120,7 +112,7 @@
         </div>
         <div class="number">
             <label>เลขทะเบียน</label>
-            <input type="text" id="studentId" placeholder="รหัสนักศึกษา 10 หลัก" name="studentId" maxlength="10"
+            <input type="text" id="" placeholder="รหัสนักศึกษา 10 หลัก" name="studentId" maxlength="10"
                    pattern="[0-9]{10}" required>
             <label for= "studentYear" name="studentYear">ชั้นปีที่</label>
             <select id="studentYear">
@@ -181,7 +173,7 @@
             <label>โทรศัพท์บ้าน(ถ้ามี)</label>
             <input type="text" id="phone" name="phone"  maxlength="10" pattern="[0-9]{10}"><br>
             <label>อาจารย์ที่ปรึกษา</label>
-            <input type="text" id="advisor" name="advisor" >
+            <input type="text" id="adivsor" name="adivsor" >
         </div>
         <label>มีความประสงค์จะยื่นคำร้องเรื่อง</label>
         <div>
@@ -192,25 +184,28 @@
                 <label>ปีการศึกษา</label>
                 <input type="text" id="year"><br>
                 <label>เหตุผล เพราะ</label><br>
-                <input type="radio" id="cause" name="cause" value="">
-                <label>ศึกษาต่อที่ มหาวิทยาลัยธรรมศาสตร์</label>
+                <input type="radio" id="causeTamasat" name="cause" value="มหาวิทยาลัยธรรมศาสตร์">ศึกษาต่อที่ มหาวิทยาลัยธรรมศาสตร์<br>
+
+                <label>คณะ</label>
+                <input type="text" id="TamasatFac" placeholder="คณะ">
+                <label>สาขา</label>
+                <input type="text" id="TamasatField" placeholder="สาขา"><br>
+
+                <input type="radio" id="causeOther" name="cause" value="มหาวิทยาลัยอื่น">ศึกษาต่อที่ มหาวิทยาลัยอื่น<br>
+
                 <label>คณะ</label>
                 <input type="text" id="OtherFac" placeholder="คณะ">
                 <label>สาขา</label>
                 <input type="text" id="OtherField" placeholder="สาขา"><br>
-                <input type="radio" id="wantOther" name="wantOther" value="">
-                <label>ศึกษาต่อที่ มหาวิทยาลัยอื่น</label>
-                <label>คณะ</label>
-                <input type="text" id="FacOther" placeholder="คณะ">
-                <label>สาขา</label>
-                <input type="text" id="FieldOther" placeholder="สาขา"><br>
+
                 <label>กรณีลาออก</label><br>
                 <label>1.มีหนี้ค้างกับ มธ/หน่วยงานภายใน มธ หรือไม่ ถ้ามีโปรดระบุ</label>
                 <input type="text" id="numDebt">
                 <label>(หากไม่มีกรุณา -)</label><br>
                 <label>2.ต้องการเกรดในภาคเรียนที่ยื่นคำร้องลาออกหรือไม่</label>
-                <input type="radio" id="grade" name="grade" value="want">ต้องการ
-                <input type="radio" id="Nograde" name="Nograde" value="Nowant">ไม่ต้องการ
+                <input type="radio" id="grade" name="choice" value="grade">ต้องการ
+                <input type="radio" id="Nograde" name="choice" value="Nograde">ไม่ต้องการ
+
             </div>
             <div class="want2">
                 <input type="radio" id="Deferment" name="Deferment" value="">
@@ -252,6 +247,16 @@
         <input type="text" id="ฺฺBecause" name="because">
     </div>
     <button type="submit">ส่งแบบฟอร์ม</button>
+    <label for="additionalFile">เอกสารเพิ่มเติม:</label>
+    <input type="file" id="additionalFile" name="additionalFile" multiple>
+
 </form>
+<button type="button" onclick="logout()">ออกจากระบบ</button>
+
+<script>
+  function logout() {
+    window.location.href = "index.html";
+  }
+</script>
 </body>
 </html>
