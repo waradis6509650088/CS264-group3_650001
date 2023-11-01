@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>คำร้องขอเพิ่ม-ถอน รายวิชา</title>
+    <link rel="icon" href="resource/TU.png" type="image/png">
+
+</head>
+<body>
+
+
+<h1 style="text-align: center;">คำร้องขอเพิ่ม-ถอน รายวิชา</h1>
+<h2 style="text-align: center;">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</h2>
+
+<label><star>*</star>แทน บังคับใส่ข้อมูล</label>
+<link rel="stylesheet" type="text/css" href="css/addDropStyle.css">
+<hr>
+<form action="/courseRequest" method="post" id="request" >
+    <label for="date">วันที่<star>*</star></label>
+    <input type="number" id="date" name="date" min="1" max="31" placeholder="1-31" required>
+    <script>
+        const dateInput = document.getElementById("date");
+
+        dateInput.addEventListener("input", function () {
+            const enteredDate = parseInt(this.value);
+
+            if (isNaN(enteredDate) || enteredDate < 1 || enteredDate > 31) {
+                // ถ้าค่าที่ป้อนมาไม่ใช่ตัวเลขหรือไม่อยู่ในช่วง 1-31 ให้ลบตัวอักษรสุดท้าย
+                this.value = this.value.slice(0, -1);
+            }
+        });
+    </script>
+
+    <label for="month">เดือน<star>*</star></label>
+    <input type="text" id="month" name="month" placeholder="1-12"required>
+    <script>
+        const monthInput = document.getElementById("month");
+
+        monthInput.addEventListener("input", function () {
+            const enteredMonth = parseInt(this.value);
+
+            if (isNaN(enteredMonth) || enteredMonth < 1 || enteredMonth > 12) {
+                // ถ้าค่าที่ป้อนมาไม่ใช่ตัวเลขหรือไม่อยู่ในช่วง 1-12 ให้ลบตัวอักษรสุดท้าย
+                this.value = this.value.slice(0, -1);
+            }
+        });
+    </script>
+
+    <label for="year">ค.ศ.<star>*</star></label>
+    <input type="text" id="year" name="year" placeholder="19XX-2XXX"required><hr>
+
+    <h3>ข้อมูลส่วนตัวนักศึกษา</h3>
+    <label for="prefix">คำนำหน้าชื่อ(นาย/นาง/นางสาว):<star>*</star></label>
+    <select id="prefix" name="prefix">
+        <option value="นาย">นาย</option>
+        <option value="นาง">นาง</option>
+        <option value="นางสาว">นางสาว</option>
+    </select>
+
+    <label for="studentFirstName">ชื่อ:<star>*</star></label>
+    <input type="text" id="studentFirstName" name="studentFirstName" required>
+
+    <label for="studentLastName">นามสกุล:<star>*</star></label>
+    <input type="text" id="studentLastName" name="studentLastName" required>
+
+    <label for="studentId">เลขทะเบียน:<star>*</star></label>
+    <input type="text" id="studentId" name="studentId" maxlength="10" placeholder="รหัสนัศศึกษา 10 หลัก" required>
+
+    <label for="studentYear">ชั้นปีที่:<star>*</star></label>
+    <input type="text" id="studentYear" name="studentYear" required>
+    <script>
+        const yearInput = document.getElementById("studentYear");
+
+        yearInput.addEventListener("input", function () {
+            const maxYear = 7; // กำหนดค่าสูงสุดเป็น 7
+
+            if (parseInt(this.value) > maxYear) {
+                // ถ้าค่าที่ป้อนมามากกว่า 7 ให้เซ็ตค่าใหม่เป็น 7
+                this.value = "กรอกข้อมูลใหม่";
+            }
+        });
+    </script>
+
+    <label for="studyField">สาขาวิชา(ในคณะวิทยาศาสตร์และเทคโนโลยี):<star>*</star></label>
+    <input type="text" id="studyField" name="studyField" required>
+    <label for="advios">อาจารย์ที่ปรึกษา:<star>*</star></label>
+    <input type="text" id="advios" name="advios" required>
+    <hr>
+
+    <h3>ข้อมูลที่สามารถติดต่อได้ทางไปรษณีย์</h3>
+    <label for="addressNumber">บ้านเลขที่:<star>*</star></label>
+    <input type="text" id="addressNumber" name="addressNumber" required>
+
+    <label for="moo">หมู่:<star>*</star></label>
+    <input type="text" id="moo" name="moo" required>
+
+    <label for="tumbol">ตำบล:<star>*</star></label>
+    <input type="text" id="tumbol" name="tumbol" required>
+
+    <label for="amphur">อำเภอ:<star>*</star></label>
+    <input type="text" id="amphur" name="amphur" required>
+
+    <label for="province">จังหวัด:<star>*</star></label>
+    <input type="text" id="province" name="province" required>
+
+    <label for="postalcode">รหัสไปรษณีย์:<star>*</star></label>
+    <input type="text" id="postalcode" name="postalcode" placeholder="รหัสไปรษณีย์ 5 หลัก" required>
+    <script>
+        const postalcodeInput = document.getElementById("postalcode");
+
+        postalcodeInput.addEventListener("input", function () {
+            // กำหนดความยาวสูงสุดให้เท่ากับ 5
+            if (this.value.length > 5) {
+                this.value = this.value.slice(0, 5);
+            }
+        });
+    </script>
+
+    <label for="mobilePhone">เบอร์โทรศัพท์:<star>*</star></label>
+    <input type="text" id="mobilePhone" name="mobilePhone" placeholder="เบอร์โทรศัพท์ 10 หลัก"  required>
+    <script>
+        const mobilePhoneInput = document.getElementById("mobilePhone");
+
+        mobilePhoneInput.addEventListener("input", function () {
+            // กำหนดความยาวสูงสุดให้เท่ากับ 10
+            if (this.value.length > 10) {
+                this.value = this.value.slice(0, 10);
+            }
+        });
+    </script>
+
+    <label for="Phone">เบอร์โทรศัพท์บ้าน(ถ้ามี):</label>
+    <input type="text" id="Phone" name="Phone" >
+    <script>
+        const phoneInput = document.getElementById("Phone");
+
+        phoneInput.addEventListener("input", function () {
+            // กำหนดความยาวสูงสุดให้เท่ากับ 10
+            if (this.value.length > 10) {
+                this.value = this.value.slice(0, 10);
+            }
+        });
+    </script>
+
+    <hr>
+
+
+    <h3>ข้อมูลรายวิชา</h3>
+    <label>มีความประสงค์</label>
+    <label for="addsubject">ขอเพิ่ม</label>
+    <input type="number" id="addsubject" name="addsubject" min="0" max="10" >
+    <label >วิชา</label>
+    <label for="dropsubject">ขอถอน</label>
+    <input type="number" id="dropsubject" name="dropsubject" min="0" max="10" >
+    <label >วิชา</label>
+    <table>
+        <tr>
+            <th>ลำดับ</th>
+            <th>รหัสวิชา</th>
+            <th>ชื่อวิชา</th>
+            <th>Section</th>
+            <th>วัน/เวลา</th>
+            <th>หน่วยกิต</th>
+            <th>ชื่อผู้สอน</th>
+            <th>ผู้สอนอณุญาต</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><input type="text" name="subjectCode1"></td>
+            <td><input type="text" name="subjectName1"></td>
+            <td><input type="text" name="subjectSection1"></td>
+            <td><input type="text" name="subjectDate1"></td>
+            <td><input type="text" name="subjectCredit1"></td>
+            <td><input type="text" name="subjectTeacher1"></td>
+            <td><input type="checkbox" name="subjectTeacherCheck1"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><input type="text" name="subjectCode2"></td>
+            <td><input type="text" name="subjectName2"></td>
+            <td><input type="text" name="subjectSection2"></td>
+            <td><input type="text" name="subjectDate2"></td>
+            <td><input type="text" name="subjectCredit2"></td>
+            <td><input type="text" name="subjectTeacher2"></td>
+            <td><input type="checkbox" name="subjectTeacherCheck2"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><input type="text" name="subjectCode3"></td>
+            <td><input type="text" name="subjectName3"></td>
+            <td><input type="text" name="subjectSection3"></td>
+            <td><input type="text" name="subjectDate3"></td>
+            <td><input type="text" name="subjectCredit3"></td>
+            <td><input type="text" name="subjectTeacher3"></td>
+            <td><input type="checkbox" name="subjectTeacherCheck3"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><input type="text" name="subjectCode4"></td>
+            <td><input type="text" name="subjectName4"></td>
+            <td><input type="text" name="subjectSection4"></td>
+            <td><input type="text" name="subjectDate4"></td>
+            <td><input type="text" name="subjectCredit4"></td>
+            <td><input type="text" name="subjectTeacher4"></td>
+            <td><input type="checkbox" name="subjectTeacherCheck4"></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><input type="text" name="subjectCode5"></td>
+            <td><input type="text" name="subjectName5"></td>
+            <td><input type="text" name="subjectSection5"></td>
+            <td><input type="text" name="subjectDate5"></td>
+            <td><input type="text" name="subjectCredit5"></td>
+            <td><input type="text" name="subjectTeacher5"></td>
+            <td><input type="checkbox" name="subjectTeacherCheck5"></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><input type="text" name="subjectCode6"></td>
+            <td><input type="text" name="subjectName6"></td>
+            <td><input type="text" name="subjectSection6"></td>
+            <td><input type="text" name="subjectDate6"></td>
+            <td><input type="text" name="subjectCredit6"></td>
+            <td><input type="text" name="subjectTeacher6"></td>
+            <td><input type="checkbox" name="subjectTeacherCheck6"></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td><input type="text" name="subjectCode7"></td>
+            <td><input type="text" name="subjectName7"></td>
+            <td><input type="text" name="subjectSection7"></td>
+            <td><input type="text" name="subjectDate7"></td>
+            <td><input type="text" name="subjectCredit7"></td>
+            <td><input type="text" name="subjectTeacher7"></td>
+            <td><input type="checkbox" name="subjectTeacherCheck67"></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td><input type="text" name="subjectCode8"></td>
+            <td><input type="text" name="subjectName8"></td>
+            <td><input type="text" name="subjectSection8"></td>
+            <td><input type="text" name="subjectDate8"></td>
+            <td><input type="text" name="subjectCredit8"></td>
+            <td><input type="text" name="subjectTeacher8"></td>
+            <td><input type="checkbox" name="subjectTeacherCheck68"></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td><input type="text" name="subjectCode9"></td>
+            <td><input type="text" name="subjectName9"></td>
+            <td><input type="text" name="subjectSection9"></td>
+            <td><input type="text" name="subjectDate9"></td>
+            <td><input type="text" name="subjectCredit9"></td>
+            <td><input type="text" name="subjectTeacher9"></td>
+            <td><input type="checkbox" name="subjectTeacherCheck69"></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td><input type="text" name="subjectCode10"></td>
+            <td><input type="text" name="subjectName10"></td>
+            <td><input type="text" name="subjectSection10"></td>
+            <td><input type="text" name="subjectDate10"></td>
+            <td><input type="text" name="subjectCredit10"></td>
+            <td><input type="text" name="subjectTeacher10"></td>
+            <td><input type="checkbox" name="subjectTeacherCheck610"></td>
+        </tr>
+    </table>
+    <label for="cause">เหตุผลที่ขอการเพิ่มถอน<star>*</star></label>
+    <textarea id="cause" name="cause" required></textarea><br>
+
+    <button>ส่งแบบฟอร์ม</button>
+
+
+</form>
+<script>
+    function validateForm() {
+        var addSubjectCount = parseInt(document.getElementById("addsubject").value);
+        var dropSubjectCount = parseInt(document.getElementById("dropsubject").value);
+
+        if (addSubjectCount + dropSubjectCount < 1) {
+            alert("ต้องมีอย่างน้อย 1 รายวิชาที่จะขอเพิ่มหรือถอน");
+            return false;
+        }
+        return true;
+    }
+</script>
+</body>
+</html>

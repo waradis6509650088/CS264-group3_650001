@@ -11,7 +11,10 @@ body {
     align-items: center; /* จัดกลางตามแกนนอน (horizontally center) */
     height: 100vh; /* ทำให้พื้นที่รอบๆ หน้าเว็บเต็มหน้าจอ */
     margin: 0; /* ลบ margin ของ body */
-    background-image: url("pic/head.jpg");
+     background-image: url("pic/head.jpg");
+         background-size: cover;
+        background-repeat: no-repeat;
+     background-attachment: fixed;
 
 
 }
@@ -52,7 +55,7 @@ body {
 }
 
 .login button {
-    background-color: #4caf50;
+    background-color: #fff204 ;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -60,3 +63,4 @@ body {
     cursor: pointer;
     margin-top: 10px;
 }
+
