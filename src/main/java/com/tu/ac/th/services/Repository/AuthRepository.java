@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface AuthRepository {
 
-    int save(Auth auth);
+    int save(Auth authObj);
     List<Auth> getAll();
     
 }

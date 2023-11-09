@@ -11,12 +11,12 @@ public class JdbcAuthRepository implements AuthRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     @Override
-    public int save(Auth auth) {
+    public int save(Auth authObj) {
         return jdbcTemplate.update(
                 "INSERT INTO loginTime" +
                         "(studentId, loginTime) " +
                         "VALUES (?, ?)",
-                auth.getId(), auth.getLoginTime()
+                authObj.getId(), authObj.getLoginTime()
         );
     }
 
