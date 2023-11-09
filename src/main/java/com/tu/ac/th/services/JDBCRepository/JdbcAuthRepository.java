@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
 
-public class jdbcAuthRepository implements AuthRepository {
+public class JdbcAuthRepository implements AuthRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     @Override
