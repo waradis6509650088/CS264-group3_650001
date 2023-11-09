@@ -23,12 +23,16 @@ body {
   margin: 0 auto;
 
 }
-.image-with-text img {
-  width: 500px;
-  height: 100px;
-  display: block;
-  margin-left: 89px;
+.image-with-text {
+      width: 49%;
+      margin-bottom: 2%;
 }
+img{
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto ;
+            object-fit: contain;}
 
 .banner {
   padding: 20px;
