@@ -13,8 +13,8 @@ public class JdbcAuthRepository implements AuthRepository {
     @Override
     public int save(Auth auth) {
         return jdbcTemplate.update(
-                "INSERT INTO auth" +
-                        "(id, login_time) " +
+                "INSERT INTO loginTime" +
+                        "(studentId, loginTime) " +
                         "VALUES (?, ?)",
                 auth.getId(), auth.getLoginTime()
         );
@@ -22,11 +22,11 @@ public class JdbcAuthRepository implements AuthRepository {
 
     @Override
     public List<Auth> getAll() {
-        String sql = "SELECT * FROM auth";
+        String sql = "SELECT * FROM loginTime";
         List<Auth> authList = jdbcTemplate.query(sql, (rs, rowNum) -> {
             Auth auth = new Auth(null); // replace null with your JSON
-            auth.setId(rs.getString("id"));
-            auth.setLoginTime(rs.getString("login_time"));
+            auth.setId(rs.getString("studentId"));
+            auth.setLoginTime(rs.getString("loginTime"));
             return auth;
         });
 
