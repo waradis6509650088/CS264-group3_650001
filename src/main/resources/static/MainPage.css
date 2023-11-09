@@ -35,7 +35,7 @@ body {
   width: 250px;
   background-color: #f4f4f4;
   /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
-  margin-left: 89px; /* ปรับระยะห่างด้านซ้ายตามต้องการ */
+  margin-left: 6%; /* ปรับระยะห่างด้านซ้ายตามต้องการ */
 }
 
 .banner ul {

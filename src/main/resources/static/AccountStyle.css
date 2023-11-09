@@ -78,7 +78,7 @@ img {
     padding: 20px;
     width: 250px;
     background-color: #f4f4f4;
-    margin-left: 89px; /* ปรับระยะห่างด้านซ้ายตามต้องการ */
+     margin-left: 6%;  /* ปรับระยะห่างด้านซ้ายตามต้องการ */
 }
 
 .mainmenu a {
