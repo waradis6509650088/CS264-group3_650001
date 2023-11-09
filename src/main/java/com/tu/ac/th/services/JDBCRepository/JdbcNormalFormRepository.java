@@ -1,13 +1,14 @@
-package com.tu.ac.th.services.Repository;
+package com.tu.ac.th.services.JDBCRepository;
 
 import com.tu.ac.th.services.Models.NormalForm;
+import com.tu.ac.th.services.Repository.NormalFormRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
-//KUY
 
-public class JdbcNormalFormREpository implements NormalFormRepository {
+public class JdbcNormalFormRepository implements NormalFormRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     @Override

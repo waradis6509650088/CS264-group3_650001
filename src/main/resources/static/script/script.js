@@ -12,8 +12,8 @@ function login(apiForm){
 
     // สร้าง JSON จากข้อมูลฟอร์ม
     const jsonData = {};
-    formData.forEach((value, key) => {
-    jsonData[key] = value
+        formData.forEach((value, key) => {
+        jsonData[key] = value
     });
 
     // ส่งข้อมูลไปยัง API

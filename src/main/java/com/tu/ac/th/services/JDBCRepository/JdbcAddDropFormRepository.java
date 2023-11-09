@@ -1,6 +1,8 @@
-package com.tu.ac.th.services.Repository;
+package com.tu.ac.th.services.JDBCRepository;
 
 import com.tu.ac.th.services.Models.AddDropForm;
+import com.tu.ac.th.services.Repository.AddDropFormRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
