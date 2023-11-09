@@ -18,19 +18,24 @@ body {
   color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-.image-with-text img {
-  width: 50px;
-  height: auto;
-  display: block;
+.navbar img{
+    display: block;
   margin: 0 auto;
+
+}
+.image-with-text img {
+  width: 500px;
+  height: 100px;
+  display: block;
+  margin-left: 89px;
 }
 
 .banner {
   padding: 20px;
   width: 250px;
   background-color: #f4f4f4;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+  margin-left: 89px; /* ปรับระยะห่างด้านซ้ายตามต้องการ */
 }
 
 .banner ul {
@@ -57,11 +62,12 @@ body {
 
 .content {
   padding: 20px;
-  margin-left: 270px;
-  background-color: #FFF2CC;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /*background-color: #FFF2CC;*/
+  /*border-radius: 10px;*/
+  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
   color: #e10925 ;
+  margin-left: 400px; /* ปรับระยะห่างด้านซ้ายตามต้องการ */
+  margin-top: -550px;
 }
 
 
