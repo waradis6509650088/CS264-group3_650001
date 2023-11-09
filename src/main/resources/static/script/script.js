@@ -6,18 +6,34 @@
 //  vvส่งพร้อมตอนเรียก func
 // const apiForm = document.getElementById('apiForm');
 // const apiResponse = document.getElementById('apiResponse');
-function login(apiForm){
+function login(apiForm) {
     // รับข้อมูลจากฟอร์ม
-    formData = new FormData(apiForm);
+    const formData = new FormData(apiForm);
 
     // สร้าง JSON จากข้อมูลฟอร์ม
     const jsonData = {};
-        formData.forEach((value, key) => {
-        jsonData[key] = value
+    formData.forEach((value, key) => {
+        jsonData[key] = value;
     });
 
     // ส่งข้อมูลไปยัง API
     sendDataToAPI(jsonData);
+
+    // เก็บ studentID และเวลาที่ login ลงใน session storage
+    const studentID = jsonData.studentID;
+    const timeNow = new Date().toLocaleString();
+
+    // สร้าง Object สำหรับเก็บข้อมูล
+    const loginData = {
+        studentID: studentID,
+        loginTime: timeNow
+    };
+
+    // แปลง Object เป็น JSON
+    const loginDataJSON = JSON.stringify(loginData);
+
+    // เก็บข้อมูลใน session storage
+    sessionStorage.setItem('loginData', loginDataJSON);
 }
 
 function sendDataToAPI(data) {
@@ -47,4 +63,10 @@ function sendDataToAPI(data) {
         console.error('เกิดข้อผิดพลาดในการเรียกใช้ API:', error);
         apiResponse.innerHTML = 'เกิดข้อผิดพลาดในการเรียกใช้ API';
     });
+}
+
+function logout() {
+    // ลบข้อมูลที่ถูกเก็บใน session storage
+    sessionStorage.removeItem('loginData');
+
 }
