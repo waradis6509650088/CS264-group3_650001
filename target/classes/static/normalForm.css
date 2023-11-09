@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&family=Kanit:wght@300&display=swap');
+* {
+    font-family: 'Kanit', sans-serif;
+
+}
+
+/* Reset some default styles */
+body, h1, h2, label, input, select {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Set a background color and text color for the entire page */
+body {
+    background-color: #F0F0F0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-image: url("pic/Back.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Style the form container */
+#form {
+    width: 70%;
+    margin: 0 auto;
+    background-color: #FFF;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Center-align headings */
+h1, h2 {
+    text-align: center;
+}
+
+/* Style the labels */
+label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Style the input fields */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+    background-color: #007EAD;
+    color: #FFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style radio buttons and checkboxes */
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 5px;
+
+}
+
+/* Style the additional file input */
+#additionalFile {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Center the submit button */
+button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Style specific elements (you can add more styles as needed) */
+/* Example: Style the "menuinfo" label */
+#menuinfo {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.lineone , .name{
+    display: flex;
+    max-height: 55px;
+    gap: 10px;
+}
+
+.prefix select {
+    max-width: 100px;
+    width: 100px;
+    max-height: 55px;
+}
+.prefix {
+    display: flex;
+    gap: 10px;
+}
+.numnum {
+    display: flex;
+    gap: 10px;
+}
+.number input{
+    max-width: 115px;
+    width: 115px;
+}
+#studentYear {
+    max-width: 50px;
+}
+.number ,.year,.branch {
+    display: flex;
+    gap: 20px;
+}
+.number ,.year,.branch ,input select{
+    max-height: 55px;
+    height: 55px;
+}
+.branch {
+    display: flex;
+}
+.radioselect {
+    display: flex;
+    max-height: 25px;
+    height: 25px;
+}
+.placeja {
+    display: flex;
+    max-height: 55px;
+    height: 55px;
+    gap: 20px;
+}
+.placejee {
+    display: flex;
+    max-height: 55px;
+    height: 55px;
+    gap: 20px;
+}
+.teltel {
+    display: flex;
+    max-height: 55px;
+    height: 55px;
+    gap: 20px;
+}
