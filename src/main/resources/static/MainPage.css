@@ -1,42 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&family=Kanit:wght@300&display=swap');
+
 * {
-    font-family: 'Kanit', sans-serif;
-
+  font-family: 'Kanit', sans-serif;
+  margin: 0;
 }
-body{
-        background-image: url("pic/Back.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-}
-img {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%;
-            height: auto ;
-            object-fit: contain;
-            display: block;
 
- }
- 
+body {
+  background-image: url("pic/Back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.navbar /*แถบบน*/ {
+  background-color: ;
+  padding: 10px;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.image-with-text img {
+  width: 50px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.banner {
+  padding: 20px;
+  width: 250px;
+  background-color: #f4f4f4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.banner ul {
+  list-style: none;
+  padding: 0;
+}
+
+.banner a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  display: block;
+  padding: 10px;
+  transition: color 0.3s;
+}
+
+.banner a:hover {
+  color: darkred;
+}
+
+.banner .sub-menu {
+  padding-left: 15px;
+}
 
 .content {
-      width: 80%;
-      height: 500%;
-      margin-left: 20%;
-      background-color: #FFF2CC ;
-
-
-}
-.banner a {
-    text-decoration: none;
-    color: red;
-    font-weight: bold;
-    font-size: 18px;
-    font-family: 'Kanit', sans-serif;
+  padding: 20px;
+  margin-left: 270px;
+  background-color: #FFF2CC;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #e10925 ;
 }
 
-.mainmenu a:hover {
-    color: darkred;
-}
+
 
