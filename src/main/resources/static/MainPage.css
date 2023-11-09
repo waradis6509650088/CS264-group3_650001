@@ -5,74 +5,33 @@
   margin: 0;
 }
 
+
 body {
-  background-image: url("pic/Back.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+        }
 
-.navbar /*แถบบน*/ {
-  background-color: ;
-  padding: 10px;
-  color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.navbar img{
-    display: block;
-  margin: 0 auto;
+ header {
+          background-color: #333;
+          color: #fff;
+          padding: 10px;
+          text-align: center;
+        }
 
-}
-.image-with-text {
-      width: 49%;
-      margin-bottom: 2%;
-}
-img{
-            display: block;
-            margin: 0 auto;
-            max-width: 100%;
-            height: auto ;
-            object-fit: contain;}
+nav {
+          display: flex;
+          justify-content: center;
+          background-color: #444;
+        }
 
-.banner {
-  padding: 20px;
-  width: 250px;
-  background-color: #f4f4f4;
-  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
-  margin-left: 6%; /* ปรับระยะห่างด้านซ้ายตามต้องการ */
-}
+ nav a {
+          color: white;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
 
-.banner ul {
-  list-style: none;
-  padding: 0;
-}
-
-.banner a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  display: block;
-  padding: 10px;
-  transition: color 0.3s;
-}
-
-.banner a:hover {
-  color: darkred;
-}
-
-.banner .sub-menu {
-  padding-left: 15px;
-}
-
-.content {
-  padding: 20px;
-  /*background-color: #FFF2CC;*/
-  /*border-radius: 10px;*/
-  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
-  color: #e10925 ;
-  margin-left: 400px; /* ปรับระยะห่างด้านซ้ายตามต้องการ */
-  margin-top: -550px;
-}
-
-
-
+ nav a:hover {
+          background-color: #ddd;
+          color: black;
+        }
