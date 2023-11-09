@@ -128,3 +128,38 @@ hr {
     border-top: 1px solid #ccc;
     width: 50%;
 }
+
+.contactbar{
+    margin-top: 3.5%;
+    margin-bottom: 2%;
+    margin-left: 7%;
+    background-color: #FFD13F;
+    width: 86%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.emailpic{
+    margin-left: 1%;
+}
+
+.ourcontact{
+    margin-left: 1%;
+    font-color: #C3002F;
+
+}
+
+.upperbarred{
+    height: 10px;
+    width: 86%;
+    margin-left: 7%;
+    margin-top: 2%;
+    background-color: red;
+    margin-bottom: -3.5%;
+}
+
+.image-with-text{
+    width: 49%;
+    margin-bottom: 2%;
+}
