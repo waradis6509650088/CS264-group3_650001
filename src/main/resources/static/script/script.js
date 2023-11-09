@@ -84,6 +84,6 @@ function logout() {
     // ลบข้อมูลที่ถูกเก็บใน session storage
     sessionStorage.removeItem('loginData');
 
-    // ทำการนำทางหน้าไปยังหน้า '' หลังจาก logout
-    //window.location.href = '';
+    // ทำการนำทางหน้าไปยังหน้า ' ' หลังจาก logout
+    //window.location.href = ' ';
 }
