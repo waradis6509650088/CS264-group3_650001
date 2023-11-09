@@ -8,24 +8,50 @@
 <body>
 <link rel="stylesheet" type="text/css" href="MainPage.css">
 <header>
-    <h1>Group3KrubBaby</h1>
+    <img src= "pic/TU.png">
+    <h1>TU GROUP3</h1>
 </header>
 
 <nav>
     <a href="MainPage.html">เมนูหลัก</a><br>
     <a href="Account.html">ข้อมูลส่วนตัวผู้ใช้</a><br>
     <a href="https://www.reg.tu.ac.th/th/Picture/AttFile/279893db-4b83-4fbd-a1fb-3b8fc77e6d99">ข้อบังคับมหาวิทยาลัยธรรมศาสตร์</a><br>
-    <select id="Topic" >
-        <option>แบบฟอร์มยื่นคำร้องขอ</option>
-        <option><a href="normalForm.html">คำร้องขอทั่วไป</a><br></option>
-        <option><a href="addDrop.html">คำร้องขอเพิ่มถอนรายวิชา</a></option>
+    <select id="Topic" onchange="location = this.value;" >
+        <option value="Template.html">แบบฟอร์มยื่นคำร้องขอ</option>
+        <option value="normalForm.html" >คำร้องขอทั่วไป</option>
+        <option value="addDrop.html">คำร้องขอเพิ่มถอนรายวิชา</option>
     </select>
-    <a href="#">สืบค้นสถานะคำร้องของนักศึกษา</a><br>
-    <a href="#">ประวัติการเขียนคำร้อง</a><br>
-    <a href="#">รายการชำระเงิน</a><br>
+    <a href="UserStatus.html">สืบค้นสถานะคำร้องของนักศึกษา</a>
+    <a href="#">ประวัติการเขียนคำร้อง</a>
+    <a href="#">รายการชำระเงิน</a>
+    <a href="index.html">ออกจากระบบ</a>
 </nav>
 
-<!-- เนื้อหาหน้าเว็บของคุณจะอยู่ที่นี่ -->
+<div class="banner">
+    <img src="pic/banner_file.jpg">
+</div>
+
+
+<!-- เนื้อหาหลักขวา -->
+<div class="content">
+
+    <label>***ผู้ใช้สามารถติดต่อสอบถามปัญหาได้ คุณพรหมพร พรมจันทร์ เบอร์ 064xxxxxxx</label><br>
+    <label>Email : Group3KrupBaby@XXXX.XX.XX.XX</label><br>
+    <br>
+    <br>
+    <label>คำถามที่พบบ่อยการ Upload File ในการยื่นคำร้องขอ</label><br>
+    <label>1. ระบบสามารถ upload file pdf jpg</label><br>
+    <label>2. Upload ได้ขนาดไม่เกิน 100 KB</label><br>
+    <label>3. จํานวนไม่เกิน 5 ไฟล์</label><br>
+    <br>
+    <br>
+    <label>การเข้าใช้งาน</label><br>
+    <label>นักศึกษาสามารถใช้ ระบบ Group3 โดยใช้ข้อมูล User Name & Password  เดียวกับของสำนักงานทะเบียนและประมวลผลมธ</label><br>
+    <label>ติดต่อผู้ดูแลระบบ  คุณกอหญ้า Email Group3KrupBaby@XXXX.XX.XX.XX</label><br>
+    <label>กรณีที่ลืมรหัสผ่านสามารถแจ้งได้ที่ คุณกอหญ้า Email Group3KrupBaby@XXXX.XX.XX.XX </label><br>
+
+</div>
+
 
 </body>
 </html>
