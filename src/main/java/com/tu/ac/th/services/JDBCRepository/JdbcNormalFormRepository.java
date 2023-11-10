@@ -5,12 +5,16 @@ import com.tu.ac.th.services.Repository.NormalFormRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class JdbcNormalFormRepository implements NormalFormRepository {
+
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    
     @Override
     public int save(NormalForm normalForm){
         return jdbcTemplate.update(
@@ -28,7 +32,7 @@ public class JdbcNormalFormRepository implements NormalFormRepository {
     public List<NormalForm> getAll() {
         String sql = "SELECT * FROM normalForm";
         List<NormalForm> addDropForms = jdbcTemplate.query(sql, (rs, rowNum) -> {
-            NormalForm form = new NormalForm(null);//replace null with your json
+            NormalForm form = new NormalForm();
             form.setId(rs.getString("id"));
             form.setFname(rs.getString("fname"));
             form.setLname(rs.getString("lname"));

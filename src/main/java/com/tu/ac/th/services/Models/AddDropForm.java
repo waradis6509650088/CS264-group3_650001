@@ -48,9 +48,10 @@ public class AddDropForm {
         this.addSubjectList = (String) json.get("addSubjectList");
         this.dropSubjectList = (String) json.get("dropSubjectList");
     }
-
+    public AddDropForm() {
+        super();
+    }
     // Getter and Setter Methods for all fields
-
     public long getId() {
         return id;
     }

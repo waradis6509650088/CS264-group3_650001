@@ -19,6 +19,9 @@ public class Auth {
         }
         
     }
+    public Auth() {
+        super();
+    }
     public String getId() {
         return id;
     }

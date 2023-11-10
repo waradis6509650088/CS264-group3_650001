@@ -11,14 +11,14 @@ import com.tu.ac.th.services.Repository.AuthRepository;
 public class AuthController {
     
     @Autowired
-    AuthRepository auth;
+    AuthRepository authRepository;
     
     //will be called every time the page sends or recieve data
     @PostMapping("/saveAuth")
     public int saveAuth(String authJsonString){
         try{
             Auth AuthObj = new Auth(authJsonString);
-            auth.save(AuthObj);
+            authRepository.save(AuthObj);
             return 0;
         }catch(Exception e){
             return 1;

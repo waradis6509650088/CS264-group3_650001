@@ -5,12 +5,16 @@ import com.tu.ac.th.services.Repository.AddDropFormRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class JdbcAddDropFormRepository implements AddDropFormRepository{
+
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
     @Override
     public int save(AddDropForm addDropForm) {
         // Implement the SQL INSERT statement to save the entity
@@ -31,7 +35,7 @@ public class JdbcAddDropFormRepository implements AddDropFormRepository{
     public List<AddDropForm> getAll() {
         String sql = "SELECT * FROM addDropForm";
         List<AddDropForm> addDropForms = jdbcTemplate.query(sql, (rs, rowNum) -> {
-            AddDropForm form = new AddDropForm(null);//replace null with your json
+            AddDropForm form = new AddDropForm();
             form.setId(rs.getLong("id"));
             form.setDate(rs.getDate("date"));
             form.setStudentFirstName(rs.getString("studentFirstName"));

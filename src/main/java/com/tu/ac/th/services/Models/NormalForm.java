@@ -19,6 +19,10 @@ public class NormalForm {
     private String deanOp;
 
     // Constructors
+    public NormalForm(){
+        super();
+    }
+
 
     public NormalForm(JSONObject json) {
         this.id = (String) json.get("id");
