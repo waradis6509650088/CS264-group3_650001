@@ -14,18 +14,16 @@ function login(apiForm) {
 
     // แปลงเวลาเป็น milliseconds
     const timeNow = new Date().getTime();
-
-    // สร้าง Object สำหรับเก็บข้อมูล
-    const loginData = {
-        studentID: studentID,
-        loginTime: timeNow
-    };
+    loginData = {
+        "time" : timeNow,
+        "id" : studentID
+    }
 
     // แปลง Object เป็น JSON
     const loginDataJSON = JSON.stringify(loginData);
 
     // เก็บข้อมูลใน session storage
-    sessionStorage.setItem('loginData', loginDataJSON);
+    sessionStorage.setItem('id', studentID);
 
     // ส่งข้อมูล studentID และ timeNow ไปยัง checkAuth
     sendLoginDataToAuth(loginData);
@@ -81,7 +79,7 @@ function sendDataToAPI(data) {
 // logout function
 function logout() {
     // ลบข้อมูลที่ถูกเก็บใน session storage
-    sessionStorage.removeItem('loginData');
+    sessionStorage.removeItem('id');
 
     //ทำการนำทางหน้าไปยังหน้า ' ' หลังจาก logout
     //window.location.href = ' ';
