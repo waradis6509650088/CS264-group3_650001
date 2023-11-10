@@ -5,3 +5,60 @@
 
 }
 
+ body{
+         background-image: url("pic/Back.jpg");
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-attachment: fixed;
+ }
+
+ header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* ให้ข้อความและรูปอยู่ทางซ้าย */
+  }
+
+  header img {
+      width:10%;
+      margin-right: 7px;
+  }
+
+  header h1 {
+      margin: 0;
+      margin-right: 50px;
+      padding-bottom: 5px; /* สร้างพื้นที่ห่างด้านล่างของข้อความ */
+      border-bottom: 3px solid #fff204; /* สร้างขีดทางล่างของข้อความ */
+  }
+  header label {
+   margin: 0;
+   margin-top: 40px;
+   margin-left: 1px;
+
+ }
+ header img {
+     width :45px ;
+}
+ header {
+          background-color: #e10925 ;
+          color: #fff;
+          padding: 10px;
+          text-align: center;
+ }
+
+nav {
+          display: flex;
+          justify-content: center;
+          background-color: #e10925 ;
+ }
+
+ nav a {
+          color: white;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size
+ }
+
+ nav a:hover {
+          background-color: #ddd;
+          color: black;
+ }
