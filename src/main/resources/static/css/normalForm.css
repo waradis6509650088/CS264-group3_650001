@@ -9,7 +9,7 @@ body {
     font-family: 'Kanit', sans-serif;
     background-color: #F0F0F0;
     color: #333;
-    background-image: url("pic/Back.jpg");
+    background-image: url("../pic/Back.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
