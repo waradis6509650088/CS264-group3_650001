@@ -63,23 +63,36 @@ header h1 {
     border-bottom: 3px solid #fff204; /* สร้างขีดทางล่างของข้อความ */
 }
 header label {
-margin: 0;
-margin-top: 40px;
-margin-left: 1px;
-
+    margin: 0;
+    margin-top: 40px;
+    margin-left: 1px;
 }
 header img {
-width :45px ;
+    width :45px ;
 }
 
-table {
-    border-collapse: collapse;
-    width: 80%;
-    margin: auto;
-  }
-  td, th {
-    border: 5px solid #fae317;
-    text-align: left;
-    padding: 8px;
-  }
+.information table {
+  width: 80%; /* ความกว้างของตาราง */
+  margin: auto; /* ทำให้ตารางอยู่ตรงกลาง */
+  border-collapse: collapse;
+}
+
+.information th {
+  border: 2px solid #F8F8F8;
+  text-align: center;
+  padding: 8px;
+  color: black;
+
+}
+
+.information th:nth-child(even) {
+  background-color: #FABCBC ;
+}
+
+.information th:nth-child(odd) {
+  background-color: #F2F2F2;
+}
+
+
+
   
