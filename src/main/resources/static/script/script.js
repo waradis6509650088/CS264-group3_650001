@@ -1,7 +1,4 @@
-
-//login function
-//apiForm = document.getElementById('apiForm'); 
-//in login page
+//login function, call when user click login button
 function login(apiForm) {
     // รับข้อมูลจากฟอร์ม
     const formData = new FormData(apiForm);
@@ -84,6 +81,6 @@ function logout() {
     // ลบข้อมูลที่ถูกเก็บใน session storage
     sessionStorage.removeItem('loginData');
 
-    // ทำการนำทางหน้าไปยังหน้า ' ' หลังจาก logout
+    //ทำการนำทางหน้าไปยังหน้า ' ' หลังจาก logout
     //window.location.href = ' ';
 }
