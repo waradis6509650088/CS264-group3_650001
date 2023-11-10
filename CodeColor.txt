@@ -5,3 +5,4 @@
 
 ย้าย java script ใน HTML ไปไฟล์ที่ CM สร้าง ไฟล์Script
 เพิ่ม innerHTML ใน Acoount.HTML
+git reset มางานล่าสุดที่ commit

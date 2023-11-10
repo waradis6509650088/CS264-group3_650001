@@ -16,11 +16,7 @@ body {
           background-attachment: fixed;
 
 }
-.banner img {
-    width: 90%; /* ทำให้รูปเต็มความกว้างของ container */
-    margin: 70px; /* ปรับระยะห่างรูปเอง */
 
-}
 header {
           background-color: #e10925 ;
           color: #fff;
@@ -48,29 +44,23 @@ nav {
     background-color: #ddd;
     color: black;
 }
-.content {
-       max-width: 600px; /* ปรับความกว้างตามที่คุณต้องการ */
-       /*margin: 0 auto; /* ทำให้ div อยู่ตรงกลาง */
-       background-color: #F8F8F8 ;
-       padding: 20px;
-       margin-top: 2%;
-}
+
 header {
-display: flex;
-align-items: center;
-justify-content: flex-start; /* ให้ข้อความและรูปอยู่ทางซ้าย */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* ให้ข้อความและรูปอยู่ทางซ้าย */
 }
 
 header img {
-width:10%;
-margin-right: 7px;
+    width:10%;
+    margin-right: 7px;
 }
 
 header h1 {
-margin: 0;
-margin-right: 50px;
-padding-bottom: 5px; /* สร้างพื้นที่ห่างด้านล่างของข้อความ */
-border-bottom: 3px solid #fff204; /* สร้างขีดทางล่างของข้อความ */
+    margin: 0;
+    margin-right: 50px;
+    padding-bottom: 5px; /* สร้างพื้นที่ห่างด้านล่างของข้อความ */
+    border-bottom: 3px solid #fff204; /* สร้างขีดทางล่างของข้อความ */
 }
 header label {
 margin: 0;
