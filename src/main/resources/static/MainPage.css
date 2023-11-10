@@ -81,8 +81,11 @@ nav {
  .content {
         text-align: left;
         padding: 20px;
-        width: 200%;
+        width: 500%;
+        max-width: 1280px;
         margin: 0 auto;
+        margin-bottom: 10% ;
+
 }
 
 .bottom-frame {
@@ -99,7 +102,7 @@ nav {
  }
 .bottom-frame span {
      position: absolute; /* ตั้งค่าให้เป็น absolute position */
-     bottom: -480px; /* จัดตำแหน่งข้อความที่ติดกับด้านล่างของ div */
+     bottom: -605px; /* จัดตำแหน่งข้อความที่ติดกับด้านล่างของ div */
      right: -45px ; /* จัดตำแหน่งข้อความทางด้านซ้าย */
      width: 100%; /* ทำให้ข้อความเต็มขนาดของ div */
      text-align: left; /* จัดตำแหน่งข้อความทางด้านซ้าย */
