@@ -11,7 +11,9 @@ function login(apiForm) {
 
     // เก็บ studentID และเวลาที่ login ลงใน session storage
     const studentID = jsonData.studentID;
-    const timeNow = new Date().toLocaleString();//need date in milliseconds not in date format
+
+    // แปลงเวลาเป็น milliseconds
+    const timeNow = new Date().getTime();
 
     // สร้าง Object สำหรับเก็บข้อมูล
     const loginData = {
