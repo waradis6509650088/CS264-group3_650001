@@ -128,3 +128,14 @@ select#prefix option {
     padding: 20px; /* กำหนดระยะห่างภายในกรอบ */
     background-color: white;
 }
+
+#addDropTableHead th {
+    padding: 10px; /* กำหนดระยะห่างขอบสองข้างของข้อความในหัวข้อคอลัมน์ */
+    text-align: center; /* จัดตำแหน่งข้อความในหัวข้อคอลัมน์เป็นกลาง */
+}
+
+#addDropTable td {
+    padding: 10px; /* กำหนดระยะห่างขอบสองข้างของข้อความในเซลล์ */
+    text-align: center; /* จัดตำแหน่งข้อความในเซลล์เป็นกลาง */
+    border: 1px solid #ddd; /* กำหนดเส้นขอบรอบของเซลล์ */
+}
