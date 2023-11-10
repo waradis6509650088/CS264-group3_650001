@@ -13,14 +13,15 @@ public class AuthController {
     @Autowired
     AuthRepository auth;
     
-    @PostMapping("/checkAuth")
-    public int checkAuth(String authJsonString){
+    //will be called every time the page sends or recieve data
+    @PostMapping("/saveAuth")
+    public int saveAuth(String authJsonString){
         try{
             Auth AuthObj = new Auth(authJsonString);
             auth.save(AuthObj);
-            return 1;
-        }catch(Exception e){
             return 0;
+        }catch(Exception e){
+            return 1;
         }
     }
 }

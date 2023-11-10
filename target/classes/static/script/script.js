@@ -1,25 +1,55 @@
 
-
-
 //login function
-//ต้อง pass จาก หน้า login, เดี๋ยวให้ กญ ใส่ฟังชั่นในฟุ่มเข้าสู่ระบบ
-//  vvส่งพร้อมตอนเรียก func
-// const apiForm = document.getElementById('apiForm');
-// const apiResponse = document.getElementById('apiResponse');
-function login(apiForm){
+//apiForm = document.getElementById('apiForm'); 
+//in login page
+function login(apiForm) {
     // รับข้อมูลจากฟอร์ม
-    formData = new FormData(apiForm);
+    const formData = new FormData(apiForm);
 
     // สร้าง JSON จากข้อมูลฟอร์ม
     const jsonData = {};
-        formData.forEach((value, key) => {
-        jsonData[key] = value
+    formData.forEach((value, key) => {
+        jsonData[key] = value;
     });
 
+    // เก็บ studentID และเวลาที่ login ลงใน session storage
+    const studentID = jsonData.studentID;
+    const timeNow = new Date().toLocaleString();//need date in milliseconds not in date format
+
+    // สร้าง Object สำหรับเก็บข้อมูล
+    const loginData = {
+        studentID: studentID,
+        loginTime: timeNow
+    };
+
+    // แปลง Object เป็น JSON
+    const loginDataJSON = JSON.stringify(loginData);
+
+    // เก็บข้อมูลใน session storage
+    sessionStorage.setItem('loginData', loginDataJSON);
+
+    // ส่งข้อมูล studentID และ timeNow ไปยัง checkAuth
+    sendLoginDataToAuth(loginData);
     // ส่งข้อมูลไปยัง API
     sendDataToAPI(jsonData);
 }
 
+//call function saveAuth in backend
+function sendLoginDataToAuth(data) {
+    // URL ของ API saveAuth
+    const apiUrl = '/saveAuth';
+
+    // ส่งข้อมูล studentID และ timeNow ไปยัง API saveAuth
+    fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+}
+
+//send login data to tuAPI
 function sendDataToAPI(data) {
     // URL ของ API
     const apiUrl = 'https://restapi.tu.ac.th/api/v1/auth/Ad/verify';
@@ -47,4 +77,13 @@ function sendDataToAPI(data) {
         console.error('เกิดข้อผิดพลาดในการเรียกใช้ API:', error);
         apiResponse.innerHTML = 'เกิดข้อผิดพลาดในการเรียกใช้ API';
     });
+}
+
+// logout function
+function logout() {
+    // ลบข้อมูลที่ถูกเก็บใน session storage
+    sessionStorage.removeItem('loginData');
+
+    // ทำการนำทางหน้าไปยังหน้า ' ' หลังจาก logout
+    //window.location.href = ' ';
 }

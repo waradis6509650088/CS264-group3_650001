@@ -1,9 +1,7 @@
 
 //login function
-//ต้อง pass จาก หน้า login, เดี๋ยวให้ กญ ใส่ฟังชั่นในฟุ่มเข้าสู่ระบบ
-//  vvส่งพร้อมตอนเรียก func
-// const apiForm = document.getElementById('apiForm');
-// const apiResponse = document.getElementById('apiResponse');
+//apiForm = document.getElementById('apiForm'); 
+//in login page
 function login(apiForm) {
     // รับข้อมูลจากฟอร์ม
     const formData = new FormData(apiForm);
@@ -16,7 +14,7 @@ function login(apiForm) {
 
     // เก็บ studentID และเวลาที่ login ลงใน session storage
     const studentID = jsonData.studentID;
-    const timeNow = new Date().toLocaleString();
+    const timeNow = new Date().toLocaleString();//need date in milliseconds not in date format
 
     // สร้าง Object สำหรับเก็บข้อมูล
     const loginData = {
@@ -31,16 +29,17 @@ function login(apiForm) {
     sessionStorage.setItem('loginData', loginDataJSON);
 
     // ส่งข้อมูล studentID และ timeNow ไปยัง checkAuth
-    sendLoginDataToAPI(loginData);
+    sendLoginDataToAuth(loginData);
     // ส่งข้อมูลไปยัง API
     sendDataToAPI(jsonData);
 }
 
-function sendLoginDataToAPI(data) {
-    // URL ของ API checkAuth
-    const apiUrl = '/checkAuth';
+//call function saveAuth in backend
+function sendLoginDataToAuth(data) {
+    // URL ของ API saveAuth
+    const apiUrl = '/saveAuth';
 
-    // ส่งข้อมูล studentID และ timeNow ไปยัง API checkAuth
+    // ส่งข้อมูล studentID และ timeNow ไปยัง API saveAuth
     fetch(apiUrl, {
         method: 'POST',
         headers: {
@@ -50,6 +49,7 @@ function sendLoginDataToAPI(data) {
     })
 }
 
+//send login data to tuAPI
 function sendDataToAPI(data) {
     // URL ของ API
     const apiUrl = 'https://restapi.tu.ac.th/api/v1/auth/Ad/verify';
