@@ -5,64 +5,75 @@
   margin: 0;
 }
 
+
 body {
-  background-image: url("pic/Back.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-image: url("pic/Back.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+
 }
+.banner img {
+    width: 90%; /* ทำให้รูปเต็มความกว้างของ container */
+    margin: 70px; /* ปรับระยะห่างรูปเอง */
 
-.navbar /*แถบบน*/ {
-  background-color: ;
-  padding: 10px;
-  color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+ header {
+          background-color: #e10925 ;
+          color: #fff;
+          padding: 10px;
+          text-align: center;
+ }
 
-.image-with-text img {
-  width: 50px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+nav {
+          display: flex;
+          justify-content: center;
+          background-color: #e10925 ;
+ }
+
+ nav a {
+          color: white;
+          padding: 14px 16px;
+          text-decoration: none;
+ }
+
+ nav a:hover {
+          background-color: #ddd;
+          color: black;
+ }
+ .content {
+             max-width: 600px; /* ปรับความกว้างตามที่คุณต้องการ */
+             /*margin: 0 auto; /* ทำให้ div อยู่ตรงกลาง */
+             background-color: #F8F8F8 ;
+             padding: 20px;
+             margin-top: 2%;
+  }
+  header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* ให้ข้อความและรูปอยู่ทางซ้าย */
+  }
+
+  header img {
+      width:10%;
+      margin-right: 7px;
+  }
+
+  header h1 {
+      margin: 0;
+      margin-right: 50px;
+      padding-bottom: 5px; /* สร้างพื้นที่ห่างด้านล่างของข้อความ */
+      border-bottom: 3px solid #fff204; /* สร้างขีดทางล่างของข้อความ */
+  }
+  header label {
+   margin: 0;
+   margin-top: 40px;
+   margin-left: 1px;
+
+ }
+ header img {
+     width :45px ;
 }
-
-.banner {
-  padding: 20px;
-  width: 250px;
-  background-color: #f4f4f4;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.banner ul {
-  list-style: none;
-  padding: 0;
-}
-
-.banner a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  display: block;
-  padding: 10px;
-  transition: color 0.3s;
-}
-
-.banner a:hover {
-  color: darkred;
-}
-
-.banner .sub-menu {
-  padding-left: 15px;
-}
-
-.content {
-  padding: 20px;
-  margin-left: 270px;
-  background-color: #FFF2CC;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: #e10925 ;
-}
-
-
-

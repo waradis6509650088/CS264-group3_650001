@@ -2,59 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ระบบ Group3</title>
-    <link rel="icon" href="pic/TU.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group3</title>
 </head>
 <body>
 <link rel="stylesheet" type="text/css" href="MainPage.css">
+<header>
+    <img src= "pic/TU.png">
+    <h1>TU GROUP3</h1>
+</header>
 
-<!-- แถบด้านบน -->
-<div class="navbar">
-    <div class="image-with-text">
-    <img src ="pic/TU3.png"  >
-    </div>
+<nav>
+    <a href="MainPage.html">เมนูหลัก</a><br>
+    <a href="Account.html">ข้อมูลส่วนตัวผู้ใช้</a><br>
+    <a href="https://www.reg.tu.ac.th/th/Picture/AttFile/279893db-4b83-4fbd-a1fb-3b8fc77e6d99">ข้อบังคับมหาวิทยาลัยธรรมศาสตร์</a><br>
+    <select id="Topic" onchange="location = this.value;" >
+        <option value="Template.html">แบบฟอร์มยื่นคำร้องขอ</option>
+        <option value="normalForm.html" >คำร้องขอทั่วไป</option>
+        <option value="addDrop.html">คำร้องขอเพิ่มถอนรายวิชา</option>
+    </select>
+    <a href="UserStatus.html">สืบค้นสถานะคำร้องของนักศึกษา</a>
+    <a href="#">ประวัติการเขียนคำร้อง</a>
+    <a href="#">รายการชำระเงิน</a>
+    <a href="index.html">ออกจากระบบ</a>
+</nav>
 
-    <img src ="pic/banner_file.jpg" >
-    <!-- แถบด้านซ้าย -->
-    <div class="banner">
-        <ul>
-            <a href="MainPage.html">เมนูหลัก</a><br>
-            <a href="Account.html">ข้อมูลส่วนตัวผู้ใช้</a><br>
-            <a href="#">แบบฟอร์มยื่นคำร้องขอ</a><br>
-            <ul class="sub-menu">
-                <a href="normalForm.html">คำร้องขอทั่วไป</a><br>
-                <a href="addDrop.html">คำร้องขอเพิ่มถอนรายวิชา</a><br>
-            </ul>
-            <a href="#">สืบค้นสถานะคำร้องของนักศึกษา</a><br>
-            <a href="#">ประวัติการเขียนคำร้อง</a><br>
-            <a href="#">รายการชำระเงิน</a><br>
-        </ul>
-
-    </div>
-    <!-- เนื้อหาหลักขวา -->
-    <div class="content">
-        <label>***ผู้ใช้สามารถติดต่อสอบถามปัญหาได้ คุณพรหมพร พรมจันทร์ เบอร์ 064xxxxxxx</label><br>
-        <label>Email : Group3KrupBaby@XXXX.XX.XX.XX</label><br>
-        <br>
-        <br>
-        <label>การ Upload File ในการยื่นคำร้องขอ</label><br>
-        <label>1. ระบบสามารถ upload file pdf jpg</label><br>
-        <label>2. Upload ได้ขนาดไม่เกิน 100 KB</label><br>
-        <label>3. จํานวนไม่เกิน 5 ไฟล์</label><br>
-        <br>
-        <br>
-        <label>การเข้าใช้งาน</label><br>
-        <label>นักศึกษาสามารถใช้ ระบบ Group3 โดยใช้ข้อมูล User Name & Password  เดียวกับของสำนักงานทะเบียนและประมวลผลมธ</label><br>
-        <label>ติดต่อผู้ดูแลระบบ  คุณกอหญ้า Email Group3KrupBaby@XXXX.XX.XX.XX</label><br>
-        <label>กรณีที่ลืมรหัสผ่านสามารถแจ้งได้ที่ คุณกอหญ้า Email Group3KrupBaby@XXXX.XX.XX.XX </label><br>
-
-    </div>
-
-
+<div class="banner">
+    <img src="pic/banner_file.jpg">
 </div>
 
 
+<!-- เนื้อหาหลักขวา -->
+<div class="content">
 
+    <label>***ผู้ใช้สามารถติดต่อสอบถามปัญหาได้ คุณพรหมพร พรมจันทร์ เบอร์ 064xxxxxxx</label><br>
+    <label>Email : Group3KrupBaby@XXXX.XX.XX.XX</label><br>
+    <br>
+    <br>
+    <label>คำถามที่พบบ่อยการ Upload File ในการยื่นคำร้องขอ</label><br>
+    <label>1. ระบบสามารถ upload file pdf jpg</label><br>
+    <label>2. Upload ได้ขนาดไม่เกิน 100 KB</label><br>
+    <label>3. จํานวนไม่เกิน 5 ไฟล์</label><br>
+    <br>
+    <br>
+    <label>การเข้าใช้งาน</label><br>
+    <label>นักศึกษาสามารถใช้ ระบบ Group3 โดยใช้ข้อมูล User Name & Password  เดียวกับของสำนักงานทะเบียนและประมวลผลมธ</label><br>
+    <label>ติดต่อผู้ดูแลระบบ  คุณกอหญ้า Email Group3KrupBaby@XXXX.XX.XX.XX</label><br>
+    <label>กรณีที่ลืมรหัสผ่านสามารถแจ้งได้ที่ คุณกอหญ้า Email Group3KrupBaby@XXXX.XX.XX.XX </label><br>
+
+</div>
 
 
 </body>

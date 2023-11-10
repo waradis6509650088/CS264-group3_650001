@@ -8,46 +8,29 @@
 <body>
 <link rel="stylesheet" type="text/css" href="AccountStyle.css">
 
-<!-- แถบด้านบน -->
-<div class="navbar">
-    <div class="image-with-text">
-        <img src ="pic/TU3.png"  >
-    </div>
 
-    <img src ="pic/banner_file.jpg" >
-    <div class="sidebar">
-        <ul>
-            <div class="mainmenu">
-                <a href="MainPage.html"><h2>เมนูหลัก</h2></a><br>
-            </div>
-            <hr>
-            <a href="Account.html">ข้อมูลส่วนตัวผู้ใช้</a><br>
-            <a href="https://www.reg.tu.ac.th/th/Picture/AttFile/279893db-4b83-4fbd-a1fb-3b8fc77e6d99">ข้อบังคับมหาวิทยาลัยธรรมศาสตร์</a><br>
-            <a href="#">แบบฟอร์มยื่นคำร้องขอ</a><br>
-            <ul class="sub-menu">
-                <a href="form.html">คำร้องขอทั่วไป</a><br>
-                <a href="addDrop.html">คำร้องขอเพิ่มถอนรายวิชา</a><br>
-            </ul>
-            <a href="#">สืบค้นสถานะคำร้องของนักศึกษา</a><br>
-            <a href="#">ประวัติการเขียนคำร้อง</a><br>
-            <a href="#">รายการชำระเงิน</a><br>
-        </ul>
-    </div>
+<link rel="stylesheet" type="text/css" href="MainPage.css">
+<header>
+    <img src= "pic/TU.png">
+    <h1>TU GROUP3</h1>
+</header>
+
+<nav>
+    <a href="MainPage.html">เมนูหลัก</a><br>
+    <a href="Account.html">ข้อมูลส่วนตัวผู้ใช้</a><br>
+    <a href="https://www.reg.tu.ac.th/th/Picture/AttFile/279893db-4b83-4fbd-a1fb-3b8fc77e6d99">ข้อบังคับมหาวิทยาลัยธรรมศาสตร์</a><br>
+    <select id="Topic" onchange="location = this.value;" >
+        <option value="Template.html">แบบฟอร์มยื่นคำร้องขอ</option>
+        <option value="normalForm.html" >คำร้องขอทั่วไป</option>
+        <option value="addDrop.html">คำร้องขอเพิ่มถอนรายวิชา</option>
+    </select>
+    <a href="UserStatus.html">สืบค้นสถานะคำร้องของนักศึกษา</a>
+    <a href="#">ประวัติการเขียนคำร้อง</a>
+    <a href="#">รายการชำระเงิน</a>
+    <a href="index.html">ออกจากระบบ</a>
+</nav>
     <!-- เนื้อหาหลักขวา -->
     <div class="content">
-        <div class = "accountpic">
-            <img src ="pic/Account.png"  >
-        </div>
-        <div class = "dataAccount">
-            <div class = "data">
-                <h2>Account info</h2>
-                <hr>
-            </div>
-            <div class = "nameid">
-                <label>UserName</label><br>
-                <label>UserId</label><br>
-            </div>
-        </div>
 
 
     </div>

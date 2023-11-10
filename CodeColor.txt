@@ -1,3 +1,7 @@
 #F2F2F2 สีเทา
 #e10925 สีแดง
 #fff204 สีเหลือง
+#F8F8F8 สีเทาพื้นหลังกรอบ
+
+ย้าย java script ใน HTML ไปไฟล์ที่ CM สร้าง ไฟล์Script
+เพิ่ม innerHTML ใน Acoount.HTML
