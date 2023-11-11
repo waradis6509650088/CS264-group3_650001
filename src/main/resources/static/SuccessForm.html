@@ -8,20 +8,34 @@
 <body>
 <link rel="stylesheet" type="text/css" href="css/SuccessStyle.css">
     <div class="container">
-    <h1>ส่งแบบฟอร์มสำเร็จ</h1>
-    <p>Thank you for submitting the form</p>
-    <br>
-    <a href="MainPage.html">Go to Main Page</a>
-    <br>
+        <div id="circle"></div>
+        <div id="tickMark">&#10004;</div>
+
+        <h1>ส่งแบบฟอร์มสำเร็จ</h1>
+
+        <p>Thank you for submitting the form</p>
+
+        <a href="MainPage.html">Go to Main Page</a>
+
     </div>
 
 <!-- เพิ่มสคริปต์ JavaScript หากต้องการปรับแต่งการทำงานเพิ่มเติม -->
 <script>
-    // ตัวอย่าง: หากต้องการทำอะไรบางอย่างเมื่อหน้าโหลด
     document.addEventListener('DOMContentLoaded', function () {
-        window.onload
-        (MainPage.html)
-    });
+       var circle = document.getElementById('circle');
+       var tickMark = document.getElementById('tickMark');
+
+       // แสดงวงกลมและติ้ก
+       circle.style.display = 'block';
+       tickMark.style.display = 'block';
+
+       // หายไปหลังจาก 2 วินาที
+       setTimeout(function() {
+           circle.style.display = 'none';
+           tickMark.style.display = 'none';
+       }, 2000);
+   });
+
 </script>
 
 </body>

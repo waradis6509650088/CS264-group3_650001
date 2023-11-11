@@ -15,7 +15,22 @@ body {
 }
 
 .container {
-    text-align: center;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     border: 2px solid #28a745; /* สีขอบกรอบ */
+     padding: 20px; /* ระยะห่างของเนื้อหาจากขอบกรอบ */
+     margin: 0 auto; /* ทำให้เป็นกลางที่สุดในหน้าจอ */
+     top: 50%; /* จุดกึ่งกลางตำแหน่งด้านบน */
+     left: 50%; /* จุดกึ่งกลางตำแหน่งด้านซ้าย */
+     background-color: #fff; /* สีพื้นหลังของกรอบ */
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กรอบ */
+     border-radius: 5px;
+     max-width: 1000px;
+     width : 40% ;
+     height : 30% ;
 }
 
 h1 {
@@ -30,7 +45,7 @@ p {
 }
 
 a {
-    color: #ff5733; /* เปลี่ยนสีของลิงก์เป็นสีที่คุณต้องการ */
+    color: #e10925; /* เปลี่ยนสีของลิงก์เป็นสีที่คุณต้องการ */
     text-decoration: none;
     font-weight: bold;
 }
@@ -50,3 +65,39 @@ a:hover {
     font-weight: bold;
     margin-bottom: 10px; /* เพิ่ม margin-bottom สำหรับ failure-message */
 }
+
+ /* เพิ่มสไตล์ของตัวติ้ก */
+
+@keyframes moveElements {
+    0% {
+        transform: scale(0) translateY(50%);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) translateY(-50%);
+        opacity: 1;
+    }
+}
+#circle {
+    width: 80px;
+    height: 80px;
+    background-color: #28a745;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+     animation: moveElements 1s ease-in-out forwards;
+}
+
+#tickMark {
+    font-size: 3em;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 48.4%;
+    transform: translate(-50%, -50%);
+    display: none;
+     animation: moveElements 1s ease-in-out forwards;
+}
+

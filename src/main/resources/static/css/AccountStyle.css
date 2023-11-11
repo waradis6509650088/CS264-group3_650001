@@ -5,7 +5,6 @@
   margin: 0;
 }
 
-
 body {
           font-family: Arial, sans-serif;
           margin: 0;
@@ -36,7 +35,7 @@ nav {
  }
 
  nav a:hover {
-          background-color: #ddd;
+          background-color: #F2F2F2 ;
           color: black;
  }
 
@@ -68,6 +67,22 @@ header img {
      width :45px ;
 }
 
+/* ตัวเนื้อหา */
+
+.content {
+
+}
+
+.AccountName {
+
+}
+
+.AccountData {
+
+}
+hr {
+
+}
 
 
 
