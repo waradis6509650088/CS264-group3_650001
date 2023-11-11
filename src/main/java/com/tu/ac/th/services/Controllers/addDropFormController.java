@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tu.ac.th.services.Repository.AddDropFormRepository;
 
 @RestController
-public class addDropForm {
+public class addDropFormController {
     @Autowired
     AddDropFormRepository ad;
 
