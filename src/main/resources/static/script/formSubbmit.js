@@ -164,12 +164,22 @@ if (table.rows.length < 2) {
     alert("กรุณาเพิ่ม/ถอนอย่างน้อย 1 วิชาก่อนยืนยัน");
 } else {
     studentString = toJSONstring();
-    // fetch('/formSubmit?studentInfoJSONstring='+ encodeURIComponent(studentString))
-    // .then(response => response.text())
-    // .then(data => console.log(JSON.parse(studentString)))
-    // .catch(error => console.error('Error:', error));
-    alert("ส่งแบบฟอร์มสำเร็จ!");
-    //location.reload();
-}
+    url = 'http://example.com/api/form/saveAddDropForm';
+    fetch(url, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(studentString)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch(error => {
+        console.alert("ส่งแบบฟอร์มสำเร็จ!");
+    //location.reload();}
+    });
+};
 });
 
