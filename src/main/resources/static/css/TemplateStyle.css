@@ -14,6 +14,7 @@ body {
           background-size: cover;
           background-repeat: no-repeat;
           background-attachment: fixed;
+
 }
 .banner img {
     width: 90%; /* ทำให้รูปเต็มความกว้างของ container */
@@ -21,7 +22,7 @@ body {
 
 }
  header {
-          background-color: #e10925 ;
+          background-color: #8B0000 ;
           color: #fff;
           padding: 10px;
           text-align: center;
@@ -30,7 +31,7 @@ body {
 nav {
           display: flex;
           justify-content: center;
-          background-color: #e10925 ;
+          background-color: #8B0000 ;
  }
 
  nav a {
@@ -76,6 +77,49 @@ nav {
  header img {
      width :45px ;
 }
+/* เนื้อหาหลัก */
 
+h1 {
+    margin-left: 10% ; /* ปรับระยะห่างจากขอบจอด้านซ้าย */
+   /* border-bottom: 3px solid #fff204; /* เพิ่มเส้นด้านล่าง */
+    /* padding-bottom: 1% ; /* หรือถ้าต้องการเพิ่มพื้นที่ทางด้านล่าง */
+    margin-top: 3% ;
+}
+hr {
+    width: 40%; /* ปรับความยาวของ hr เป็น 50% ของพื้นที่ทั้งหมด */
+    margin-left: 10% ; /* ถ้าไม่ต้องการให้มีการย่อหรือขยายชิดขอบจอด้านซ้าย */
+    border-width: 3px;
+}
+
+.content {
+        display: flex;
+        width: 100%; /* กำหนดความกว้างของ content เป็น 80% ของพื้นที่ทั้งหมด */
+        height: 500px; /* กำหนดความสูงของ content เป็น 200px หรือตามที่ต้องการ */
+        gap: 50px;
+        margin-top: 5% ;
+        margin-left: 25% ;
+        align-items: center; /* จัดวางตรงกลางในแนวดิ่ง */
+        flex-direction: row; /* จัดเรียงเนื้อหาในแถวเดียวกัน */
+        background-color: transparent;
+}
+
+
+ .TemNormal {
+        width: 20vw; /* ปรับขนาดของวงกลมตามที่ต้องการ */
+        height: 40vh;
+        /*background-color: red; /* สีของวงกลม */
+        border-radius: 50%; /* ทำให้มีรูปร่างเป็นวงกลม */
+        border: 5px solid #8B0000;
+        cursor: pointer;
+}
+
+.TemAdd {
+        width: 20vw; /* ปรับขนาดของวงกลมตามที่ต้องการ */
+        height: 40vh;
+       /* background-color: blue; /* สีของวงกลม */
+        border-radius: 50%; /* ทำให้มีรูปร่างเป็นวงกลม */
+        border: 5px solid #8B0000;
+        cursor: pointer;
+}
 
 

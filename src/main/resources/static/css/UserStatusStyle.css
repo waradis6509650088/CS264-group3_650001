@@ -18,7 +18,7 @@ body {
 }
 
 header {
-          background-color: #e10925 ;
+          background-color: #8B0000 ;
           color: #fff;
           padding: 10px;
           text-align: center;
@@ -27,7 +27,7 @@ header {
 nav {
           display: flex;
           justify-content: center;
-          background-color: #e10925 ;
+          background-color: #8B0000 ;
  }
 
  nav a {

@@ -19,20 +19,33 @@
     <a href="LinkTU.html">ข้อบังคับมหาวิทยาลัยธรรมศาสตร์</a><br>
     <a href="Template.html">แบบฟอร์มยื่นคำร้องขอ</a>
     <a href="UserStatus.html">สืบค้นสถานะคำร้องของนักศึกษา</a>
-    <a href="#">ประวัติการเขียนคำร้อง</a>
+    <a href="HisForm.html">ประวัติการเขียนคำร้อง</a>
     <a href="#">รายการชำระเงิน</a>
     <a href="index.html">ออกจากระบบ</a>
 </nav>
 
+    <h1>เลือกแบบฟอร์มที่ต้องการเขียนคำร้อง</h1><hr>
+
 <div class="content">
-    <div class="TemNormal">
+    <div class="TemNormal" onclick="redirectToFormNormal()" >
 
     </div>
-    <div class="TemAdd">
+
+    <div class="TemAdd" onclick="redirectToFormAdddrop()" >
 
 
     </div>
+
 </div>
 
+<script>
+    function redirectToFormNormal() {
+        window.location.href = 'normalForm.html'; // แก้ไปยัง URL ที่ต้องการ
+    }
+
+    function redirectToFormAdddrop() {
+        window.location.href = 'addDrop.html'; // แก้ไปยัง URL ที่ต้องการ
+    }
+</script>
 </body>
 </html>

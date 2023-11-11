@@ -23,7 +23,7 @@ body {
 
 }
  header {
-          background-color: #e10925 ;
+          background-color: #8B0000 ;
           color: #fff;
           padding: 10px;
           text-align: center;
@@ -32,7 +32,7 @@ body {
 nav {
           display: flex;
           justify-content: center;
-          background-color: #e10925 ;
+          background-color: #8B0000 ;
  }
 
  nav a {
@@ -90,7 +90,7 @@ nav {
 }
 
 .bottom-frame {
-            background-color: #e10925 ; /* สีพื้นหลังของกรอบด้านล่าง */
+            background-color: #8B0000 ; /* สีพื้นหลังของกรอบด้านล่าง */
             padding: 10px;
             text-align: center;
  }
