@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account</title>
     <link rel="icon" href="pic/TU.png" type="image/png">
 </head>
 <body>
 <link rel="stylesheet" type="text/css" href="css/AccountStyle.css">
-
 <header>
-    <img src= "pic/TU.png">
-    <h1>TU GROUP3</h1>
+<img src= "pic/TU.png">
+<h1>TU GROUP3</h1>
 </header>
+
 <nav>
     <a href="MainPage.html">เมนูหลัก</a><br>
     <a href="Account.html">ข้อมูลส่วนตัวผู้ใช้</a><br>
@@ -28,6 +28,23 @@
     <a href="index.html">ออกจากระบบ</a>
 </nav>
 
+<div class ="content" >
+    <img src="pic/Account.png">
+    <hr>
+    <label>ชื่อ นามสกุล</label>
+    <label id = displayname_th ></label>
+    <label id = displayname_en > </label>
+    <label id = username ></label>
+    <label id = tu_status > </label>
+    <label id = email > </label>
+    <label id =  > </label>
+
+
+
+
+
+</div>
+
 
 
 
@@ -37,12 +54,12 @@
 <script>
     function callJSON(){
     info = {
-    "status": true,
-    "message": "Success",
+    "status": true, // ไม่ต้องดึงมา
+    "message": "Success", // ไม่ต้องดึงมา
     "type": "student",
     "username": "5701010101",
     "tu_status": "สำเร็จการศึกษา",
-    "statusid": "40",
+    "statusid": "40", // ไม่ต้องดึงมา
     "displayname_th": "นักศึกษา ทดสอบ",
     "displayname_en": "nuksuksa todsob",
     "email": "email.std@dome.tu.ac.th",

@@ -2,6 +2,7 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>คำร้องขอเพิ่ม-ถอน รายวิชา</title>
     <link rel="icon" href="pic/TU.png" type="image/png">
 
@@ -65,7 +66,7 @@
     <input type="text" id="studentLastName" name="studentLastName" required>
 
     <label for="studentId">เลขทะเบียน:<star>*</star></label>
-    <input type="text" id="studentId" name="studentId" maxlength="10" placeholder="รหัสนัศศึกษา 10 หลัก" required>
+    <input type="text" id="studentId" name="studentId" maxlength="10" placeholder="รหัสนักศึกษา 10 หลัก" required>
 
     <label for="studentYear">ชั้นปีที่:<star>*</star></label>
     <input type="text" id="studentYear" name="studentYear" required>
@@ -338,7 +339,18 @@
     <label for="cause">เหตุผลที่ขอการเพิ่มถอน<star>*</star></label>
     <textarea id="cause" name="cause" required></textarea><br>
 
-    <button>ส่งแบบฟอร์ม</button>
+    <button  id="submitButton">ส่งแบบฟอร์ม</button>
+
+    <!-- เพิ่มสคริปต์ JavaScript สำหรับการเด้งไปยังหน้าใหม่ (successForm.html) -->
+    <script>
+        // ฟังก์ชันที่ถูกเรียกเมื่อกดปุ่ม "ส่งแบบฟอร์ม"
+           document.getElementById("submitButton").addEventListener("click", function() {
+               // ตรวจสอบความถูกต้องของข้อมูลแบบฟอร์ม และดำเนินการอื่น ๆ ตามต้องการ
+
+               // เด้งไปยังหน้าใหม่ (successForm.html)
+               window.location.href = "successForm.html";
+           });
+    </script>
 
 
 </form>

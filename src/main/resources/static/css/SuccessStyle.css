@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&family=Kanit:wght@300&display=swap');
+
+* {
+  font-family: 'Kanit', sans-serif;
+  margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #45a049; /* เปลี่ยนสีของ h1 เป็นสีที่คุณต้องการ */
+    margin-bottom: 10px; /* เพิ่ม margin-bottom สำหรับ h1 */
+}
+
+p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px; /* เพิ่ม margin-bottom สำหรับ p */
+}
+
+a {
+    color: #ff5733; /* เปลี่ยนสีของลิงก์เป็นสีที่คุณต้องการ */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.success-message {
+    color: #28a745;
+    font-weight: bold;
+    margin-bottom: 10px; /* เพิ่ม margin-bottom สำหรับ success-message */
+}
+
+.failure-message {
+    color: #dc3545;
+    font-weight: bold;
+    margin-bottom: 10px; /* เพิ่ม margin-bottom สำหรับ failure-message */
+}
