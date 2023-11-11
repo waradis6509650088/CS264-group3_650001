@@ -1,32 +1,3 @@
-function submitAddDropForm(formData){
-    sessionStorage.setItem('id', "1234");
-    const jsonData = {
-        "date":document.getElementById("date").value
-        + "-" + document.getElementById("month").value
-        +"-" + document.getElementById("year").value,
-        "studentFirstName":document.getElementById("prefix").value
-        + " " + document.getElementById("studentFirstName").value,
-        "studentLastName":document.getElementById("studentLastName").value,
-        "studentId":document.getElementById("studentId").value,
-        "studentYear":document.getElementById("studentYear").value,
-        "studyField":document.getElementById("studyField").value,
-        "advisor":document.getElementById("advisor").value,
-        "addressNumber":document.getElementById("addressNumber").value,
-        "moo":document.getElementById("moo").value,
-        "tumbol":document.getElementById("tumbol").value,
-        "amphur":document.getElementById("amphur").value,
-        "province":document.getElementById("province").value,
-        "postalCode":document.getElementById("postalcode").value,
-        "mobilePhone":document.getElementById("mobilePhone").value,
-        "phone":document.getElementById("Phone").value,
-        "cause":document.getElementById("cause").value,
-        "ID":sessionStorage.getItem('id')
-    };
-
-    console.log(jsonData);
-    return jsonData
-}
-
 //script for adding content to table
 function addDropTable_addContent(){
     dat1 = document.getElementById("addDropChoice").value;
@@ -92,7 +63,7 @@ function addDropTable_deleteSubject(){
 }
 
 //script for turning table to array
-function toJSONstring() {
+function combineFormAndTable() {
     const table = document.getElementById("addDropTable");
 
     if(table.rows.length > 1){
@@ -154,32 +125,57 @@ function validateForm() {
     return true;
 }
 
-//eventlistener addDropForm
-document.addEventListener("submit", (e) => {
-e.preventDefault();
-let table = document.getElementById("addDropTable");
+//submit addDropForm to api
+function submitAddDropFormAPI(){
+    let table = document.getElementById("addDropTable");
+    if (table.rows.length < 2) {
+        alert("กรุณาเพิ่ม/ถอนอย่างน้อย 1 วิชาก่อนยืนยัน");
+    } else {
+        studentString = combineFormAndTable();
+        url = 'http://example.com/api/form/saveAddDropForm';
+        fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(studentString)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch(error => {
+            console.alert("ส่งแบบฟอร์มสำเร็จ!");
+            //location.reload();
+        });
+    };
+}
 
+//collect data addDropForm to JSON
+function adFormToJSON(){
+        const jsonData = {
+        "date":document.getElementById("date").value
+        + "-" + document.getElementById("month").value
+        +"-" + document.getElementById("year").value,
+        "studentFirstName":document.getElementById("prefix").value
+        + " " + document.getElementById("studentFirstName").value,
+        "studentLastName":document.getElementById("studentLastName").value,
+        "studentId":document.getElementById("studentId").value,
+        "studentYear":document.getElementById("studentYear").value,
+        "studyField":document.getElementById("studyField").value,
+        "advisor":document.getElementById("advisor").value,
+        "addressNumber":document.getElementById("addressNumber").value,
+        "moo":document.getElementById("moo").value,
+        "tumbol":document.getElementById("tumbol").value,
+        "amphur":document.getElementById("amphur").value,
+        "province":document.getElementById("province").value,
+        "postalCode":document.getElementById("postalcode").value,
+        "mobilePhone":document.getElementById("mobilePhone").value,
+        "phone":document.getElementById("Phone").value,
+        "cause":document.getElementById("cause").value,
+        "ID":sessionStorage.getItem('id')
+    };
 
-if (table.rows.length < 2) {
-    alert("กรุณาเพิ่ม/ถอนอย่างน้อย 1 วิชาก่อนยืนยัน");
-} else {
-    studentString = toJSONstring();
-    url = 'http://example.com/api/form/saveAddDropForm';
-    fetch(url, {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(studentString)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-    })
-    .catch(error => {
-        console.alert("ส่งแบบฟอร์มสำเร็จ!");
-    //location.reload();}
-    });
-};
-});
-
+    console.log(jsonData);
+    return jsonData
+}

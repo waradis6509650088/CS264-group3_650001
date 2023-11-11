@@ -1,16 +1,18 @@
+window.onload = function() {
+    sessionStorage.clear();
+};
+
+
 //login function, call when user click login button
-function login(apiForm) {
-    // รับข้อมูลจากฟอร์ม
-    const formData = new FormData(apiForm);
-
+function login() {
     // สร้าง JSON จากข้อมูลฟอร์ม
-    const jsonData = {};
-    formData.forEach((value, key) => {
-        jsonData[key] = value;
-    });
-
+    const jsonData = {
+        "UserName" : document.getElementById("username").value,
+        "PassWord" : document.getElementById("password").value
+    };
+    console.log(jsonData)
     // เก็บ studentID และเวลาที่ login ลงใน session storage
-    const studentID = jsonData.studentID;
+    const studentID = jsonData['UserName'];
 
     // แปลงเวลาเป็น milliseconds
     const timeNow = new Date().getTime();
@@ -22,19 +24,19 @@ function login(apiForm) {
     // แปลง Object เป็น JSON
     const loginDataJSON = JSON.stringify(loginData);
 
-    // เก็บข้อมูลใน session storage
-    sessionStorage.setItem('id', studentID);
 
+    //send login data
+    // ส่งข้อมูลไปยัง API
+    sendDataToTUAPI(jsonData);
     // ส่งข้อมูล studentID และ timeNow ไปยัง checkAuth
     sendLoginDataToAuth(loginData);
-    // ส่งข้อมูลไปยัง API
-    sendDataToAPI(jsonData);
+    
 }
 
 //call function saveAuth in backend
 function sendLoginDataToAuth(data) {
     // URL ของ API saveAuth
-    const apiUrl = '/saveAuth';
+    const apiUrl = '/api/saveAuth';
 
     // ส่งข้อมูล studentID และ timeNow ไปยัง API saveAuth
     fetch(apiUrl, {
@@ -47,10 +49,10 @@ function sendLoginDataToAuth(data) {
 }
 
 //send login data to tuAPI
-function sendDataToAPI(data) {
+function sendDataToTUAPI(data) {
     // URL ของ API
     const apiUrl = 'https://restapi.tu.ac.th/api/v1/auth/Ad/verify';
-
+    apiResponse = document.getElementById("apiRes")
     // สร้างคำขอ POST โดยใช้ Fetch API
     fetch(apiUrl, {
         method: 'POST',
@@ -59,28 +61,29 @@ function sendDataToAPI(data) {
         'Application-Key': 'TUe2e59e8f883232ef8d55e1df294429a53ebe2b674e71f1b3a2dfd91d4f978aa699bb71061f3ce8da1d35f4010396f273', // คีย์แอปพลิเคชัน
         },
         body: JSON.stringify(data)
-    })
+    }) 
     .then(response => response.json())
-    .then(responseData => {
+    .then(responseData  => {
         if (responseData.status && responseData.type == "student") {
         // ทำการนำทางไปยังหน้าอื่น ๆ หากมีข้อมูลถูกต้อง
-        window.location.href = 'form.html';
+        window.location.href = 'MainPage.html';
         } else {
         // ไม่พบข้อมูลหรือข้อมูลไม่ถูกต้อง
-        apiResponse.innerHTML = 'ไม่พบข้อมูลหรือข้อมูลไม่ถูกต้อง';
+        // apiResponse.innerHTML = 'ไม่พบข้อมูลหรือข้อมูลไม่ถูกต้อง';
         }
+        console.log(responseData);
     })
     .catch(error => {
         console.error('เกิดข้อผิดพลาดในการเรียกใช้ API:', error);
-        apiResponse.innerHTML = 'เกิดข้อผิดพลาดในการเรียกใช้ API';
+        // apiResponse.innerHTML = 'เกิดข้อผิดพลาดในการเรียกใช้ API';
     });
 }
 
 // logout function
 function logout() {
     // ลบข้อมูลที่ถูกเก็บใน session storage
-    sessionStorage.removeItem('id');
+    sessionStorage.clear();
 
-    //ทำการนำทางหน้าไปยังหน้า ' ' หลังจาก logout
-    //window.location.href = ' ';
+    //ทำการนำทางหน้าไปยังหน้า 'index' หลังจาก logout
+    window.location.href = 'index.html';
 }
