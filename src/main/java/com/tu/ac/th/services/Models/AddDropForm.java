@@ -3,6 +3,7 @@ package com.tu.ac.th.services.Models;
 import java.util.Date;
 
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 public class AddDropForm {
     private long id;
@@ -27,26 +28,33 @@ public class AddDropForm {
 
     // Constructors
 
-    public AddDropForm(JSONObject json) {
-        this.id = (Long) json.get("id");
-        this.date = (Date) json.get("date");
-        this.studentFirstName = (String) json.get("studentFirstName");
-        this.studentLastName = (String) json.get("studentLastName");
-        this.studentId = (String) json.get("studentId");
-        this.studentYear = (String) json.get("studentYear");
-        this.studyField = (String) json.get("studyField");
-        this.advisor = (String) json.get("advisor");
-        this.addressNumber = (String) json.get("addressNumber");
-        this.moo = (String) json.get("moo");
-        this.tumbol = (String) json.get("tumbol");
-        this.amphur = (String) json.get("amphur");
-        this.province = (String) json.get("province");
-        this.postalCode = (String) json.get("postalCode");
-        this.mobilePhone = (String) json.get("mobilePhone");
-        this.phone = (String) json.get("phone");
-        this.cause = (String) json.get("cause");
-        this.addSubjectList = (String) json.get("addSubjectList");
-        this.dropSubjectList = (String) json.get("dropSubjectList");
+    public AddDropForm(String jsonString) {
+        JSONParser parser = new JSONParser();
+        try{
+            JSONObject json = (JSONObject) parser.parse(jsonString);
+            this.id = (Long) json.get("ID");
+            this.date = (Date) json.get("date");
+            this.studentFirstName = (String) json.get("studentFirstName");
+            this.studentLastName = (String) json.get("studentLastName");
+            this.studentId = (String) json.get("studentId");
+            this.studentYear = (String) json.get("studentYear");
+            this.studyField = (String) json.get("studyField");
+            this.advisor = (String) json.get("advisor");
+            this.addressNumber = (String) json.get("addressNumber");
+            this.moo = (String) json.get("moo");
+            this.tumbol = (String) json.get("tumbol");
+            this.amphur = (String) json.get("amphur");
+            this.province = (String) json.get("province");
+            this.postalCode = (String) json.get("postalCode");
+            this.mobilePhone = (String) json.get("mobilePhone");
+            this.phone = (String) json.get("phone");
+            this.cause = (String) json.get("cause");
+            this.addSubjectList = (String) json.get("addSubjectList");
+            this.dropSubjectList = (String) json.get("dropSubjectList");
+        }catch(Exception e){
+            System.out.println("Failed to parse json string");
+        }
+        
     }
     public AddDropForm() {
         super();
