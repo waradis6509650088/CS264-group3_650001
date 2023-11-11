@@ -142,11 +142,9 @@ function submitAddDropFormAPI(){
         })
         .then(response => response.json())
         .then(data => {
-            console.log('Success:', data);
+            console.alert("ส่งแบบฟอร์มสำเร็จ!");
         })
         .catch(error => {
-            console.alert("ส่งแบบฟอร์มสำเร็จ!");
-            //location.reload();
         });
     };
 }
@@ -173,7 +171,7 @@ function adFormToJSON(){
         "mobilePhone":document.getElementById("mobilePhone").value,
         "phone":document.getElementById("Phone").value,
         "cause":document.getElementById("cause").value,
-        "ID":sessionStorage.getItem('id')
+        "ID": sessionStorage.getItem('id')
     };
 
     console.log(jsonData);

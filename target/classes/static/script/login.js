@@ -30,11 +30,11 @@ function login() {
     sendDataToTUAPI(jsonData);
     // ส่งข้อมูล studentID และ timeNow ไปยัง checkAuth
     sendLoginDataToAuth(loginData);
-    
-}
 
-//call function saveAuth in backend
-function sendLoginDataToAuth(data) {
+    }
+
+    //call function saveAuth in backend
+    function sendLoginDataToAuth(data) {
     // URL ของ API saveAuth
     const apiUrl = '/api/saveAuth';
 
@@ -71,12 +71,30 @@ function sendDataToTUAPI(data) {
         // ไม่พบข้อมูลหรือข้อมูลไม่ถูกต้อง
         // apiResponse.innerHTML = 'ไม่พบข้อมูลหรือข้อมูลไม่ถูกต้อง';
         }
-        console.log(responseData);
+        addToSessionStorage(responseData);
+        // console.log(responseData);
     })
     .catch(error => {
         console.error('เกิดข้อผิดพลาดในการเรียกใช้ API:', error);
         // apiResponse.innerHTML = 'เกิดข้อผิดพลาดในการเรียกใช้ API';
     });
+    }
+    //sent json to session storage
+    function addToSessionStorage(jsonObject) {
+    if (jsonObject && typeof jsonObject === 'object') {
+        // Loop through each key-value pair in the JSON object
+        for (const key in jsonObject) {
+        if (jsonObject.hasOwnProperty(key)) {
+            // Convert the value to a string before storing in session storage
+            const valueString = JSON.stringify(jsonObject[key]);
+            
+            // Add the key-value pair to session storage
+            sessionStorage.setItem(key, valueString);
+        }
+        }
+    } else {
+        console.error('Invalid JSON object provided');
+    }
 }
 
 // logout function
