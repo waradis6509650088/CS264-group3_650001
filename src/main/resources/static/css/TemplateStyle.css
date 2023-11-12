@@ -79,16 +79,14 @@ nav {
 }
 /* เนื้อหาหลัก */
 
-h1 {
+h2 {
     margin-left: 10% ; /* ปรับระยะห่างจากขอบจอด้านซ้าย */
-   /* border-bottom: 3px solid #fff204; /* เพิ่มเส้นด้านล่าง */
-    /* padding-bottom: 1% ; /* หรือถ้าต้องการเพิ่มพื้นที่ทางด้านล่าง */
-    margin-top: 3% ;
-}
-hr {
-    width: 40%; /* ปรับความยาวของ hr เป็น 50% ของพื้นที่ทั้งหมด */
-    margin-left: 10% ; /* ถ้าไม่ต้องการให้มีการย่อหรือขยายชิดขอบจอด้านซ้าย */
+    border-bottom: 3px solid #FFD700; /* เพิ่มเส้นด้านล่าง */
     border-width: 3px;
+    padding-bottom: 0.5% ; /* หรือถ้าต้องการเพิ่มพื้นที่ทางด้านล่าง */
+    margin-top: 3% ;
+    width: 40%;
+    font-size : 35px ;
 }
 
 .content {
@@ -96,7 +94,7 @@ hr {
         width: 100%; /* กำหนดความกว้างของ content เป็น 80% ของพื้นที่ทั้งหมด */
         height: 500px; /* กำหนดความสูงของ content เป็น 200px หรือตามที่ต้องการ */
         gap: 50px;
-        margin-top: 5% ;
+        margin-top: -5% ;
         margin-left: 25% ;
         align-items: center; /* จัดวางตรงกลางในแนวดิ่ง */
         flex-direction: row; /* จัดเรียงเนื้อหาในแถวเดียวกัน */
@@ -105,21 +103,34 @@ hr {
 
 
  .TemNormal {
-        width: 20vw; /* ปรับขนาดของวงกลมตามที่ต้องการ */
-        height: 40vh;
-        /*background-color: red; /* สีของวงกลม */
+        width: 19vw; /* ปรับขนาดของวงกลมตามที่ต้องการ */
+        height: 35vh;
         border-radius: 50%; /* ทำให้มีรูปร่างเป็นวงกลม */
         border: 5px solid #8B0000;
         cursor: pointer;
+        position: relative;
+        overflow: hidden;
 }
 
 .TemAdd {
-        width: 20vw; /* ปรับขนาดของวงกลมตามที่ต้องการ */
-        height: 40vh;
-       /* background-color: blue; /* สีของวงกลม */
+        width: 19vw; /* ปรับขนาดของวงกลมตามที่ต้องการ */
+        height: 35vh;
         border-radius: 50%; /* ทำให้มีรูปร่างเป็นวงกลม */
         border: 5px solid #8B0000;
         cursor: pointer;
+        position: relative;
+        overflow: hidden;
 }
 
+.TemNormal:hover, .TemAdd:hover {
+    background-color: #8B0000; /* เมื่อ hover ก็จะเปลี่ยนสีพื้นหลัง */
+}
+ .TemNormal img, .TemAdd img {
+        width: 50%; /* ทำให้รูปภาพเต็มขนาดของวงกลม */
+        height: 50%; /* ทำให้รูปภาพเต็มขนาดของวงกลม */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+ }
 
