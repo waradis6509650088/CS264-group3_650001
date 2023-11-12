@@ -5,7 +5,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-size: 25px;
+    font-size: 18px;
 }
 
 /* เพิ่มสไตล์ตกแต่งให้สวยงาม */
@@ -23,10 +23,11 @@ body {
 }
 
 form {
-    max-width: 1600px;
+    max-width: 80%;
     margin: 0 auto;
-    padding: 20px;
+    border: 1px solid #ddd;
     background-color: #fff;
+    padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -92,12 +93,12 @@ input[type="radio"] {
 }
 /* ปรับขนาดหัวข้อ */
 #menuinfo, #place, #meewi {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
 }
 
 #what,#retried,.selectone,.selecttwo,.selectthree,#retriedone,#retriedtwo,.money {
-    font-size: 35px;
+    font-size: 25px;
 }
 
 
@@ -118,7 +119,7 @@ input[type="radio"] {
 }
 /* ปรับความยาวของคำว่า "เลขทะเบียน" */
 #numID {
-    width: 240px;
+    width: 160px;
 }
 /* ปรับช่อง เลขทะเบียน */
 #stdID {
@@ -126,7 +127,7 @@ input[type="radio"] {
 }
 /* ปรับความยาวของคำว่า "ขั้นปีที่" */
 #stdYear {
-    width: 140px;
+    width: 90px;
 }
 /* ปรับช่อง ชั้นปี */
 #studentYear {
@@ -134,7 +135,7 @@ input[type="radio"] {
 }
 /* ปรับความยาวของคำว่า "สาขาวิชา" */
 #stdField {
-    width: 190px;
+    width: 130px;
 }
 .placeline1 {
     display: flex;
@@ -142,7 +143,7 @@ input[type="radio"] {
 }
 /* ปรับความยาวของคำว่า "บ้านเลขที่" */
 #homeID{
-    width: 250px;
+    width: 180px;
 }
 /* ปรับช่อง บ้านเลขที่ */
 #addressNumber {
@@ -150,7 +151,7 @@ input[type="radio"] {
 }
 /* ปรับความยาวของคำว่า "หมู่ที่" */
 #nummoo {
-    width: 130px;
+    width: 90px;
 }
 /* ปรับช่อง หมู่ที่ */
 #moo {
@@ -166,11 +167,11 @@ input[type="radio"] {
     gap: 5px
 }
 #ptCode {
-    width: 900px;
+    width: 680px;
 }
 #myphone {
-    width: 1000px;
+    width: 700px;
 }
 #homephone {
-    width: 1250px;
+    width: 850px;
 }
