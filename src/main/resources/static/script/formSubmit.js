@@ -176,8 +176,8 @@ function adInfoFormToJSON(){
     return jsonData
 }
 
+//collect data normalForm to JSON
 function normalFormToJSON(){
-
  const jsonData = {
         "date": document.getElementById("date").value,
         "topic": document.getElementById("topic").value,
