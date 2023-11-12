@@ -6,7 +6,7 @@
     <title>Account</title>
     <link rel="icon" href="pic/TU.png" type="image/png">
 </head>
-<body>
+<body onload="pullInfoFromSession()">
 <link rel="stylesheet" type="text/css" href="css/AccountStyle.css">
 <header>
 <img src= "pic/TU.png">
@@ -27,17 +27,17 @@
 <div class ="content" >
     <div class ="AccountName">
     <img src="pic/Account.png">
-        <label id = username >6509650567</label>
-        <label id = displayname_en >Promporn Promjan </label>
+        <label id = username1 >6509650567</label>
+        <label id = displayname_en1 >Promporn Promjan </label>
     </div>
     <hr>
    <div class = "AccountData">
-    <label id = type > </label>
+    <label id = type >asdasd</label>
     <label>ชื่อ นามสกุล</label>
     <label id = displayname_th >พรหมพร พรมจันทร์</label>
-    <label id = displayname_en >Promporn Promjan </label><br>
+    <label id = displayname_en2 >Promporn Promjan </label><br>
     <label>รหัสนักศึกษา</label>
-    <label id = username >6509650567</label><br>
+    <label id = username2 >6509650567</label><br>
     <label>สถานะ</label>
     <label id = tu_status >กำลังศึกษา </label><br>
     <label>Email</label>
@@ -47,28 +47,10 @@
     <label>สาขา</label>
     <label id = department > สาขาวิทยาการคอมพิวเตอร์</label>
    </div>
-
 </div>
 
 
-<script>
-    function callJSON(){
-    info = {
-    "status": true,
-    "message": "Success",
-    "type": "student",
-    "username": "5701010101",
-    "tu_status": "สำเร็จการศึกษา",
-    "statusid": "40",
-    "displayname_th": "นักศึกษา ทดสอบ",
-    "displayname_en": "nuksuksa todsob",
-    "email": "email.std@dome.tu.ac.th",
-    "department": "สาขาวิชาการบริหารเทคโนโลยี",
-    "faculty": "วิทยาลัยนวัตกรรม"
-    }
-    return  info;
-  }
-    </script>
+
 
 </body>
 </html>
