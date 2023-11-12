@@ -2,11 +2,13 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>คำร้องขอเพิ่ม-ถอน รายวิชา</title>
     <link rel="icon" href="pic/TU.png" type="image/png">
 
 </head>
 <body>
+<script src="script/formSubmit.js"></script>
 
 <div class = "formaddrop">
 <img src="pic/TU.png" alt="คำร้องขอเพิ่ม-ถอน รายวิชา" >
@@ -14,7 +16,7 @@
 <h2 style="text-align: center;">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</h2>
 
 <label><star>*</star>แทน บังคับใส่ข้อมูล</label>
-<link rel="stylesheet" type="text/css" href="addDropStyle.css">
+<link rel="stylesheet" type="text/css" href="css/addDropStyle.css">
 <hr>
 <!-- form submit api script -->
 <script src="script/formSubmit.js"></script>
@@ -68,7 +70,7 @@
     <input type="text" id="studentLastName" name="studentLastName" required>
 
     <label for="studentId">เลขทะเบียน:<star>*</star></label>
-    <input type="text" id="studentId" name="studentId" maxlength="10" placeholder="รหัสนัศศึกษา 10 หลัก" required>
+    <input type="text" id="studentId" name="studentId" maxlength="10" placeholder="รหัสนักศึกษา 10 หลัก" required>
 
     <label for="studentYear">ชั้นปีที่:<star>*</star></label>
     <input type="text" id="studentYear" name="studentYear" required>
@@ -183,7 +185,8 @@
     <label for="cause">เหตุผลที่ขอการเพิ่มถอน<star>*</star></label>
     <textarea id="cause" name="cause" required></textarea><br>
 
-    <button onclick="submitAddDropFormAPI()">ส่งแบบฟอร์ม</button>
+    <button onclick="submitAddDropFormAPI()" id="submitButton">ส่งแบบฟอร์ม</button>
+
 
 
 </form>

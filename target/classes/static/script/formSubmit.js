@@ -142,7 +142,7 @@ function submitAddDropFormAPI(){
         })
         .then(response => response.json())
         .then(data => {
-            console.alert("ส่งแบบฟอร์มสำเร็จ!");
+            window.location.href = "successForm.html";
         })
         .catch(error => {
         });

@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&family=Kanit:wght@300&display=swap');
+
+* {
+  font-family: 'Kanit', sans-serif;
+  margin: 0;
+}
+
+
+body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-image: url("../pic/Back.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+
+}
+.banner img {
+    width: 90%; /* ทำให้รูปเต็มความกว้างของ container */
+    margin: 70px; /* ปรับระยะห่างรูปเอง */
+
+}
+ header {
+          background-color: #8B0000 ;
+          color: #fff;
+          padding: 10px;
+          text-align: center;
+ }
+
+nav {
+          display: flex;
+          justify-content: center;
+          background-color: #8B0000 ;
+ }
+
+ nav a {
+          color: white;
+          padding: 14px 16px;
+          text-decoration: none;
+ }
+
+ nav a:hover {
+          background-color: #F2F2F2 ;
+          color: black;
+ }
+ .content {
+             max-width: 600px; /* ปรับความกว้างตามที่คุณต้องการ */
+             /*margin: 0 auto; /* ทำให้ div อยู่ตรงกลาง */
+             background-color: #F8F8F8 ;
+             padding: 20px;
+             margin-top: 2%;
+  }
+  header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* ให้ข้อความและรูปอยู่ทางซ้าย */
+  }
+
+  header img {
+      width:10%;
+      margin-right: 7px;
+  }
+
+  header h1 {
+      margin: 0;
+      margin-right: 50px;
+      padding-bottom: 5px; /* สร้างพื้นที่ห่างด้านล่างของข้อความ */
+      border-bottom: 3px solid #fff204; /* สร้างขีดทางล่างของข้อความ */
+  }
+  header label {
+   margin: 0;
+   margin-top: 40px;
+   margin-left: 1px;
+
+ }
+ header img {
+     width :45px ;
+}
+/* เนื้อหาหลัก */
+
+h2 {
+    margin-left: 10% ; /* ปรับระยะห่างจากขอบจอด้านซ้าย */
+    border-bottom: 3px solid #FFD700; /* เพิ่มเส้นด้านล่าง */
+    border-width: 3px;
+    padding-bottom: 0.5% ; /* หรือถ้าต้องการเพิ่มพื้นที่ทางด้านล่าง */
+    margin-top: 3% ;
+    width: 40%;
+    font-size : 35px ;
+}
+
+.content {
+        display: flex;
+        width: 100%; /* กำหนดความกว้างของ content เป็น 80% ของพื้นที่ทั้งหมด */
+        height: 500px; /* กำหนดความสูงของ content เป็น 200px หรือตามที่ต้องการ */
+        gap: 50px;
+        margin-top: -5% ;
+        margin-left: 25% ;
+        align-items: center; /* จัดวางตรงกลางในแนวดิ่ง */
+        flex-direction: row; /* จัดเรียงเนื้อหาในแถวเดียวกัน */
+        background-color: transparent;
+}
+
+
+ .TemNormal {
+        width: 19vw; /* ปรับขนาดของวงกลมตามที่ต้องการ */
+        height: 35vh;
+        border-radius: 50%; /* ทำให้มีรูปร่างเป็นวงกลม */
+        border: 5px solid #8B0000;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+}
+
+.TemAdd {
+        width: 19vw; /* ปรับขนาดของวงกลมตามที่ต้องการ */
+        height: 35vh;
+        border-radius: 50%; /* ทำให้มีรูปร่างเป็นวงกลม */
+        border: 5px solid #8B0000;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+}
+
+.TemNormal:hover, .TemAdd:hover {
+    background-color: #8B0000; /* เมื่อ hover ก็จะเปลี่ยนสีพื้นหลัง */
+}
+ .TemNormal img, .TemAdd img {
+        width: 50%; /* ทำให้รูปภาพเต็มขนาดของวงกลม */
+        height: 50%; /* ทำให้รูปภาพเต็มขนาดของวงกลม */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+ }
+

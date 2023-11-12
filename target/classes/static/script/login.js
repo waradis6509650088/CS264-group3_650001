@@ -11,15 +11,7 @@ function login() {
         "PassWord" : document.getElementById("password").value
     };
     console.log(jsonData)
-    // เก็บ studentID และเวลาที่ login ลงใน session storage
-    const studentID = jsonData['UserName'];
-
-    // แปลงเวลาเป็น milliseconds
-    const timeNow = new Date().getTime();
-    loginData = {
-        "time" : timeNow,
-        "id" : studentID
-    }
+    
 
     // แปลง Object เป็น JSON
     const loginDataJSON = JSON.stringify(loginData);
@@ -29,12 +21,20 @@ function login() {
     // ส่งข้อมูลไปยัง API
     sendDataToTUAPI(jsonData);
     // ส่งข้อมูล studentID และ timeNow ไปยัง checkAuth
-    sendLoginDataToAuth(loginData);
+    sendLoginDataToAuth();
 
     }
 
-    //call function saveAuth in backend
-    function sendLoginDataToAuth(data) {
+//call function saveAuth in backend and save auth data
+function sendLoginDataToAuth() {
+    // แปลงเวลาเป็น milliseconds
+    const timeNow = new Date().getTime();
+    
+    loginData = {
+        "time" : timeNow,
+        "id" : sessionStorage.getItem('username')
+    }
+
     // URL ของ API saveAuth
     const apiUrl = '/api/saveAuth';
 

@@ -10,10 +10,11 @@ body {
           font-family: Arial, sans-serif;
           margin: 0;
           padding: 0;
-          background-image: url("pic/Back.jpg");
+          background-image: url("../pic/Back.jpg");
           background-size: cover;
           background-repeat: no-repeat;
           background-attachment: fixed;
+
 
 }
 .banner img {
@@ -22,7 +23,7 @@ body {
 
 }
  header {
-          background-color: #e10925 ;
+          background-color: #8B0000 ;
           color: #fff;
           padding: 10px;
           text-align: center;
@@ -31,7 +32,7 @@ body {
 nav {
           display: flex;
           justify-content: center;
-          background-color: #e10925 ;
+          background-color: #8B0000 ;
  }
 
  nav a {
@@ -41,7 +42,7 @@ nav {
  }
 
  nav a:hover {
-          background-color: #ddd;
+          background-color: #F2F2F2 ;
           color: black;
  }
  .content {
@@ -77,3 +78,34 @@ nav {
  header img {
      width :45px ;
 }
+
+ .content {
+        text-align: left;
+        padding: 20px;
+        width: 500%;
+        max-width: 1280px;
+        margin: 0 auto;
+        margin-bottom: 10% ;
+
+}
+
+.bottom-frame {
+            background-color: #8B0000 ; /* สีพื้นหลังของกรอบด้านล่าง */
+            padding: 10px;
+            text-align: center;
+ }
+.bottom-frame img {
+    width: 2%; /* ปรับความกว้างของรูปให้เต็มกว่าพื้นที่ของ div */
+    height: 2% /* รักษาสัดส่วนของรูป */
+    margin-top: 5px; /* ปรับขึ้นลงตามที่คุณต้องการ */
+    margin-bottom: -10px; /* ปรับขึ้นลงตามที่คุณต้องการ */
+    margin-right: 100% ;
+ }
+.bottom-frame span {
+     position: absolute; /* ตั้งค่าให้เป็น absolute position */
+     bottom: -605px; /* จัดตำแหน่งข้อความที่ติดกับด้านล่างของ div */
+     right: -45px ; /* จัดตำแหน่งข้อความทางด้านซ้าย */
+     width: 100%; /* ทำให้ข้อความเต็มขนาดของ div */
+     text-align: left; /* จัดตำแหน่งข้อความทางด้านซ้าย */
+     color : white ;
+ }

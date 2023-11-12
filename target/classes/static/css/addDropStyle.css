@@ -10,13 +10,13 @@
 }
 
 body {
-    background-image: url("pic/Back.jpg");
+    background-image: url("../pic/Back.jpg");
      background-size: cover;
     background-repeat: no-repeat;
      background-attachment: fixed;
 
 }
-star{
+star {
     color : red ;
     font-size: 20px;
 }
@@ -27,19 +27,22 @@ star{
             height: auto;
             object-fit: contain;
  }
- button{
+ button {
 
              display: block;
              margin: 0 auto;
              width: 200px;
              height: 50px;
              background-color: #ffcc00;
-             color: #333;
+             color: black ;
              border: none;
              border-radius: 5px;
              font-size: 16px;
              cursor: pointer;
 
+ }
+ button:hover {
+     background-color: #F2F2F2;
  }
  /*[type="submit"]*/
  input {

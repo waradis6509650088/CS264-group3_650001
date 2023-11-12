@@ -12,8 +12,8 @@ public class Auth {
         JSONParser parser = new JSONParser();
         try{
             JSONObject jsonObject = (JSONObject) parser.parse(authInfoString);
-            this.id = (String) jsonObject.get("ID KEY");
-            this.loginTime = (String) jsonObject.get("LOGIN TIME KEY");
+            this.id = (String) jsonObject.get("id");
+            this.loginTime = (String) jsonObject.get("time");
         }   catch (ParseException e) {
                 System.out.println("Failed to parse JSON string.");
         }

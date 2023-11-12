@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>แบบฟอร์มยื่นคำร้อง</title>
+    <link rel="icon" href="pic/TU.png" type="image/png">
 </head>
 <body>
-<link rel="stylesheet" type="text/css" href="MainPage.css">
+<link rel="stylesheet" type="text/css" href="css/TemplateStyle.css">
 <header>
     <img src= "pic/TU.png">
     <h1>TU GROUP3</h1>
@@ -14,17 +16,41 @@
 <nav>
     <a href="MainPage.html">เมนูหลัก</a><br>
     <a href="Account.html">ข้อมูลส่วนตัวผู้ใช้</a><br>
-    <a href="https://www.reg.tu.ac.th/th/Picture/AttFile/279893db-4b83-4fbd-a1fb-3b8fc77e6d99">ข้อบังคับมหาวิทยาลัยธรรมศาสตร์</a><br>
-    <select id="Topic" onchange="location = this.value;" >
-        <option value="Template.html">แบบฟอร์มยื่นคำร้องขอ</option>
-        <option value="normalForm.html" >คำร้องขอทั่วไป</option>
-        <option value="addDrop.html">คำร้องขอเพิ่มถอนรายวิชา</option>
-    </select>
+    <a href="LinkTU.html">ข้อบังคับมหาวิทยาลัยธรรมศาสตร์</a><br>
+    <a href="Template.html">แบบฟอร์มยื่นคำร้องขอ</a>
     <a href="UserStatus.html">สืบค้นสถานะคำร้องของนักศึกษา</a>
-    <a href="#">ประวัติการเขียนคำร้อง</a>
+    <a href="HisForm.html">ประวัติการเขียนคำร้อง</a>
     <a href="#">รายการชำระเงิน</a>
     <a href="index.html">ออกจากระบบ</a>
 </nav>
 
+    <h2>เลือกแบบฟอร์มที่ต้องการเขียนคำร้อง</h2>
+
+<div class="content">
+    <div class="TemNormal" onclick="redirectToFormNormal()" >
+        <img src="pic/iconForm.png" alt="iconForm">
+    </div>
+
+    <div class="TemAdd" onclick="redirectToFormAdddrop()" >
+        <img src="pic/iconForm.png" alt="iconForm">
+    </div>
+
+</div>
+
+<!--กล่องข้อความ-->
+<div class="TextBox" >
+     <label>แบบฟอร์มคำร้องขอทั่วไป</label>
+    <label>แบบฟอร์มคำร้องขอเพิ่ม-ถอน รายวิชา</label>
+</div>
+
+<script>
+    function redirectToFormNormal() {
+        window.location.href = 'normalForm.html'; // แก้ไปยัง URL ที่ต้องการ
+    }
+
+    function redirectToFormAdddrop() {
+        window.location.href = 'addDrop.html'; // แก้ไปยัง URL ที่ต้องการ
+    }
+</script>
 </body>
 </html>
