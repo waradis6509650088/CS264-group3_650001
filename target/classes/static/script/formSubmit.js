@@ -176,6 +176,66 @@ function adInfoFormToJSON(){
     return jsonData
 }
 
+//collect data normalForm to JSON
 function normalFormToJSON(){
+ const jsonData = {
+        "date": document.getElementById("date").value,
+        "topic": document.getElementById("topic").value,
+        "studentInfo": {
+            "prefix": document.getElementById("prefix").value,
+            "studentFirstName": document.getElementById("studentFirstName").value,
+            "studentLastName": document.getElementById("studentLastName").value,
+            "studentId": document.getElementById("stdID").value,
+            "studentYear": document.getElementById("studentYear").value,
+            "studyField": document.getElementById("studyField").value,
+        },
+        "address": {
+            "addressNumber": document.getElementById("addressNumber").value,
+            "moo": document.getElementById("moo").value,
+            "tumbol": document.getElementById("tumbol").value,
+            "amphur": document.getElementById("amphur").value,
+            "province": document.getElementById("province").value,
+            "postalCode": document.getElementById("postalCode").value,
+            "mobilePhone": document.getElementById("mobilePhone").value,
+            "phone": document.getElementById("phone").value,
+        },
+        "advisor": document.getElementById("adivsor").value,
+        "data" : "datadat"//เอาข้อมูลมาไว้ตรงนี้
+
+        
+        //ให้เลือกแค่ 1/3 -> stringify -> เก็บไว้ที่ data
+        //เช็คตัวเลือกจาก id ของ div อะไรซักอย่าลองถาม กญ ดู
+
+        // //ลาออก
+        // "requestType": document.querySelector('input[name="wantTU"]:checked').value,
+        // "term": document.getElementById("term").value,
+        // "year": document.getElementById("year").value,
+        // "cause": document.querySelector('input[name="cause"]:checked').value,
+        // "tamasatInfo": {
+        //     "faculty": document.getElementById("TamasatFac").value,
+        //     "field": document.getElementById("TamasatField").value,
+        // },
+        // "otherInfo": {
+        //     "faculty": document.getElementById("OtherFac").value,
+        //     "field": document.getElementById("OtherField").value,
+        // },
+        // //ผ่อนผันค่าเทอม
+        // "debtInfo": {
+        //     "numDebt": document.getElementById("numDebt").value,
+        //     "gradeChoice": document.querySelector('input[name="choice"]:checked').value,
+        // },
+        // "defermentInfo": {
+        //     "term": document.getElementById("DefermentTerm").value,
+        //     "year": document.getElementById("DefermentYear").value,
+        //     "defermentMonth": document.getElementById("Defermentmonth").value,
+        // },
+
+        // //อื่นๆ
+        // "otherOption": document.querySelector('input[name="OtherOption"]:checked').value,
+        // "otherOptionTopic": document.getElementById("OtherOptionTopic").value,
+        // "because": document.getElementById("Because").value
+    };
+
+    return jsonData;
     
 }

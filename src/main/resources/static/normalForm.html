@@ -101,42 +101,56 @@
         <input type="text" id="adivsor" name="adivsor">
 
         <label id="meewi">มีความประสงค์จะยื่นคำร้องเรื่อง</label>
+
+        <!-- ขอลาออก -->
         <div class="selectone">
         <input type="radio" id="wantTU" name="wantTU" value="">ขอลาออก ในภาคเรียนที่
         </div>
+        
         <input type="text" id="term">
         <label>ปีการศึกษา</label>
         <input type="text" id="year"><br><br>
          
         <label id="what">เหตุผล เพราะ</label>
+        
+        <!-- ขอลาออก มธ -->
         <div class="selecttwo">
-        <input type="radio" id="causeTamasat" name="cause" value="มหาวิทยาลัยธรรมศาสตร์">ศึกษาต่อที่ มหาวิทยาลัยธรรมศาสตร์
+            <input type="radio" id="causeTamasat" name="cause" value="มหาวิทยาลัยธรรมศาสตร์">ศึกษาต่อที่ มหาวิทยาลัยธรรมศาสตร์
         </div>
+        
         <label>คณะ</label>
         <input type="text" id="TamasatFac" placeholder="คณะ">
         <label>สาขา</label>
         <input type="text" id="TamasatField" placeholder="สาขา"><br>
+        
+        <!-- ขอลาออกมหาลัยอื่น -->
         <div class="selectthree">
-        <input type="radio" id="causeOther" name="cause" value="มหาวิทยาลัยอื่น">ศึกษาต่อที่ มหาวิทยาลัยอื่น
+            <input type="radio" id="causeOther" name="cause" value="มหาวิทยาลัยอื่น">ศึกษาต่อที่ มหาวิทยาลัยอื่น
         </div>
+        
         <label>คณะ</label>
         <input type="text" id="OtherFac" placeholder="คณะ">
         <label>สาขา</label>
         <input type="text" id="OtherField" placeholder="สาขา">
         <br><br>
 
+        <!-- ดึงไปเมื่อลาออก is  checked -->
         <label id="retried">กรณีลาออก</label>
         <label id="retriedone">1.มีหนี้ค้างกับ มธ/หน่วยงานภายใน มธ หรือไม่ ถ้ามีโปรดระบุ</label>
         <input type="text" id="numDebt">
         <label>(หากไม่มีกรุณา -)</label><br>
+
+        <!-- ขอลาออก need grade -->
         <label id="retriedtwo">2.ต้องการเกรดในภาคเรียนที่ยื่นคำร้องลาออกหรือไม่</label>
         <input type="radio" id="grade" name="choice" value="grade">ต้องการ
         <input type="radio" id="Nograde" name="choice" value="Nograde">ไม่ต้องการ
         <br><br>
 
+        <!-- ผ่อนผันค่าเทอม -->
         <div class ="money">
-        <input type="radio" id="Deferment" name="Deferment" value="">ขอผ่อนผันค่าเทอมจดทะเบียนเรียน
+            <input type="radio" id="Deferment" name="Deferment" value="">ขอผ่อนผันค่าเทอมจดทะเบียนเรียน
         </div>
+        
         <label>ในภาคเรียนที่</label>
         <input type="text" id="DefermentTerm">
         <label>ปีการศึกษา</label>
@@ -162,6 +176,7 @@
         </select><br>
         <label>(ทั้งนี้ต้องไม่มีหนี้ค้างชำระค่าจดทะเบียนเรียนในภาคเรียนก่อนหน้า)</label>
 
+        <!-- other -->
         <input type="radio" id="OtherOption" name="OtherOption" value="">อื่นๆโปรดระบุ
         <input type="text" id="OtherOptionTopic">
 
@@ -172,19 +187,6 @@
         <input type="file" id="additionalFile" name="additionalFile" multiple>
 
         <button id="submitButton">ส่งแบบฟอร์ม</button>
-        <!-- เพิ่มสคริปต์ JavaScript สำหรับการเด้งไปยังหน้าใหม่ (successForm.html) -->
-        <script>
-            // ฟังก์ชันที่ถูกเรียกเมื่อกดปุ่ม "ส่งแบบฟอร์ม"
-            document.getElementById("submitButton").addEventListener("click", function () {
-                // ตรวจสอบความถูกต้องของข้อมูลแบบฟอร์ม และดำเนินการอื่น ๆ ตามต้องการ
-
-                // เด้งไปยังหน้าใหม่ (successForm.html)
-                window.location.href = "successForm.html";
-            });
-        </script>
-
-
-
     </form>
 </body>
 

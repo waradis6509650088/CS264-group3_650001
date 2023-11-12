@@ -18,13 +18,18 @@ public class AuthController {
     
     //will be called every time the page sends or recieve data
     @PostMapping("/api/saveAuth")
-    public int saveAuth(@RequestBody String authJsonString){
+    public String saveAuth(@RequestBody String authJsonString){
         try{
             Auth AuthObj = new Auth(authJsonString);
             authRepository.save(AuthObj);
-            return 0;
+            return "success";
         }catch(Exception e){
-            return 1;
+            return "failed";
         }
+    }
+
+    @PostMapping("/api/checkAuth")
+    public String checkAuth(@RequestBody String authJsonString){
+        return null;
     }
 }
