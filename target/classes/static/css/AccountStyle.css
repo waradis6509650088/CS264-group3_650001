@@ -95,12 +95,12 @@ header img {
 }
 .AccountData label:nth-child(1),
 .AccountData label:nth-child(2),
-.AccountData label:nth-child(5),
-.AccountData label:nth-child(8),
-.AccountData label:nth-child(11),
-.AccountData label:nth-child(14),
-.AccountData label:nth-child(17),
-.AccountData label:nth-child(20) {
+.AccountData label:nth-child(4),
+.AccountData label:nth-child(7),
+.AccountData label:nth-child(10),
+.AccountData label:nth-child(13),
+.AccountData label:nth-child(16),
+.AccountData label:nth-child(19) {
 
         font-weight: bold;
 }
