@@ -2,7 +2,10 @@
 
 * {
     font-family: 'Kanit', sans-serif;
-
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
 }
 
 /* เพิ่มสไตล์ตกแต่งให้สวยงาม */
@@ -20,7 +23,7 @@ body {
 }
 
 form {
-    max-width: 1100px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
@@ -30,7 +33,7 @@ form {
 img {
     display: block;
     margin: 0 auto;
-    max-width: 10%;
+    max-width: 20%;
     height: auto;
     object-fit: contain;
 }
@@ -45,6 +48,7 @@ label {
     display: block;
     margin-bottom: 5px;
     color: #333;
+    width: 200;
 }
 
 input,
@@ -53,6 +57,7 @@ select {
     padding: 8px;
     margin-bottom: 10px;
     box-sizing: border-box;
+    border-radius: 15px;
 }
 
 input[type="radio"] {
@@ -75,17 +80,97 @@ button:hover {
 input[type="radio"] {
     width: fit-content;
 }
-
-input {
+/* ปรับช่อง input วันที่ */
+#date {
     max-width: 200px;
     width: 200px
 }
+/* ปรับช่อง input เรื่อง */
+#topic {
+    max-width: 400px;
+    width: 400px
+}
+/* ปรับขนาดหัวข้อ */
+#menuinfo, #place, #meewi {
+    font-size: 40px;
+    font-weight: bold;
+}
 
+#what,#retried,.selectone,.selecttwo,.selectthree,#retriedone,#retriedtwo,.money {
+    font-size: 35px;
+}
+
+
+/* ปรับช่อง (ข้าพเจ้า ชื่อ นามสกุล) ให้อยุ่บรรทัดเดียวกัน */
 .name {
     display: flex;
+    gap: 5px
 }
 
 #prefix {
     max-width: 100px;
     width: 100px;
+}
+/* ปรับช่อง (เลขทะเบียน ชั้นปีที่ สาขาวิชา) ให้อยุ่บรรทัดเดียวกัน */
+.numnum {
+    display: flex;
+    gap: 5px;
+}
+/* ปรับความยาวของคำว่า "เลขทะเบียน" */
+#numID {
+    width: 240px;
+}
+/* ปรับช่อง เลขทะเบียน */
+#stdID {
+    width: 230px;
+}
+/* ปรับความยาวของคำว่า "ขั้นปีที่" */
+#stdYear {
+    width: 140px;
+}
+/* ปรับช่อง ชั้นปี */
+#studentYear {
+    width: 300px;
+}
+/* ปรับความยาวของคำว่า "สาขาวิชา" */
+#stdField {
+    width: 190px;
+}
+.placeline1 {
+    display: flex;
+    gap: 5px
+}
+/* ปรับความยาวของคำว่า "บ้านเลขที่" */
+#homeID{
+    width: 250px;
+}
+/* ปรับช่อง บ้านเลขที่ */
+#addressNumber {
+    width: 150px;
+}
+/* ปรับความยาวของคำว่า "หมู่ที่" */
+#nummoo {
+    width: 130px;
+}
+/* ปรับช่อง หมู่ที่ */
+#moo {
+    width: 100px;
+}
+/* ปรับช่อง ตำบล */
+#tumbol {
+    width: 900px;
+}
+/* ปรับช่อง (จังหวัด รหัสปณ tel) ให้อยุ่บรรทัดเดียวกัน */
+.placeline2 {
+    display: flex;
+    gap: 5px
+}
+#ptCode {
+    width: 900px;
+}
+#myphone {
+    width: 1000px;
+}
+#homephone {
+    width: 1250px;
 }

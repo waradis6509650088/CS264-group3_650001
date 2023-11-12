@@ -100,10 +100,10 @@
             <input type="text" id="studentLastName" name="studentLastName" required>
         </div>
         <div class="numnum">
-            <label>เลขทะเบียน</label>
-            <input type="text" id="" placeholder="รหัสนักศึกษา 10 หลัก" name="studentId" maxlength="10"
+            <label id="numID">เลขทะเบียน</label>
+            <input type="text" id="stdID" placeholder="รหัสนักศึกษา 10 หลัก" name="studentId" maxlength="10"
                 pattern="[0-9]{10}" required>
-            <label for="studentYear" name="studentYear">ชั้นปีที่</label>
+            <label for="studentYear" id="stdYear" name="studentYear">ชั้นปีที่</label>
             <select id="studentYear">
                 <option value="">-- กรุณาเลือกชั้นปี --</option>
                 <option value="1">1</option>
@@ -114,88 +114,94 @@
                 <option value="6">6</option>
                 <option value="7">7</option>
             </select>
+            <label id="stdField">สาขาวิชา</label>
+            <select id="studyField" name="studyField">
+                <option value="">-- กรุณาเลือกสาขา --</option>
+                <option>สาขาวิชาฟิสิกส์</option>
+                <option>สาขาวิชาฟิสิกส์อิเลกทรอนิกส์</option>
+                <option>สาขาวิชาคณิตศาสตร์</option>
+                <option>สาขาวิชาคณิตศาสตร์ประยุกต์</option>
+                <option>สาขาวิชาคณิตศาสตร์การจัดการ (ตรีควบโท)</option>
+                <option>สาขาวิชาเคมี</option>
+                <option>สาขาวิชาเทคโนโลยีชีวภาพ</option>
+                <option>สาขาวิชาเทคโนโลยีการเกษตร</option>
+                <option>สาขาวิชาเทคโนโลยีพลังงานชีวภาพและการแปรรูปเคมีชีวภาพ</option>
+                <option>สาขาวิชาเทคโนโลยีเพื่อการพัฒนายั่งยืน</option>
+                <option>สาขาวิชาเทคโนโลยีดิจิทัลแนวสร้างสรรค์ (หลักสูตรนานาชาติ)</option>
+                <option>สาขาวิชาวิทยาศาสตร์และนวัตกรรมทางอาหาร</option>
+                <option>สาขาวิชาวิทยาศาสตร์และเทคโนโลยีการอาหาร</option>
+                <option>สาขาวิชาวิทยาศาสตร์และเทคโนโลยีสิ่งทอ</option>
+                <option>สาขาวิชาสถิติ</option>
+                <option>สาขาวิชาการออกแบบเชิงนวัตกรรมดิจิทัล (หลักสูตรนานาชาติ)</option>
+                <option>สาขาวิชาวัสดุศาสตร์</option>
+                <option>สาขาวิชาวิทยาการคอมพิวเตอร์</option>
+                <option>สาขาวิชาวิทยาศาสตร์อุตสาหการและการจัดการ (หลักสูตรนานาชาติ)</option>
+                <option>สาขาวิชาวิทยาการประกันภัย</option>
+            </select>
         </div>
-        <label for="studyField">สาขาวิชา</label>
-        <select id="studyField" name="studyField">
-            <option value="">-- กรุณาเลือกสาขา --</option>
-            <option>สาขาวิชาฟิสิกส์</option>
-            <option>สาขาวิชาฟิสิกส์อิเลกทรอนิกส์</option>
-            <option>สาขาวิชาคณิตศาสตร์</option>
-            <option>สาขาวิชาคณิตศาสตร์ประยุกต์</option>
-            <option>สาขาวิชาคณิตศาสตร์การจัดการ (ตรีควบโท)</option>
-            <option>สาขาวิชาเคมี</option>
-            <option>สาขาวิชาเทคโนโลยีชีวภาพ</option>
-            <option>สาขาวิชาเทคโนโลยีการเกษตร</option>
-            <option>สาขาวิชาเทคโนโลยีพลังงานชีวภาพและการแปรรูปเคมีชีวภาพ</option>
-            <option>สาขาวิชาเทคโนโลยีเพื่อการพัฒนายั่งยืน</option>
-            <option>สาขาวิชาเทคโนโลยีดิจิทัลแนวสร้างสรรค์ (หลักสูตรนานาชาติ)</option>
-            <option>สาขาวิชาวิทยาศาสตร์และนวัตกรรมทางอาหาร</option>
-            <option>สาขาวิชาวิทยาศาสตร์และเทคโนโลยีการอาหาร</option>
-            <option>สาขาวิชาวิทยาศาสตร์และเทคโนโลยีสิ่งทอ</option>
-            <option>สาขาวิชาสถิติ</option>
-            <option>สาขาวิชาการออกแบบเชิงนวัตกรรมดิจิทัล (หลักสูตรนานาชาติ)</option>
-            <option>สาขาวิชาวัสดุศาสตร์</option>
-            <option>สาขาวิชาวิทยาการคอมพิวเตอร์</option>
-            <option>สาขาวิชาวิทยาศาสตร์อุตสาหการและการจัดการ (หลักสูตรนานาชาติ)</option>
-            <option>สาขาวิชาวิทยาการประกันภัย</option>
-        </select>
 
-        <label id="place">ที่อยู่ที่สามารถติดต่อได้ทางไปรษณีย์</label><br>
-        <label>บ้านเลขที่</label>
-        <input type="text" id="addressNumber" name="addressNumber">
-        <label>หมู่ที่</label>
-        <input type="text" id="moo" name="moo">
-        <label>ตำบล</label>
-        <input type="text" id="tumbol" name="tumbol"><br>
-        <label>อำเภอ</label>
-        <input type="text" id="amphur" name="amphur">
+        <label id="place">ที่อยู่ที่สามารถติดต่อได้ทางไปรษณีย์</label>
+        <div class="placeline1">
+            <label id="homeID">บ้านเลขที่</label>
+            <input type="text" id="addressNumber" name="addressNumber">
+            <label id="nummoo">หมู่ที่</label>
+            <input type="text" id="moo" name="moo">
+            <label>ตำบล</label>
+            <input type="text" id="tumbol" name="tumbol"><br>
+            <label>อำเภอ</label>
+            <input type="text" id="amphur" name="amphur">
+        </div>
+        <div class="placeline2">
         <label>จังหวัด</label>
         <input type="text" id="province" name="province">
-        <label>รหัสไปรษณีย์</label>
+        <label id="ptCode">รหัสไปรษณีย์</label>
         <input type="text" id="postalCode" name="postalCode" maxlength="5" pattern="[0-9]{5}"><br>
-        <label>โทรศัพท์มือถือ</label>
+        <label id="myphone">โทรศัพท์มือถือ</label>
         <input type="text" id="mobilePhone" name="mobilePhone" placeholder="0XXXXXXXXX" maxlength="10"
             pattern="[0-9]{10}">
-        <label>โทรศัพท์บ้าน(ถ้ามี)</label>
+        <label id="homephone">โทรศัพท์บ้าน(ถ้ามี)</label>
         <input type="text" id="phone" name="phone" maxlength="10" pattern="[0-9]{10}">
+        </div>
         <label>อาจารย์ที่ปรึกษา</label>
         <input type="text" id="adivsor" name="adivsor">
 
-        <label>มีความประสงค์จะยื่นคำร้องเรื่อง</label>
-
-        <input type="radio" id="wantTU" name="wantTU" value="">
-        <label>ขอลาออก ในภาคเรียนที่</label>
+        <label id="meewi">มีความประสงค์จะยื่นคำร้องเรื่อง</label>
+        <div class="selectone">
+        <input type="radio" id="wantTU" name="wantTU" value="">ขอลาออก ในภาคเรียนที่
+        </div>
         <input type="text" id="term">
         <label>ปีการศึกษา</label>
-        <input type="text" id="year"><br>
-
-        <label>เหตุผล เพราะ</label><br>
-
-        <input type="radio" id="causeTamasat" name="cause" value="มหาวิทยาลัยธรรมศาสตร์">
-        <label>ศึกษาต่อที่ มหาวิทยาลัยธรรมศาสตร์</label>
+        <input type="text" id="year"><br><br>
+         
+        <label id="what">เหตุผล เพราะ</label>
+        <div class="selecttwo">
+        <input type="radio" id="causeTamasat" name="cause" value="มหาวิทยาลัยธรรมศาสตร์">ศึกษาต่อที่ มหาวิทยาลัยธรรมศาสตร์
+        </div>
         <label>คณะ</label>
         <input type="text" id="TamasatFac" placeholder="คณะ">
         <label>สาขา</label>
         <input type="text" id="TamasatField" placeholder="สาขา"><br>
-
-        <input type="radio" id="causeOther" name="cause" value="มหาวิทยาลัยอื่น">
-        <label>ศึกษาต่อที่ มหาวิทยาลัยอื่น</label>
+        <div class="selectthree">
+        <input type="radio" id="causeOther" name="cause" value="มหาวิทยาลัยอื่น">ศึกษาต่อที่ มหาวิทยาลัยอื่น
+        </div>
         <label>คณะ</label>
         <input type="text" id="OtherFac" placeholder="คณะ">
         <label>สาขา</label>
-        <input type="text" id="OtherField" placeholder="สาขา"><br>
+        <input type="text" id="OtherField" placeholder="สาขา">
+        <br><br>
 
-        <label>กรณีลาออก</label><br>
-        <label>1.มีหนี้ค้างกับ มธ/หน่วยงานภายใน มธ หรือไม่ ถ้ามีโปรดระบุ</label>
+        <label id="retried">กรณีลาออก</label>
+        <label id="retriedone">1.มีหนี้ค้างกับ มธ/หน่วยงานภายใน มธ หรือไม่ ถ้ามีโปรดระบุ</label>
         <input type="text" id="numDebt">
         <label>(หากไม่มีกรุณา -)</label><br>
-        <label>2.ต้องการเกรดในภาคเรียนที่ยื่นคำร้องลาออกหรือไม่</label>
+        <label id="retriedtwo">2.ต้องการเกรดในภาคเรียนที่ยื่นคำร้องลาออกหรือไม่</label>
         <input type="radio" id="grade" name="choice" value="grade">ต้องการ
         <input type="radio" id="Nograde" name="choice" value="Nograde">ไม่ต้องการ
+        <br><br>
 
-
-        <input type="radio" id="Deferment" name="Deferment" value="">
-        <label>ขอผ่อนผันค่าเทอมจดทะเบียนเรียน</label>
+        <div class ="money">
+        <input type="radio" id="Deferment" name="Deferment" value="">ขอผ่อนผันค่าเทอมจดทะเบียนเรียน
+        </div>
         <label>ในภาคเรียนที่</label>
         <input type="text" id="DefermentTerm">
         <label>ปีการศึกษา</label>
@@ -221,8 +227,7 @@
         </select><br>
         <label>(ทั้งนี้ต้องไม่มีหนี้ค้างชำระค่าจดทะเบียนเรียนในภาคเรียนก่อนหน้า)</label>
 
-        <input type="radio" id="OtherOption" name="OtherOption" value="">
-        <label>อื่นๆโปรดระบุ</label>
+        <input type="radio" id="OtherOption" name="OtherOption" value="">อื่นๆโปรดระบุ
         <input type="text" id="OtherOptionTopic">
 
 
