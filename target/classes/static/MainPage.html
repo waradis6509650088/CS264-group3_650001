@@ -20,8 +20,18 @@
     <a href="UserStatus.html">สืบค้นสถานะคำร้องของนักศึกษา</a>
     <a href="HisForm.html">ประวัติการเขียนคำร้อง</a>
     <a href="#">รายการชำระเงิน</a>
-    <a href="index.html">ออกจากระบบ</a>
+    <a onclick="logout()">ออกจากระบบ</a>
 </nav>
+<script>
+    // logout function
+    function logout() {
+        // ลบข้อมูลที่ถูกเก็บใน session storage
+        sessionStorage.clear();
+
+        //ทำการนำทางหน้าไปยังหน้า 'index' หลังจาก logout
+        window.location.href = 'index.html';
+    }
+</script>
 
 <div class="banner">
     <img src="pic/banner_file.jpg">
@@ -49,7 +59,7 @@
 </div>
 
 <div class="bottom-frame">
-   <img src="pic/contact.png">
+    <img src="pic/contact.png">
     <span>Contact us</span>
 </div>
 

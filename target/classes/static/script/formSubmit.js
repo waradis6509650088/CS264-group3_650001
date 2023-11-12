@@ -99,7 +99,7 @@ function combineFormAndTable() {
         "dropSubjectList" : dropSubObj,
     }
 
-    studentJson = submitAddDropForm(document.getElementById("request"));//form info to json
+    studentJson = adInfoFormToJSON();//form info to json
     result = jsonConcat(studentJson,myJson)
 
     return JSON.stringify(result);
@@ -150,11 +150,9 @@ function submitAddDropFormAPI(){
 }
 
 //collect data addDropForm to JSON
-function adFormToJSON(){
+function adInfoFormToJSON(){
         const jsonData = {
-        "date":document.getElementById("date").value
-        + "-" + document.getElementById("month").value
-        +"-" + document.getElementById("year").value,
+        "date":document.getElementById("date").value,
         "studentFirstName":document.getElementById("prefix").value
         + " " + document.getElementById("studentFirstName").value,
         "studentLastName":document.getElementById("studentLastName").value,

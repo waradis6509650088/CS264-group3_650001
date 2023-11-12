@@ -8,7 +8,12 @@
 
 <body>
 <!-- script for login -->
-<script src="script/login.js"></script>
+<script src="script/login.js">
+    window.onload = function() {
+        sessionStorage.clear();
+    };
+</script>
+
 
 <img src="pic/TU3.png" >
 

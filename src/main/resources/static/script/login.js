@@ -1,7 +1,3 @@
-window.onload = function() {
-    sessionStorage.clear();
-};
-
 
 //login function, call when user click login button
 function login() {
@@ -11,11 +7,6 @@ function login() {
         "PassWord" : document.getElementById("password").value
     };
     console.log(jsonData)
-    
-
-    // แปลง Object เป็น JSON
-    const loginDataJSON = JSON.stringify(loginData);
-
 
     //send login data
     // ส่งข้อมูลไปยัง API
@@ -97,11 +88,4 @@ function sendDataToTUAPI(data) {
     }
 }
 
-// logout function
-function logout() {
-    // ลบข้อมูลที่ถูกเก็บใน session storage
-    sessionStorage.clear();
 
-    //ทำการนำทางหน้าไปยังหน้า 'index' หลังจาก logout
-    window.location.href = 'index.html';
-}
