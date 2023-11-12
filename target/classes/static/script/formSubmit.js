@@ -206,7 +206,7 @@ function normalFormToJSON(){
         //ให้เลือกแค่ 1/3 -> stringify -> เก็บไว้ที่ data
         //เช็คตัวเลือกจาก id ของ div อะไรซักอย่าลองถาม กญ ดู
 
-        // //ลาออก
+        // //case ลาออก
         // "requestType": document.querySelector('input[name="wantTU"]:checked').value,
         // "term": document.getElementById("term").value,
         // "year": document.getElementById("year").value,
@@ -219,7 +219,8 @@ function normalFormToJSON(){
         //     "faculty": document.getElementById("OtherFac").value,
         //     "field": document.getElementById("OtherField").value,
         // },
-        // //ผ่อนผันค่าเทอม
+        
+        // //case ผ่อนผันค่าเทอม
         // "debtInfo": {
         //     "numDebt": document.getElementById("numDebt").value,
         //     "gradeChoice": document.querySelector('input[name="choice"]:checked').value,
@@ -230,10 +231,11 @@ function normalFormToJSON(){
         //     "defermentMonth": document.getElementById("Defermentmonth").value,
         // },
 
-        // //อื่นๆ
+        // //case อื่นๆ
         // "otherOption": document.querySelector('input[name="OtherOption"]:checked').value,
         // "otherOptionTopic": document.getElementById("OtherOptionTopic").value,
         // "because": document.getElementById("Because").value
+
     };
 
     return jsonData;
