@@ -175,3 +175,7 @@ function adInfoFormToJSON(){
     console.log(jsonData);
     return jsonData
 }
+
+function normalFormToJSON(){
+    
+}
