@@ -167,77 +167,104 @@
         <hr>
 
         <label id="meewi">มีความประสงค์จะยื่นคำร้องเรื่อง</label>
-        <div class="selectone">
-        <input type="radio" id="wantTU" name="wantTU" value="">ขอลาออก ในภาคเรียนที่
+        <div>
+            <input type="radio"  id="wantTU" name="leaveOption" value="leave">ขอลาออก
+            <input type= "radio"  id="Deferment" name="leaveOption" value="Deferment">ขอผ่อนผันค่าเทอมจดทะเบียนเรียน
+            <input type="radio"  id="OtherOption" name="leaveOption" value="Other">อื่นๆโปรดระบุ
         </div>
-        <input type="text" id="term">
-        <label>ปีการศึกษา</label>
-        <input type="text" id="year"><br><br>
+
+
+        <div id="leaveDetails" class="hidden">
+            <label>ในภาคเรียนที่</label>
+            <input type="text" id="term">
+            <label>ปีการศึกษา</label>
+            <input type="text" id="year"><br><br>
          
-        <label id="what">เหตุผล เพราะ</label>
-        <div class="selecttwo">
-        <input type="radio" id="causeTamasat" name="cause" value="มหาวิทยาลัยธรรมศาสตร์">ศึกษาต่อที่ มหาวิทยาลัยธรรมศาสตร์
+         <label id="what">เหตุผล เพราะ</label>
+         <div class="selecttwo">
+          <input type="radio" id="causeTamasat" name="cause" value="มหาวิทยาลัยธรรมศาสตร์">ศึกษาต่อที่ มหาวิทยาลัยธรรมศาสตร์
+            <label>คณะ</label>
+            <input type="text" id="TamasatFac" placeholder="คณะ">
+            <label>สาขา</label>
+            <input type="text" id="TamasatField" placeholder="สาขา"><br>
+         </div>
+
+          <div class="selectthree">
+            <input type="radio" id="causeOther" name="cause" value="มหาวิทยาลัยอื่น">ศึกษาต่อที่ มหาวิทยาลัยอื่น
+            <label>คณะ</label>
+            <input type="text" id="OtherFac" placeholder="คณะ">
+            <label>สาขา</label>
+            <input type="text" id="OtherField" placeholder="สาขา">
+            <br><br>
+          </div>
+
+          <label id="retried">กรณีลาออก</label>
+          <label id="retriedone">1.มีหนี้ค้างกับ มธ/หน่วยงานภายใน มธ หรือไม่ ถ้ามีโปรดระบุ</label>
+          <input type="text" id="numDebt">
+          <label>(หากไม่มีกรุณา -)</label><br>
+          <label id="retriedtwo">2.ต้องการเกรดในภาคเรียนที่ยื่นคำร้องลาออกหรือไม่</label>
+          <input type="radio" id="grade" name="choice" value="grade">ต้องการ
+          <input type="radio" id="Nograde" name="choice" value="Nograde">ไม่ต้องการ
+          <br><br>
         </div>
 
-        <label>คณะ</label>
-        <input type="text" id="TamasatFac" placeholder="คณะ">
-        <label>สาขา</label>
-        <input type="text" id="TamasatField" placeholder="สาขา"><br>
+
+
+        <div id="leaveDefer" class="hidden" >
+            <label>ในภาคเรียนที่</label>
+            <input type="text" id="DefermentTerm">
+            <label>ปีการศึกษา</label>
+            <input type="text" id="DefermentYear"><br>
+            <label>คาดว่าจะสามารถชำระเงินได้ภายใน</label>
+            <label>เดือน</label>
+                <select id="Defermentmonth" name="DefermentMouth">
+                    <option value="">-- กรุณาเลือกเดือน --</option>
+                    <option>มกราคม</option>
+                    <option value="มกราคม">มกราคม</option>
+                    <option value="กุมภาพันธ์">กุมภาพันธ์</option>
+                    <option value="มีนาคม">มีนาคม</option>
+                    <option value="เมษายน">เมษายน</option>
+                    <option value="พฤษภาคม">พฤษภาคม</option>
+                    <option value="มิถุนายน">มิถุนายน</option>
+                    <option value="กรกฎาคม">กรกฎาคม</option>
+                    <option value="สิงหาคม">สิงหาคม</option>
+                    <option value="กันยายน">กันยายน</option>
+                    <option value="ตุลาคม">ตุลาคม</option>
+                    <option value="พฤศจิกายน">พฤศจิกายน</option>
+                    <option value="ธันวาคม">ธันวาคม</option>
+                </select><br>
+             <label>(ทั้งนี้ต้องไม่มีหนี้ค้างชำระค่าจดทะเบียนเรียนในภาคเรียนก่อนหน้า)</label>
         </div>
-        <div class="selectthree">
-        <input type="radio" id="causeOther" name="cause" value="มหาวิทยาลัยอื่น">ศึกษาต่อที่ มหาวิทยาลัยอื่น
+
+        <div id="leaveOther" class="hidden">
+            <input type="text" id="OtherOptionTopic">
         </div>
 
-        <label>คณะ</label>
-        <input type="text" id="OtherFac" placeholder="คณะ">
-        <label>สาขา</label>
-        <input type="text" id="OtherField" placeholder="สาขา">
-        <br><br>
-        </div>
+        <script>
+            var leaveDetails = document.getElementById("leaveDetails");
+            var leaveDefer = document.getElementById("leaveDefer");
+            var leaveOther = document.getElementById("leaveOther");
 
+            // เพิ่ม Event Listener สำหรับ Radio Buttons
+            var radioButtons = document.querySelectorAll('input[name="leaveOption"]');
+            radioButtons.forEach(function(button) {
+                button.addEventListener("click", function() {
+                    // ซ่อนทุกส่วน
+                    leaveDetails.classList.add("hidden");
+                    leaveDefer.classList.add("hidden");
+                    leaveOther.classList.add("hidden");
 
-        <label id="retried">กรณีลาออก</label>
-        <label id="retriedone">1.มีหนี้ค้างกับ มธ/หน่วยงานภายใน มธ หรือไม่ ถ้ามีโปรดระบุ</label>
-        <input type="text" id="numDebt">
-        <label>(หากไม่มีกรุณา -)</label><br>
-        <label id="retriedtwo">2.ต้องการเกรดในภาคเรียนที่ยื่นคำร้องลาออกหรือไม่</label>
-        <input type="radio" id="grade" name="choice" value="grade">ต้องการ
-        <input type="radio" id="Nograde" name="choice" value="Nograde">ไม่ต้องการ
-        <br><br>
-        </div>
-        <hr>
-        <div class ="money">
-        <input type="radio" id="Deferment" name="Deferment" value="">ขอผ่อนผันค่าเทอมจดทะเบียนเรียน
-        </div>
-        <label>ในภาคเรียนที่</label>
-        <input type="text" id="DefermentTerm">
-        <label>ปีการศึกษา</label>
-        <input type="text" id="DefermentYear"><br>
-        <label>คาดว่าจะสามารถชำระเงินได้ภายใน</label>
-        <label>เดือน</label>
-        <select id="Defermentmonth" name="DefermentMouth">
-            <option value="">-- กรุณาเลือกเดือน --</option>
-            <option>มกราคม</option>
-            <option value="มกราคม">มกราคม</option>
-            <option value="กุมภาพันธ์">กุมภาพันธ์</option>
-            <option value="มีนาคม">มีนาคม</option>
-            <option value="เมษายน">เมษายน</option>
-            <option value="พฤษภาคม">พฤษภาคม</option>
-            <option value="มิถุนายน">มิถุนายน</option>
-            <option value="กรกฎาคม">กรกฎาคม</option>
-            <option value="สิงหาคม">สิงหาคม</option>
-            <option value="กันยายน">กันยายน</option>
-            <option value="ตุลาคม">ตุลาคม</option>
-            <option value="พฤศจิกายน">พฤศจิกายน</option>
-            <option value="ธันวาคม">ธันวาคม</option>
-
-        </select><br>
-        <label>(ทั้งนี้ต้องไม่มีหนี้ค้างชำระค่าจดทะเบียนเรียนในภาคเรียนก่อนหน้า)</label>
-        <hr>
-
-        <input type="radio" id="OtherOption" name="OtherOption" value="">อื่นๆโปรดระบุ
-        <input type="text" id="OtherOptionTopic">
-
+                    // แสดงส่วนที่ถูกเลือก
+                    if (button.value === "leave") {
+                        leaveDetails.classList.remove("hidden");
+                    } else if (button.value === "Deferment") {
+                        leaveDefer.classList.remove("hidden");
+                    } else if (button.value === "Other") {
+                        leaveOther.classList.remove("hidden");
+                    }
+                });
+            });
+        </script>
 
         <label>เหตุผล เพราะ</label>
         <input type="text" id="ฺฺBecause" name="because">

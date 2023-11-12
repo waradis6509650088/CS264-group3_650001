@@ -5,7 +5,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 /* เพิ่มสไตล์ตกแต่งให้สวยงาม */
@@ -58,11 +58,12 @@ select {
     padding: 8px;
     margin-bottom: 10px;
     box-sizing: border-box;
-    border-radius: 15px;
+    border-radius: 10px;
+
 }
 
 input[type="radio"] {
-    margin-right: 5px;
+    margin-right: 4px;
 }
 
 button {
@@ -92,8 +93,9 @@ input[type="radio"] {
 }
 /* ปรับช่อง input เรื่อง */
 #topic {
-    max-width: 400px;
-    width: 400px
+    max-width: 40% ;
+
+
 }
 /* ปรับขนาดหัวข้อ */
 #menuinfo, #place, #meewi {
@@ -102,7 +104,7 @@ input[type="radio"] {
 }
 
 #what,#retried,.selectone,.selecttwo,.selectthree,#retriedone,#retriedtwo,.money {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 
@@ -110,16 +112,19 @@ input[type="radio"] {
 .name {
     display: flex;
     gap: 5px
+
 }
 
 #prefix {
     max-width: 100px;
     width: 100px;
+    height : 35px ;
 }
 /* ปรับช่อง (เลขทะเบียน ชั้นปีที่ สาขาวิชา) ให้อยุ่บรรทัดเดียวกัน */
 .numnum {
     display: flex;
     gap: 5px;
+    height : 45px ;
 }
 /* ปรับความยาวของคำว่า "เลขทะเบียน" */
 #numID {
@@ -148,10 +153,12 @@ input[type="radio"] {
 /* ปรับความยาวของคำว่า "บ้านเลขที่" */
 #homeID{
     width: 180px;
+
 }
 /* ปรับช่อง บ้านเลขที่ */
 #addressNumber {
     width: 150px;
+    height : 35px ;
 }
 /* ปรับความยาวของคำว่า "หมู่ที่" */
 #nummoo {
@@ -160,10 +167,16 @@ input[type="radio"] {
 /* ปรับช่อง หมู่ที่ */
 #moo {
     width: 100px;
+    height : 35px ;
 }
 /* ปรับช่อง ตำบล */
 #tumbol {
     width: 900px;
+     height : 35px ;
+}
+#amphur {
+    width: 900px;
+     height : 35px ;
 }
 /* ปรับช่อง (จังหวัด รหัสปณ tel) ให้อยุ่บรรทัดเดียวกัน */
 .placeline2 {
@@ -172,10 +185,19 @@ input[type="radio"] {
 }
 #ptCode {
     width: 680px;
+
 }
 #myphone {
     width: 700px;
+
 }
 #homephone {
     width: 850px;
+
 }
+
+
+/* ซ่อนDetail,Defer,Other*/
+.hidden {
+            display: none;
+ }
