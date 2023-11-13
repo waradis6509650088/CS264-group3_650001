@@ -90,21 +90,19 @@ nav {
 }
 
 .bottom-frame {
-            background-color: #8B0000 ; /* สีพื้นหลังของกรอบด้านล่าง */
-            padding: 10px;
-            text-align: center;
- }
-.bottom-frame img {
-    width: 2%; /* ปรับความกว้างของรูปให้เต็มกว่าพื้นที่ของ div */
-    height: 2% /* รักษาสัดส่วนของรูป */
-    bottom: -93%; /* จัดตำแหน่งข้อความที่ติดกับด้านล่างของ div */
-    margin-right: 100% ;
- }
-.bottom-frame span {
-     position: absolute; /* ตั้งค่าให้เป็น absolute position */
-     bottom: -70%; /* จัดตำแหน่งข้อความที่ติดกับด้านล่างของ div */
-     right: -45px ; /* จัดตำแหน่งข้อความทางด้านซ้าย */
-     width: 100%; /* ทำให้ข้อความเต็มขนาดของ div */
-     text-align: left; /* จัดตำแหน่งข้อความทางด้านซ้าย */
-     color : white ;
- }
+    display: flex;
+    justify-content: flex-start; /* ให้รูปใน .bottom-frame แสดงอยู่ในแนวเดียวกัน */
+    align-items: center; /* ให้รูปตกตรงกลางของ .bottom-frame */
+    background-color: #8B0000 ; /* สีพื้นหลังของกรอบด้านล่าง */
+    padding: 0.5px;
+}
+
+#contact {
+    width: 2%; /* กำหนดความกว้างของรูป contact */
+    height: auto; /* รักษาสัดส่วนของรูป */
+}
+
+#contactPic {
+    width: 7%; /* กำหนดความกว้างของรูป contactPic */
+    height: auto; /* รักษาสัดส่วนของรูป */
+}
