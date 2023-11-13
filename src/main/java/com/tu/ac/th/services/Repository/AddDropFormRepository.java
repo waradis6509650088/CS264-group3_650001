@@ -7,5 +7,5 @@ import java.util.List;
 public interface AddDropFormRepository {
 
     int save(AddDropForm addDropForm);
-    List<AddDropForm> getAll();
+    // List<AddDropForm> getAll();
 }

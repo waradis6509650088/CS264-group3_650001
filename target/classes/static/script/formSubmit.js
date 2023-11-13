@@ -257,8 +257,10 @@ function sendNormalFormToAPI(){
     })
     .then(response => response.json())
     .then(data => {
-        window.location.href = "successForm.html";
+        console.log("success")
+        // window.location.href = "successForm.html";
     })
     .catch(error => {
+        console.error(error)
     });
 }

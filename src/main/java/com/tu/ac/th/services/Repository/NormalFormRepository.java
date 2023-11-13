@@ -6,6 +6,6 @@ import java.util.List;
 
 
 public interface NormalFormRepository {
-    int save(NormalForm normalForm);
-    List<NormalForm> getAll();
+    void save(NormalForm normalForm);
+    // List<NormalForm> getAll();
 }

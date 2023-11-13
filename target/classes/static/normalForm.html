@@ -7,7 +7,7 @@
     <title>แบบฟอร์มคำร้องขอทั่วไป</title>
     <link rel="icon" href="pic/TU.png" type="image/png">
 </head>
-
+<script src="script/formSubmit.js"></script>
 <body>
     <link rel="stylesheet" type="text/css" href="css/normalForm.css">
     <form id="form">
@@ -206,7 +206,7 @@
         <label for="additionalFile">เอกสารเพิ่มเติม:</label>
         <input type="file" id="additionalFile" name="additionalFile" multiple>
 
-        <button id="submitButton">ส่งแบบฟอร์ม</button>
+        <button onclick="sendNormalFormToAPI()">ส่งแบบฟอร์ม</button>
     </form>
 </body>
 
