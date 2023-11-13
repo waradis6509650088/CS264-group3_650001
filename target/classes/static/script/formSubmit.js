@@ -244,3 +244,21 @@ function normalFormToJSON() {
     // คืนข้อมูล JSON
     return jsonData;
 }
+
+function sendNormalFormToAPI(){
+    studentString = combineFormAndTable();
+    url = 'http://example.com/api/form/saveNormalForm';
+    fetch(url, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(studentString)
+    })
+    .then(response => response.json())
+    .then(data => {
+        window.location.href = "successForm.html";
+    })
+    .catch(error => {
+    });
+}
