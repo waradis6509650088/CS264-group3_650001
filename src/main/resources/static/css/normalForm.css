@@ -151,7 +151,7 @@ input[type="radio"] {
 
 /* ปรับความยาวของคำว่า "เลขทะเบียน" */
 #numID {
-    width: 160px;
+    width: 170px;
 }
 
 /* ปรับช่อง เลขทะเบียน */
@@ -162,7 +162,7 @@ input[type="radio"] {
 
 /* ปรับความยาวของคำว่า "ขั้นปีที่" */
 #stdYear {
-    width: 90px;
+    width: 100px;
 }
 
 /* ปรับช่อง ชั้นปี */
@@ -172,7 +172,7 @@ input[type="radio"] {
 
 /* ปรับความยาวของคำว่า "สาขาวิชา" */
 #stdField {
-    width: 130px;
+    width: 140px;
 }
 
 .placeline1 {
@@ -182,19 +182,19 @@ input[type="radio"] {
 
 /* ปรับความยาวของคำว่า "บ้านเลขที่" */
 #homeID {
-    width: 180px;
+    width: 200px;
 
 }
 
 /* ปรับช่อง บ้านเลขที่ */
 #addressNumber {
-    width: 150px;
+    width: 180px;
     height: 35px;
 }
 
 /* ปรับความยาวของคำว่า "หมู่ที่" */
 #nummoo {
-    width: 90px;
+    width: 110px;
 }
 
 /* ปรับช่อง หมู่ที่ */
@@ -265,4 +265,9 @@ input[type="radio"] {
 /* ซ่อนDetail,Defer,Other*/
 .hidden {
     display: none;
+}
+
+star {
+    color: red;
+    font-size: 20px;
 }
