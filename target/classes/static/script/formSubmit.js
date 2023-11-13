@@ -177,8 +177,9 @@ function adInfoFormToJSON(){
 }
 
 //collect data normalForm to JSON
-function normalFormToJSON(){
- const jsonData = {
+function normalFormToJSON() {
+    // สร้างออบเจ็กต์ JSON ที่จะใช้ในการเก็บข้อมูล
+    const jsonData = {
         "date": document.getElementById("date").value,
         "topic": document.getElementById("topic").value,
         "studentInfo": {
@@ -200,44 +201,46 @@ function normalFormToJSON(){
             "phone": document.getElementById("phone").value,
         },
         "advisor": document.getElementById("adivsor").value,
-        "data" : "datadat"//เอาข้อมูลมาไว้ตรงนี้
-
-        
-        //ให้เลือกแค่ 1/3 -> stringify -> เก็บไว้ที่ data
-        //เช็คตัวเลือกจาก id ของ div อะไรซักอย่าลองถาม กญ ดู
-
-        // //case ลาออก
-        // "requestType": document.querySelector('input[name="wantTU"]:checked').value,
-        // "term": document.getElementById("term").value,
-        // "year": document.getElementById("year").value,
-        // "cause": document.querySelector('input[name="cause"]:checked').value,
-        // "tamasatInfo": {
-        //     "faculty": document.getElementById("TamasatFac").value,
-        //     "field": document.getElementById("TamasatField").value,
-        // },
-        // "otherInfo": {
-        //     "faculty": document.getElementById("OtherFac").value,
-        //     "field": document.getElementById("OtherField").value,
-        // },
-        
-        // //case ผ่อนผันค่าเทอม
-        // "debtInfo": {
-        //     "numDebt": document.getElementById("numDebt").value,
-        //     "gradeChoice": document.querySelector('input[name="choice"]:checked').value,
-        // },
-        // "defermentInfo": {
-        //     "term": document.getElementById("DefermentTerm").value,
-        //     "year": document.getElementById("DefermentYear").value,
-        //     "defermentMonth": document.getElementById("Defermentmonth").value,
-        // },
-
-        // //case อื่นๆ
-        // "otherOption": document.querySelector('input[name="OtherOption"]:checked').value,
-        // "otherOptionTopic": document.getElementById("OtherOptionTopic").value,
-        // "because": document.getElementById("Because").value
-
     };
 
+    // ระบุประเภทที่ถูกเลือกตาม ID ของปุ่มรัฟิโอ
+    const selectedCaseId = document.querySelector('input[name="requestType"]:checked').id;
+
+    // จัดการกับกรณีที่แตกต่างกัน
+    caseData = {}
+    if (selectedCaseId === "wantTU") {
+        // จัดการข้อมูลสำหรับกรณี 'wantTU' (ลาออก)
+        caseData["requestType"] = "ขอลาออก";
+        caseData["term"] = document.getElementById("term").value;
+        caseData["year"] = document.getElementById("year").value;
+        caseData["cause"] = document.querySelector('input[name="cause"]:checked').value;
+        caseData["tamasatInfo"] = {
+            "faculty": document.getElementById("TamasatFac").value,
+            "field": document.getElementById("TamasatField").value,
+        };
+        caseData["otherInfo"] = {
+            "faculty": document.getElementById("OtherFac").value,
+            "field": document.getElementById("OtherField").value,
+        };
+    } else if (selectedCaseId === "Deferment") {
+        // จัดการข้อมูลสำหรับกรณี 'Deferment' (ผ่อนผันค่าเทอม)
+        caseData["requestType"] = "ขอผ่อนผันค่าเทอม";
+        caseData["debtInfo"] = {
+            "numDebt": document.getElementById("numDebt").value,
+            "gradeChoice": document.querySelector('input[name="choice"]:checked').value,
+        };
+        caseData["defermentInfo"] = {
+            "term": document.getElementById("DefermentTerm").value,
+            "year": document.getElementById("DefermentYear").value,
+            "defermentMonth": document.getElementById("Defermentmonth").value,
+        };
+    } else if (selectedCaseId === "OtherOption") {
+        // จัดการข้อมูลสำหรับกรณี 'OtherOption' (อื่นๆ)
+        caseData["requestType"] = document.querySelector('input[name="OtherOption"]:checked').value;
+        caseData["otherOptionTopic"] = document.getElementById("OtherOptionTopic").value;
+        caseData["because"] = document.getElementById("Because").value;
+    }
+    jsonData['caseData'] = JSON.stringify(caseData)
+    // คืนข้อมูล JSON
     return jsonData;
-    
 }

@@ -207,39 +207,40 @@ function normalFormToJSON() {
     const selectedCaseId = document.querySelector('input[name="requestType"]:checked').id;
 
     // จัดการกับกรณีที่แตกต่างกัน
+    caseData = {}
     if (selectedCaseId === "wantTU") {
         // จัดการข้อมูลสำหรับกรณี 'wantTU' (ลาออก)
-        jsonData["requestType"] = "ขอลาออก";
-        jsonData["term"] = document.getElementById("term").value;
-        jsonData["year"] = document.getElementById("year").value;
-        jsonData["cause"] = document.querySelector('input[name="cause"]:checked').value;
-        jsonData["tamasatInfo"] = {
+        caseData["requestType"] = "ขอลาออก";
+        caseData["term"] = document.getElementById("term").value;
+        caseData["year"] = document.getElementById("year").value;
+        caseData["cause"] = document.querySelector('input[name="cause"]:checked').value;
+        caseData["tamasatInfo"] = {
             "faculty": document.getElementById("TamasatFac").value,
             "field": document.getElementById("TamasatField").value,
         };
-        jsonData["otherInfo"] = {
+        caseData["otherInfo"] = {
             "faculty": document.getElementById("OtherFac").value,
             "field": document.getElementById("OtherField").value,
         };
     } else if (selectedCaseId === "Deferment") {
         // จัดการข้อมูลสำหรับกรณี 'Deferment' (ผ่อนผันค่าเทอม)
-        jsonData["requestType"] = "ขอผ่อนผันค่าเทอม";
-        jsonData["debtInfo"] = {
+        caseData["requestType"] = "ขอผ่อนผันค่าเทอม";
+        caseData["debtInfo"] = {
             "numDebt": document.getElementById("numDebt").value,
             "gradeChoice": document.querySelector('input[name="choice"]:checked').value,
         };
-        jsonData["defermentInfo"] = {
+        caseData["defermentInfo"] = {
             "term": document.getElementById("DefermentTerm").value,
             "year": document.getElementById("DefermentYear").value,
             "defermentMonth": document.getElementById("Defermentmonth").value,
         };
     } else if (selectedCaseId === "OtherOption") {
         // จัดการข้อมูลสำหรับกรณี 'OtherOption' (อื่นๆ)
-        jsonData["requestType"] = document.querySelector('input[name="OtherOption"]:checked').value;
-        jsonData["otherOptionTopic"] = document.getElementById("OtherOptionTopic").value;
-        jsonData["because"] = document.getElementById("Because").value;
+        caseData["requestType"] = document.querySelector('input[name="OtherOption"]:checked').value;
+        caseData["otherOptionTopic"] = document.getElementById("OtherOptionTopic").value;
+        caseData["because"] = document.getElementById("Because").value;
     }
-
+    jsonData['caseData'] = JSON.stringify(caseData)
     // คืนข้อมูล JSON
     return jsonData;
 }
