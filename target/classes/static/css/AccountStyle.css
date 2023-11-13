@@ -71,10 +71,30 @@ header img {
 
 .content {
 
-}
+            border: 2px solid #ddd; /* สีขอบของกรอบ */
+            padding: 20px; /* ระยะห่างภายในกรอบ */
+            border-radius: 10px; /* มุมขอบของกรอบ */
+            background-color: #fff;
+            width: 50% ; /* ปรับความกว้างตามต้องการ */
+            height: 50% ; /* ปรับความสูงตามต้องการ */
+            margin-top: 7% ;
+            margin-left: 25% ;
+            font-size: 20px;
+ }
 
 .AccountName {
 
+}
+.AccountData label:nth-child(1),
+.AccountData label:nth-child(2),
+.AccountData label:nth-child(5),
+.AccountData label:nth-child(8),
+.AccountData label:nth-child(11),
+.AccountData label:nth-child(14),
+.AccountData label:nth-child(17),
+.AccountData label:nth-child(20) {
+
+        font-weight: bold;
 }
 
 .AccountData {

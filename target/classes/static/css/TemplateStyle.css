@@ -133,4 +133,27 @@ h2 {
         left: 50%;
         transform: translate(-50%, -50%);
  }
+.TextBox {
+    display: flex;
+    width: 95%;
+    height: 500px;
+    gap: 110px;
+    margin-top: -22% ;
+    margin-left: 30% ;
+    align-items: center; /* จัดวางตรงกลางในแนวดิ่ง */
+    flex-direction: row; /* จัดเรียงเนื้อหาในแถวเดียวกัน */
+    background-color: transparent;
 
+}
+.TextBox label {
+    display: inline-block;
+    border: 1px solid # ; /* เพิ่มขอบ */
+    padding: 10px; /* เพิ่มขอบใน label */
+    margin: 5px 0; /* ระยะห่างระหว่างแต่ละ label */
+    background-color: #8B0000 ;
+    cursor: pointer;
+    fonts-size : 30px ;
+}
+.TextBox label:hover {
+    background-color: #F8F8F8 ; /* สีที่ต้องการเมื่อ hover */
+}
