@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <title>แบบฟอร์มคำร้องขอทั่วไป</title>
+    <title>แบบฟอร์มคำร้องเพิ่ม-ถอน รายวิชา</title>
     <link rel="icon" href="pic/TU.png" type="image/png">
 </head>
 <body>
-<link rel="stylesheet" type="text/css" href="css/TemNormal.css">
+<link rel="stylesheet" type="text/css" href="css/TemAddStyle.css">
 <header>
     <img src= "pic/TU.png">
     <h1>TU GROUP3</h1>
@@ -25,6 +25,19 @@
     <a href="index.html">ออกจากระบบ</a>
 </nav>
 
+<div class ="content">
+    <h2>แบบฟอร์มคำร้องขอทั่วไป</h2>
+    <img src="pic/TemNormal.png" id="PicTem">
+    <label onclick=" GoToFormNormal()" >เขียนคำร้องขอ</label>
+
+</div>
+<script>
+
+    function GoToFormNormal(){
+        window.location.href = 'normalForm.html'; // แก้ไปยัง URL ที่ต้องการ
+    }
+
+</script>
 
 </body>
-</html>
+</html>>
