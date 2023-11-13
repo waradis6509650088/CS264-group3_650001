@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&family=Kanit:wght@300&display=swap');
+
+* {
+  font-family: 'Kanit', sans-serif;
+  margin: 0;
+}
+
+
+body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color : #F8F8F8 ;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+
+}
+
+header {
+          background-color: #8B0000 ;
+          color: #fff;
+          padding: 10px;
+          text-align: center;
+ }
+
+nav {
+          display: flex;
+          justify-content: center;
+          background-color: #8B0000 ;
+ }
+
+ nav a {
+          color: white;
+          padding: 14px 16px;
+          text-decoration: none;
+ }
+
+ nav a:hover {
+          background-color: #F2F2F2 ;
+          color: black;
+ }
+ nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* ให้ข้อความและรูปอยู่ทางซ้าย */
+}
+
+header img {
+    width:10%;
+    margin-right: 7px;
+}
+
+header h1 {
+    margin: 0;
+    margin-right: 50px;
+    padding-bottom: 5px; /* สร้างพื้นที่ห่างด้านล่างของข้อความ */
+    border-bottom: 3px solid #fff204; /* สร้างขีดทางล่างของข้อความ */
+}
+header label {
+    margin: 0;
+    margin-top: 40px;
+    margin-left: 1px;
+}
+header img {
+    width :45px ;
+}
+
+.information table {
+  width: 80%; /* ความกว้างของตาราง */
+  margin: auto; /* ทำให้ตารางอยู่ตรงกลาง */
+  border-collapse: collapse;
+}
+
+.information th {
+  border: 2px solid #F8F8F8;
+  text-align: center;
+  padding: 8px;
+  color: black;
+
+}
+
+.information th:nth-child(even) {
+  background-color: #FABCBC ;
+}
+
+.information th:nth-child(odd) {
+  background-color: #F2F2F2;
+}
+
+
+
+  

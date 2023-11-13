@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&family=Kanit:wght@300&display=swap');
+
+* {
+  font-family: 'Kanit', sans-serif;
+  margin: 0;
+}
+
+body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          /*background-image: url("../pic/Back.jpg");*/
+          background-color : #F8F8F8 ;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+}
+
+ header {
+          background-color: #8B0000 ;
+          color: #fff;
+          padding: 10px;
+          text-align: center;
+ }
+
+nav {
+          display: flex;
+          justify-content: center;
+          background-color: #8B0000 ;
+ }
+
+ nav a {
+          color: white;
+          padding: 14px 16px;
+          text-decoration: none;
+ }
+
+ nav a:hover {
+          background-color: #F2F2F2 ;
+          color: black;
+ }
+
+header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* ให้ข้อความและรูปอยู่ทางซ้าย */
+}
+
+header img {
+      width:10%;
+      margin-right: 7px;
+}
+
+header h1 {
+      margin: 0;
+      margin-right: 50px;
+      padding-bottom: 5px; /* สร้างพื้นที่ห่างด้านล่างของข้อความ */
+      border-bottom: 3px solid #fff204; /* สร้างขีดทางล่างของข้อความ */
+ }
+header label {
+   margin: 0;
+   margin-top: 40px;
+   margin-left: 1px;
+
+}
+
+header img {
+     width :45px ;
+}
+
+/* ตัวเนื้อหา */
+
+.content {
+
+            border: 2px solid #ddd; /* สีขอบของกรอบ */
+            padding: 20px; /* ระยะห่างภายในกรอบ */
+            border-radius: 10px; /* มุมขอบของกรอบ */
+            background-color: #fff;
+            width: 50% ; /* ปรับความกว้างตามต้องการ */
+            height: 50% ; /* ปรับความสูงตามต้องการ */
+            margin-top: 7% ;
+            margin-left: 25% ;
+            font-size: 20px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+ }
+
+.AccountName {
+
+}
+.AccountData label:nth-child(1),
+.AccountData label:nth-child(2),
+.AccountData label:nth-child(5),
+.AccountData label:nth-child(8),
+.AccountData label:nth-child(11),
+.AccountData label:nth-child(14),
+.AccountData label:nth-child(17),
+.AccountData label:nth-child(20) {
+
+        font-weight: bold;
+}
+
+.AccountData {
+
+}
+hr {
+
+}
+
+
+

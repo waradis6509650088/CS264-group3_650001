@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&family=Kanit:wght@300&display=swap');
+
+* {
+  font-family: 'Kanit', sans-serif;
+  margin: 0;
+}
+
+
+body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color : #F8F8F8 ;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+
+
+}
+.banner img {
+    width: 90%; /* ทำให้รูปเต็มความกว้างของ container */
+    margin: 70px; /* ปรับระยะห่างรูปเอง */
+
+}
+ header {
+          background-color: #8B0000 ;
+          color: #fff;
+          padding: 10px;
+          text-align: center;
+ }
+
+nav {
+          display: flex;
+          justify-content: center;
+          background-color: #8B0000 ;
+ }
+
+ nav a {
+          color: white;
+          padding: 14px 16px;
+          text-decoration: none;
+ }
+
+ nav a:hover {
+          background-color: #F2F2F2 ;
+          color: black;
+ }
+ .content {
+             max-width: 600px; /* ปรับความกว้างตามที่คุณต้องการ */
+             /*margin: 0 auto; /* ทำให้ div อยู่ตรงกลาง */
+             background-color: #F8F8F8 ;
+             padding: 20px;
+             margin-top: 2%;
+  }
+  header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* ให้ข้อความและรูปอยู่ทางซ้าย */
+  }
+
+  header img {
+      width:10%;
+      margin-right: 7px;
+  }
+
+  header h1 {
+      margin: 0;
+      margin-right: 50px;
+      padding-bottom: 5px; /* สร้างพื้นที่ห่างด้านล่างของข้อความ */
+      border-bottom: 3px solid #fff204; /* สร้างขีดทางล่างของข้อความ */
+  }
+  header label {
+   margin: 0;
+   margin-top: 40px;
+   margin-left: 1px;
+
+ }
+ header img {
+     width :45px ;
+}
+
+ .content {
+        text-align: left;
+        padding: 20px;
+        width: 500%;
+        max-width: 1280px;
+        margin: 0 auto;
+        margin-bottom: 10% ;
+
+}
+
+.bottom-frame {
+    display: flex;
+    justify-content: flex-start; /* ให้รูปใน .bottom-frame แสดงอยู่ในแนวเดียวกัน */
+    align-items: center; /* ให้รูปตกตรงกลางของ .bottom-frame */
+    background-color: #8B0000 ; /* สีพื้นหลังของกรอบด้านล่าง */
+    padding: 0.5px;
+}
+
+#contact {
+    width: 2%; /* กำหนดความกว้างของรูป contact */
+    height: auto; /* รักษาสัดส่วนของรูป */
+}
+
+#contactPic {
+    width: 7%; /* กำหนดความกว้างของรูป contactPic */
+    height: auto; /* รักษาสัดส่วนของรูป */
+}
