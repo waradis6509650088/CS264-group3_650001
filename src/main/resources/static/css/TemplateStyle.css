@@ -103,8 +103,8 @@ h2 {
 
 
  .TemNormal {
-        width: 19vw; /* ปรับขนาดของวงกลมตามที่ต้องการ */
-        height: 35vh;
+        width: 21vw; /* ปรับขนาดของวงกลมตามที่ต้องการ */
+        height: 37vh;
         border-radius: 50%; /* ทำให้มีรูปร่างเป็นวงกลม */
         border: 5px solid #8B0000;
         cursor: pointer;
@@ -113,8 +113,8 @@ h2 {
 }
 
 .TemAdd {
-        width: 19vw; /* ปรับขนาดของวงกลมตามที่ต้องการ */
-        height: 35vh;
+        width: 21vw; /* ปรับขนาดของวงกลมตามที่ต้องการ */
+        height: 37vh;
         border-radius: 50%; /* ทำให้มีรูปร่างเป็นวงกลม */
         border: 5px solid #8B0000;
         cursor: pointer;

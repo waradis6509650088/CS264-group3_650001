@@ -8,7 +8,7 @@ body {
           font-family: Arial, sans-serif;
           margin: 0;
           padding: 0;
-          background-image: url("../pic/Back.jpg");
+          background-color : #F8F8F8 ;
           background-size: cover;
           background-repeat: no-repeat;
           background-attachment: fixed;
@@ -71,6 +71,11 @@ header img {
 .content {
             text-align: left;
             margin: 50px;
+            border: 1px solid #F2F2F2 ; /* สร้างกรอบที่มีขอบสีดำขนาด 2px */
+            padding: 20px; /* ใส่ padding เพื่อทำให้ข้อความไม่ติดกับขอบกรอบ */
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -78,5 +83,5 @@ hr {
     width: 100%; /* You can adjust the percentage as needed */
     border: 1px solid #ccc; /* Optional: Set the border style and color */
     margin: 10px auto; /* Optional: Add margin for better spacing */
-    border-color: #e10925 ;
+    border-color: #8B0000 ;
 }
