@@ -9,6 +9,11 @@
 </head>
 <body>
 <script src="script/formSubmit.js"></script>
+<script src="script/sessionVerification.js">
+    window.onload = function (){
+        verification();
+    }
+</script> 
 
 <div class = "formaddrop">
 <img src="pic/TU.png" alt="คำร้องขอเพิ่ม-ถอน รายวิชา" >
@@ -171,10 +176,6 @@
         <input type="text" id="subjectDateTime" name="subjectDateTime" placeholder="วัน/เวลาที่เรียน" >
         <input type="text" id="subjectCredit" name="subjectCredit" placeholder="จำนวนหน่วยกิต" >
         <input type="text" id="subjectProfessor" name="subjectProfessor" placeholder="ชื่อผู้สอน" >
-        <select id="addDropProfCheckChoice" name="addDropProfCheckButton">
-            <option value="อนุญาต">อนุญาต</option>
-            <option value="ไม่อนุญาต">ไม่อนุญาต</option>
-        </select>
 
     </div>
     <br>

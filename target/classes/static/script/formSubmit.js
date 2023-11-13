@@ -7,7 +7,6 @@ function addDropTable_addContent(){
     dat5 = document.getElementById("subjectDateTime").value;
     dat6 = document.getElementById("subjectCredit").value;
     dat7 = document.getElementById("subjectProfessor").value;
-    dat8 = document.getElementById("addDropProfCheckChoice").value;
 
     //creating table
     table = document.getElementById("addDropTable");
@@ -18,8 +17,7 @@ function addDropTable_addContent(){
         dat4 != "" &&
         dat5 != "" &&
         dat6 != "" &&
-        dat7 != "" &&
-        dat8 != ""){
+        dat7 != "" ){
 
         let row = table.insertRow(-1);
         row.id = "tableRow_" + table.rows.length;
@@ -31,7 +29,6 @@ function addDropTable_addContent(){
         c5 = row.insertCell(4);
         c6 = row.insertCell(5);
         c7 = row.insertCell(6);
-        c8 = row.insertCell(7);
 
         c1.innerText = dat1;
         c2.innerText = dat2;
@@ -40,7 +37,6 @@ function addDropTable_addContent(){
         c5.innerText = dat5;
         c6.innerText = dat6;
         c7.innerText = dat7;
-        c8.innerText = dat8;
 
 
         //reset input field
@@ -49,7 +45,6 @@ function addDropTable_addContent(){
         document.getElementById("studentSection").value = "";
         document.getElementById("subjectDateTime").value = "";
         document.getElementById("subjectCredit").value = "";
-        document.getElementById("subjectProfessor").value = "";
     }
 }
 
@@ -81,7 +76,7 @@ function combineFormAndTable() {
                     "subjectDate" : cells[4].innerText,
                     "subjectCredit" : cells[5].innerText,
                     "subjectTeacher" : cells[6].innerText,
-                    "subjectTeacherCheck" : cells[7].innerText == "อนุญาต"? true : false
+                    "subjectTeacherCheck" : "false"
                 }
             if(cells[0].innerText == "เพิ่ม"){
                 addSubObj.push(obj);
@@ -98,9 +93,11 @@ function combineFormAndTable() {
         "addSubjectList" : addSubObj,
         "dropSubjectList" : dropSubObj,
     }
+    
 
     studentJson = adInfoFormToJSON();//form info to json
     result = jsonConcat(studentJson,myJson)
+    console.log( JSON.stringify(result))
 
     return JSON.stringify(result);
 }
@@ -142,7 +139,7 @@ function submitAddDropFormAPI(){
         })
         .then(response => response.json())
         .then(data => {
-            window.location.href = "successForm.html";
+            // window.location.href = "successForm.html";
         })
         .catch(error => {
         });
@@ -152,27 +149,26 @@ function submitAddDropFormAPI(){
 //collect data addDropForm to JSON
 function adInfoFormToJSON(){
         const jsonData = {
-        "date":document.getElementById("date").value,
-        "studentFirstName":document.getElementById("prefix").value
-        + " " + document.getElementById("studentFirstName").value,
-        "studentLastName":document.getElementById("studentLastName").value,
-        "studentId":document.getElementById("studentId").value,
-        "studentYear":document.getElementById("studentYear").value,
-        "studyField":document.getElementById("studyField").value,
-        "advisor":document.getElementById("advisor").value,
-        "addressNumber":document.getElementById("addressNumber").value,
-        "moo":document.getElementById("moo").value,
-        "tumbol":document.getElementById("tumbol").value,
-        "amphur":document.getElementById("amphur").value,
-        "province":document.getElementById("province").value,
-        "postalCode":document.getElementById("postalcode").value,
-        "mobilePhone":document.getElementById("mobilePhone").value,
-        "phone":document.getElementById("Phone").value,
-        "cause":document.getElementById("cause").value,
-        "ID": sessionStorage.getItem('id')
-    };
+            "date":document.getElementById("date").value,
+            "studentFirstName":document.getElementById("prefix").value
+            + " " + document.getElementById("studentFirstName").value,
+            "studentLastName":document.getElementById("studentLastName").value,
+            "studentId":document.getElementById("studentId").value,
+            "studentYear":document.getElementById("studentYear").value,
+            "studyField":document.getElementById("studyField").value,
+            "advisor":document.getElementById("advisor").value,
+            "addressNumber":document.getElementById("addressNumber").value,
+            "moo":document.getElementById("moo").value,
+            "tumbol":document.getElementById("tumbol").value,
+            "amphur":document.getElementById("amphur").value,
+            "province":document.getElementById("province").value,
+            "postalCode":document.getElementById("postalcode").value,
+            "mobilePhone":document.getElementById("mobilePhone").value,
+            "phone":document.getElementById("Phone").value,
+            "cause":document.getElementById("cause").value,
+            "ID": sessionStorage.getItem('id')
+        };
 
-    console.log(jsonData);
     return jsonData
 }
 

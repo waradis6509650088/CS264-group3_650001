@@ -1,7 +1,8 @@
-window.onload = function(){
+function verification(){
     AuthJSON = {
-        'id' : sessionStorage.getItem("username"),
+        'id' : sessionStorage.getItem("username")
     }
+    console.out(AuthJSON)
     fetch('/api/checkAuth', {
         method: 'POST',
         headers: {
@@ -11,7 +12,7 @@ window.onload = function(){
     })
     .then(response => response.json())
     .then(responseData  => {
-        if(responseData = "success"){
+        if(AuthJSON['id'] != null){
             console.log("verification success! the session can be continued.")
         }
         else{

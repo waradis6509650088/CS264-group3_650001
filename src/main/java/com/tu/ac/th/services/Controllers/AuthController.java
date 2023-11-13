@@ -30,6 +30,6 @@ public class AuthController {
 
     @PostMapping("/api/checkAuth")
     public String checkAuth(@RequestBody String authJsonString){
-        return null;
+        return "hello world";
     }
 }
