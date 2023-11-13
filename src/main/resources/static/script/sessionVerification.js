@@ -1,25 +1,30 @@
-function verification(){
-    AuthJSON = {
-        'id' : sessionStorage.getItem("username")
+function authVerification(){
+    const username = sessionStorage.getItem("username");
+    if (!username) {
+        console.error("Username not found in sessionStorage");
+        return;
     }
-    console.out(AuthJSON)
-    fetch('/api/checkAuth', {
+
+    const AuthJSON = {
+        'id': username.replace(/"/g, ''),
+    };
+
+    console.log(JSON.stringify(AuthJSON));
+
+    fetch('http://localhost:8080/api/checkAuth', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(AuthJSON),
     })
-    .then(response => response.json())
-    .then(responseData  => {
-        if(AuthJSON['id'] != null){
-            console.log("verification success! the session can be continued.")
-        }
-        else{
-            window.location.href = 'index.html';
+    .then(response => response.text()) //Use response.text() for plain text response
+    .then(text => {
+        if(text > 1){
+
         }
     })
     .catch(error => {
-        window.location.href = 'index.html';
+        console.error('Error:', error);
     });
 }

@@ -5,23 +5,16 @@
     <title>Login</title>
     <link rel="icon" href="pic/TU.png" type="image/png">
 
-
-<body>
 <!-- script for login -->
-<script src="script/login.js">
-    window.onload = function() {
-        sessionStorage.clear();
-    };
-</script>
-<script src="script/sessionVerification.js">
-    window.onload = verification();
-</script> 
+<script src="script/login.js"></script>
+<body onload="sessionStorage.clear();">
+
 
 
 <img src="pic/TU3.png" >
 
 <div class="login">
-    <from action="/Login" method="post" >
+    <from method="post" >
         <link rel="stylesheet" type="text/css" href="css/index.css">
 
 
@@ -33,7 +26,7 @@
         <label for="password">รหัสผ่าน:</label>
         <input type="password" id="password" name="password" placeholder="เลขประจำตัวบัตรประชาชน"required><br>
         <button onclick="login()">เข้าสู่ระบบ</button>
-
+        
 
     </from>
 </div>

@@ -27,7 +27,7 @@ function sendLoginDataToAuth() {
     }
 
     // URL ของ API saveAuth
-    const apiUrl = '/api/saveAuth';
+    const apiUrl = 'http://localhost:8080/api/saveAuth';
 
     // ส่งข้อมูล studentID และ timeNow ไปยัง API saveAuth
     fetch(apiUrl, {
@@ -35,7 +35,7 @@ function sendLoginDataToAuth() {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(loginData),
     })
 }
 
