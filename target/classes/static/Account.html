@@ -2,60 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <title>Account</title>
+
     <link rel="icon" href="pic/TU.png" type="image/png">
 </head>
 <body>
-<link rel="stylesheet" type="text/css" href="AccountStyle.css">
+<link rel="stylesheet" type="text/css" href="css/AccountStyle.css">
+<header>
+<img src= "pic/TU.png">
+<h1>TU GROUP3</h1>
+</header>
 
-<!-- แถบด้านบน -->
-<div class="navbar">
-    <div class="image-with-text">
-        <img src ="pic/TU3.png"  >
+<nav>
+    <a href="MainPage.html">เมนูหลัก</a><br>
+    <a href="Account.html">ข้อมูลส่วนตัวผู้ใช้</a><br>
+    <a href="LinkTU.html">ข้อบังคับมหาวิทยาลัยธรรมศาสตร์</a><br>
+    <a href="Template.html">แบบฟอร์มยื่นคำร้องขอ</a>
+    <a href="UserStatus.html">สืบค้นสถานะคำร้องของนักศึกษา</a>
+    <a href="HisForm.html">ประวัติการเขียนคำร้อง</a>
+    <a href="#">รายการชำระเงิน</a>
+    <a href="index.html">ออกจากระบบ</a>
+</nav>
+
+<div class ="content" >
+    <div class ="AccountName">
+    <img src="pic/Account.png">
+        <label id = username2 >6509650567</label>
+        <label id = displayname_en2 >Promporn Promjan </label>
     </div>
-
-    <img src ="pic/banner_file.jpg" >
+    <hr>
+   <div class = "AccountData">
+    <label id = type > </label>
+    <label>ชื่อ นามสกุล :</label>
+    <label id = displayname_th3 >พรหมพร พรมจันทร์</label><br>
+    <label>Name :</label>
+    <label id = displayname_en3 >Promporn Promjan </label><br>
+    <label>รหัสนักศึกษา :</label>
+    <label id = username3 >6509650567</label><br>
+    <label>สถานะ :</label>
+    <label id = tu_status > ปกติ </label><br>
+    <label>Email :</label>
+    <label id = email >Promporn.proo@dome.tu.ac.th </label><br>
+    <label>คณะ :</label>
+    <label id = faculty > วิทยาศาสตร์และเทคโนโลยี </label><br>
+    <label>สาขา :</label>
+    <label id = department > สาขาวิทยาการคอมพิวเตอร์</label>
+   </div>
 
 </div>
 
-<!-- แถบด้านซ้าย -->
-<div class="sidebar">
-    <ul>
-        <div class="mainmenu">
-            <a href="MainPage.html"><h2>เมนูหลัก</h2></a><br>
-        </div>
-        <hr>
-        <a href="Account.html">ข้อมูลส่วนตัวผู้ใช้</a><br>
-        <a href="https://www.reg.tu.ac.th/th/Picture/AttFile/279893db-4b83-4fbd-a1fb-3b8fc77e6d99">ข้อบังคับมหาวิทยาลัยธรรมศาสตร์</a><br>
-        <a href="#">แบบฟอร์มยื่นคำร้องขอ</a><br>
-        <ul class="sub-menu">
-            <a href="form.html">คำร้องขอทั่วไป</a><br>
-            <a href="addDrop.html">คำร้องขอเพิ่มถอนรายวิชา</a><br>
-        </ul>
-        <a href="#">สืบค้นสถานะคำร้องของนักศึกษา</a><br>
-        <a href="#">ประวัติการเขียนคำร้อง</a><br>
-        <a href="#">รายการชำระเงิน</a><br>
-    </ul>
-</div>
-
-<!-- เนื้อหาหลักขวา -->
-<div class="content">
-    <div class = "accountpic">
-        <img src ="pic/Account.png"  >
-    </div>
-    <div class = "dataAccount">
-        <div class = "data">
-            <h2>Account info</h2>
-            <hr>
-        </div>
-        <div class = "nameid">
-        <label>UserName</label><br>
-        <label>UserId</label><br>
-        </div>
-    </div>
-
-
-</div>
 
 <script>
     function callJSON(){

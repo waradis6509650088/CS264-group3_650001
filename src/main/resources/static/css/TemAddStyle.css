@@ -7,18 +7,11 @@
 
 
 body {
-          font-family: Arial, sans-serif;
+          font-family: Kanit, sans-serif;
           margin: 0;
           padding: 0;
           background-color : #F8F8F8 ;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-attachment: fixed;
 
-}
-.banner img {
-    width: 90%; /* ทำให้รูปเต็มความกว้างของ container */
-    margin: 70px; /* ปรับระยะห่างรูปเอง */
 
 }
  header {
@@ -44,14 +37,8 @@ nav {
           background-color: #F2F2F2 ;
           color: black;
  }
- .content {
-             max-width: 600px; /* ปรับความกว้างตามที่คุณต้องการ */
-             /*margin: 0 auto; /* ทำให้ div อยู่ตรงกลาง */
-             background-color: #F8F8F8 ;
-             padding: 20px;
-             margin-top: 2%;
-  }
-  header {
+
+ header {
       display: flex;
       align-items: center;
       justify-content: flex-start; /* ให้ข้อความและรูปอยู่ทางซ้าย */
@@ -77,3 +64,52 @@ nav {
  header img {
      width :45px ;
 }
+
+/* เนื้อหาหลัก */
+.content {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: auto;
+            margin-top: 90px ;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* ทำให้เนื้อหาตรงกลางตามแนวนอน */
+
+}
+
+ h2 {
+            color: #333;
+}
+
+ #PicTem {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+ }
+
+ label {
+            display: block;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+ }
+
+label:hover {
+            background-color: #0056b3;
+ }
+
+
+
+
+
