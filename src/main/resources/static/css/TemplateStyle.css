@@ -147,13 +147,33 @@ h2 {
 }
 .TextBox label {
     display: inline-block;
-    border: 1px solid # ; /* เพิ่มขอบ */
+    border: 5px solid # ; /* เพิ่มขอบ */
     padding: 10px; /* เพิ่มขอบใน label */
     margin: 5px 0; /* ระยะห่างระหว่างแต่ละ label */
     background-color: #8B0000 ;
     cursor: pointer;
-    fonts-size : 30px ;
 }
 .TextBox label:hover {
     background-color: #F8F8F8 ; /* สีที่ต้องการเมื่อ hover */
 }
+
+.TextBox label:nth-child(1), .TextBox label:nth-child(2) {
+    font-weight: bold; /* ทำให้ตัวหนา */
+}
+
+.TextBox {
+    font-size: 20px; /* กำหนดขนาดของกล่องข้อความ */
+    margin-left : 25% ;
+}
+
+/* ขยับกล่องข้อความ Normal */
+#Temnor {
+    margin-left: 3% ; /* ปรับขนาดระยะห่างของ label ที่มี id "Temnor" ไปทางซ้าย */
+}
+
+/* ขยับกล่องข้อความ adddrop */
+#Temadd {
+    margin-left: -3% ; /* ปรับขนาดระยะห่างของ label ที่มี id "Temnor" ไปทางซ้าย */
+}
+
+
