@@ -68,6 +68,11 @@ header label {
 header img {
     width :45px ;
 }
+.AccountLogin {
+    justify-content: flex-end;
+    margin-left: 60% ;
+}
+
 .content {
             text-align: left;
             margin: 50px;
