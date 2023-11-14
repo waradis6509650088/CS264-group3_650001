@@ -21,7 +21,7 @@ function authVerification(){
     .then(response => response.text()) //Use response.text() for plain text response
     .then(text => {
         try{
-            if(parseInt(text) > 0){
+            if(text === "auth success"){
                 console.log(text)
             }
             else

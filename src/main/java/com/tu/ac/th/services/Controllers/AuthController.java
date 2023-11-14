@@ -40,6 +40,7 @@ public class AuthController {
                 return "auth failed, unknown info";
             }
             if(Long.parseLong(db.getLoginTime()) < System.currentTimeMillis()){
+                authRepository.removeById(Long.parseLong(id));
                 return "Timed out, please login again.";
             }
             else{

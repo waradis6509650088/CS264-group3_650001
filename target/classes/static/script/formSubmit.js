@@ -242,6 +242,7 @@ function normalFormToJSON() {
 }
 
 function sendNormalFormToAPI(){
+    const formData = normalFormToJSON();
     studentString = combineFormAndTable();
     url = 'http://localhost:8080/api/form/saveNormalForm';
     fetch(url, {
@@ -260,3 +261,4 @@ function sendNormalFormToAPI(){
         console.error(error)
     });
 }
+

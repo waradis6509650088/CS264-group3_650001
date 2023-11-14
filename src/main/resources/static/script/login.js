@@ -14,7 +14,7 @@ function login() {
     // ส่งข้อมูล studentID และ timeNow ไปยัง checkAuth
     sendLoginDataToAuth();
 
-    }
+}
 
 //call function saveAuth in backend and save auth data
 function sendLoginDataToAuth() {

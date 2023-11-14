@@ -19,7 +19,7 @@ public class JdbcAuthRepository implements AuthRepository {
     public int save(Auth authObj) {
         try{
             jdbcTemplate.update(
-            "INSERT INTO loginTime" +
+            "INSERT INTO authTable" +
                     "(studentId, loginTime) " +
                     "VALUES (?, ?)",
             authObj.getId(), authObj.getLoginTime());
@@ -32,7 +32,7 @@ public class JdbcAuthRepository implements AuthRepository {
     public Auth findById(long id) {
         Auth retAuth = null;
         try{
-            retAuth = jdbcTemplate.queryForObject("SELECT * FROM requests WHERE studentId=?", BeanPropertyRowMapper.newInstance(Auth.class), id);
+            retAuth = jdbcTemplate.queryForObject("SELECT * FROM authTable WHERE studentId=?", BeanPropertyRowMapper.newInstance(Auth.class), id);
             return retAuth;
         }catch(Exception e){
             e.printStackTrace();
@@ -43,11 +43,16 @@ public class JdbcAuthRepository implements AuthRepository {
     @Override
     public int update(Auth upAuth) {
         try{
-            jdbcTemplate.update("UPDATE authTable SET loginTime = ? WHERE id = ?",
+            jdbcTemplate.update("UPDATE authTable SET loginTime = ? WHERE studentId = ?",
             upAuth.getLoginTime(), upAuth.getId());
             return 0;
         }
         catch(Exception e){return 1;}
+    }
+
+    @Override
+    public int removeById(long id) {
+        return jdbcTemplate.update("DELETE FROM authTable WHERE studentId=?", id);
     }
 
 }
