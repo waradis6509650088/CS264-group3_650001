@@ -120,13 +120,18 @@ hr {
     border-radius: 10px;
 }
 
-select #prefix {
-    width: 150px;
+#prefix {
+    width: 100px;
     height: 30px;
     font-size: 16px;
     border-radius: 10px;
 }
-
+#studentYear,#studyField{
+    width: 170px;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 10px;
+}
 
 select#prefix option {
     font-size: 16px;
@@ -161,4 +166,16 @@ select#prefix option {
     /* จัดตำแหน่งข้อความในเซลล์เป็นกลาง */
     border: 1px solid #ddd;
     /* กำหนดเส้นขอบรอบของเซลล์ */
+}
+#addDropChoice {
+    width: 80px;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+#addDropProfCheckChoice{
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 10px;
 }
