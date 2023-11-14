@@ -78,6 +78,15 @@ header img {
 .Cancel{
 
 }
+/* ปุ่มยกเลิกการส่งคำร้องทั้งหมด */
+#CancelAll{
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #8B0000;
+  color: #fdfdfd;
+  border-color: #F2F2F2;
+}
+
 .information table {
   width: 80%; /* ความกว้างของตาราง */
   margin: auto; /* ทำให้ตารางอยู่ตรงกลาง */
