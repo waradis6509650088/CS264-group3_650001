@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface AuthRepository {
     int save(Auth authObj);
-    List<Auth> getAll();
-    
+    Auth findById(long id);
+    int update(Auth upAuth);
 }

@@ -1,7 +1,7 @@
 function authVerification(){
     const username = sessionStorage.getItem("username");
     if (!username) {
-        console.error("Username not found in sessionStorage");
+        sessionStorage.setItem("username","no user")
         return;
     }
 
@@ -20,9 +20,16 @@ function authVerification(){
     })
     .then(response => response.text()) //Use response.text() for plain text response
     .then(text => {
-        if(text > 1){
-            
+        try{
+            if(parseInt(text) > 0){
+                console.log(text)
+            }
+            else
+                console.log(text)
+        }catch(error){
+            console.error(error)
         }
+        
     })
     .catch(error => {
         console.error('Error:', error);

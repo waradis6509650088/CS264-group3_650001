@@ -19,8 +19,9 @@ public class Auth {
         }
         
     }
-    public Auth() {
-        super();
+    public Auth(String inId, String inLoginTime) {
+        id = inId;
+        loginTime = inLoginTime;
     }
     public String getId() {
         return id;
