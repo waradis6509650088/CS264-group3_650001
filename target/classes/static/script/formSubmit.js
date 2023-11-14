@@ -246,8 +246,9 @@ function normalFormToJSON() {
 }
 
 function sendNormalFormToAPI(){
+    const formData = normalFormToJSON();
     studentString = combineFormAndTable();
-    url = '/api/form/saveNormalForm';
+    url = 'http://example.com/api/form/saveNormalForm';
     fetch(url, {
     method: 'POST',
     headers: {
@@ -258,9 +259,10 @@ function sendNormalFormToAPI(){
     .then(response => response.json())
     .then(data => {
         console.log("success")
-        // window.location.href = "successForm.html";
+        window.location.href = "successForm.html";
     })
     .catch(error => {
         console.error(error)
     });
 }
+
