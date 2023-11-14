@@ -4,98 +4,83 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class NormalForm {
-    private String requestType;
-    private String term;
-    private String year;
-    private String cause;
-    private String tamasatInfo;
-    private String otherInfo;
+    private String date;
+    private String topic;
+    private String studentInfo;
+    private String address;
+    private String advisor;
+    private String caseData;
 
-   
-    // Constructors
-    public NormalForm(){
-        super();
-    }
-
-
+    // Constructor ที่ใช้ jsonString เป็นพารามิเตอร์
     public NormalForm(String jsonString) {
         JSONParser parser = new JSONParser();
-        try{
+        try {
             JSONObject json = (JSONObject) parser.parse(jsonString);
-            this.requestType = (String) json.get("requestType");
-            this.term = (String) json.get("term");
-            this.year = (String) json.get("year");
-            this.cause = (String) json.get("cause");
-    
-            JSONObject tamasatInfoJson = (JSONObject) json.get("tamasatInfo");
-            this.tamasatInfo = tamasatInfoJson.toJSONString();
-    
-            JSONObject otherInfoJson = (JSONObject) json.get("otherInfo");
-            this.otherInfo = otherInfoJson.toJSONString();
+            // ดึงข้อมูลจาก JSON และกำหนดค่าให้กับ field ของ FormModel
+            this.date = (String) json.get("date");
+            this.topic = (String) json.get("topic");
+
+            // สร้าง String จาก JSON string ของ studentInfo
+            this.studentInfo = json.get("studentInfo").toString();
+
+            // สร้าง String จาก JSON string ของ address
+            this.address = json.get("address").toString();
+
+            this.advisor = (String) json.get("advisor");
+
+            // สร้าง String จาก JSON string ของ caseData
+            this.caseData = json.get("caseData").toString();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        catch(Exception e){
-            System.out.println("Failed to parse json string");
-        }
     }
 
-     public String getRequestType() {
-        return requestType;
+    // Getters and Setters (ตัวอย่างเพียงคลาสเดียว)
+    public String getDate() {
+        return date;
     }
 
-
-    public void setRequestType(String requestType) {
-        this.requestType = requestType;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-
-    public String getTerm() {
-        return term;
+    public String getTopic() {
+        return topic;
     }
 
-
-    public void setTerm(String term) {
-        this.term = term;
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 
-
-    public String getYear() {
-        return year;
+    public String getStudentInfo() {
+        return studentInfo;
     }
 
-
-    public void setYear(String year) {
-        this.year = year;
+    public void setStudentInfo(String studentInfo) {
+        this.studentInfo = studentInfo;
     }
 
-
-    public String getCause() {
-        return cause;
+    public String getAddress() {
+        return address;
     }
 
-
-    public void setCause(String cause) {
-        this.cause = cause;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-
-    public String getTamasatInfo() {
-        return tamasatInfo;
+    public String getAdvisor() {
+        return advisor;
     }
 
-
-    public void setTamasatInfo(String tamasatInfo) {
-        this.tamasatInfo = tamasatInfo;
+    public void setAdvisor(String advisor) {
+        this.advisor = advisor;
     }
 
-
-    public String getOtherInfo() {
-        return otherInfo;
+    public String getCaseData() {
+        return caseData;
     }
 
-
-    public void setOtherInfo(String otherInfo) {
-        this.otherInfo = otherInfo;
+    public void setCaseData(String caseData) {
+        this.caseData = caseData;
     }
-
-
 }

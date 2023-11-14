@@ -21,7 +21,7 @@ function authVerification(){
     .then(response => response.text()) //Use response.text() for plain text response
     .then(text => {
         if(text > 1){
-
+            
         }
     })
     .catch(error => {

@@ -17,16 +17,15 @@ public class JdbcNormalFormRepository implements NormalFormRepository {
     
     @Override
     public void save(NormalForm normalForm) {
-        String sql = "INSERT INTO normalForm (requestType, term, year, cause, tamasatInfo, otherInfo) " +
-                "VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO normalForm (topic, studentInfo, address, advisor, caseData) " +
+                "VALUES (?, ?, ?, ?, ?)";
 
         jdbcTemplate.update(sql,
-                normalForm.getRequestType(),
-                normalForm.getTerm(),
-                normalForm.getYear(),
-                normalForm.getCause(),
-                normalForm.getTamasatInfo(),
-                normalForm.getOtherInfo());
+                normalForm.getTopic(),
+                normalForm.getStudentInfo(),
+                normalForm.getAddress(),
+                normalForm.getAdvisor(),
+                normalForm.getCaseData());
     }
     // @Override
     // public List<NormalForm> getAll() {
