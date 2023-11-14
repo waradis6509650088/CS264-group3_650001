@@ -126,13 +126,18 @@ hr {
     font-size: 16px;
     border-radius: 10px;
 }
-#studentYear,#studyField{
+#studentYear {
     width: 170px;
     height: 30px;
     font-size: 16px;
     border-radius: 10px;
 }
-
+#studyField {
+    width: 500px;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 10px;
+}
 select#prefix option {
     font-size: 16px;
     border-radius: 10px;
