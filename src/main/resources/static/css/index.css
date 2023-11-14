@@ -11,7 +11,7 @@ body {
     align-items: center; /* จัดกลางตามแกนนอน (horizontally center) */
     height: 100vh; /* ทำให้พื้นที่รอบๆ หน้าเว็บเต็มหน้าจอ */
     margin: 0; /* ลบ margin ของ body */
-     background-image: url("../pic/Back.jpg");
+     background-color : #F8F8F8 ;
      background-size: cover;
       background-repeat: no-repeat;
      background-attachment: fixed;
