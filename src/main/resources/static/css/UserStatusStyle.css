@@ -74,7 +74,10 @@ header img {
     justify-content: flex-end;
     margin-left: 60% ;
 }
+/* เนื้อหาหลัก */
+.Cancel{
 
+}
 .information table {
   width: 80%; /* ความกว้างของตาราง */
   margin: auto; /* ทำให้ตารางอยู่ตรงกลาง */

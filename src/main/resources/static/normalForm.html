@@ -154,12 +154,12 @@
         </div>
         <div class="placeline2">
             <label>จังหวัด<star>*</star></label>
-            <input type="text" id="province" name="province">
+            <input type="text" id="province" name="province" required>
             <label id="ptCode">รหัสไปรษณีย์<star>*</star></label>
-            <input type="text" id="postalCode" name="postalCode" maxlength="5" pattern="[0-9]{5}"><br>
+            <input type="text" id="postalCode" name="postalCode" maxlength="5" pattern="[0-9]{5}" required><br>
             <label id="myphone">โทรศัพท์มือถือ<star>*</star></label>
-            <input type="text" id="mobilePhone" name="mobilePhone" maxlength="10" pattern="[0-9]{10}">
-            <label id="homephone">โทรศัพท์บ้าน(ถ้ามี)<star>*</star></label>
+            <input type="text" id="mobilePhone" name="mobilePhone" maxlength="10" pattern="[0-9]{10}" required>
+            <label id="homephone">โทรศัพท์บ้าน(ถ้ามี)</label>
             <input type="text" id="phone" name="phone" maxlength="10" pattern="[0-9]{10}">
         </div>
         <label>อาจารย์ที่ปรึกษา<star>*</star></label>
@@ -274,6 +274,7 @@
 
         <button id="submitButton">ส่งแบบฟอร์ม</button>
         <!-- เพิ่มสคริปต์ JavaScript สำหรับการเด้งไปยังหน้าใหม่ (successForm.html) -->
+
         <script>
             // ฟังก์ชันที่ถูกเรียกเมื่อกดปุ่ม "ส่งแบบฟอร์ม"
             document.getElementById("submitButton").addEventListener("click", function () {
@@ -283,7 +284,6 @@
                 window.location.href = "successForm.html";
             });
         </script>
-
 
 
     </form>
