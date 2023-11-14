@@ -25,12 +25,16 @@
     <a href="index.html">ออกจากระบบ</a>
 </nav>
 
-<div class ="content">
-    <h2>แบบฟอร์มคำร้องขอเพิ่ม-ถอนรายวิชา</h2>
-        <img src="pic/TemAdd.png" id="PicTem">
-        <label onclick="GoToFormAddrop()" >เขียนคำร้องขอ</label>
+<div class="popup-container">
+        <div class ="content">
+             <h2>แบบฟอร์มคำร้องขอเพิ่ม-ถอนรายวิชา</h2>
+             <img src="pic/TemAdd.png" id="PicTem">
+            <label onclick="GoToFormAddrop()" >เขียนคำร้องขอ</label>
 
+        </div>
 </div>
+
+
 <script>
 
     function GoToFormAddrop(){
@@ -38,10 +42,9 @@
     }
 
     document.addEventListener("DOMContentLoaded", function() {
-     // เพิ่ม class 'show' เพื่อแสดงผล content อย่างช้าๆ
-    var contentDiv = document.querySelector('.content');
-    contentDiv.classList.add('show');
-});
+      var contentDiv = document.querySelector('.content');
+      contentDiv.classList.add('show');
+   });
 
 </script>
 
