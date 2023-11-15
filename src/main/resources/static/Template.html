@@ -41,6 +41,10 @@
         <img src="pic/iconForm.png" alt="iconForm">
     </div>
 
+    <div class="Condition" onclick="redirectToCondition()">
+        <img src="pic/condition.png" alt="iconForm">
+    </div>
+
 </div>
 
 <!--กล่องข้อความ-->
@@ -48,6 +52,7 @@
 
      <label id="Temnor" onclick="redirectToFormNormal()"> แบบฟอร์มคำร้องขอทั่วไป</label>
     <label id="Temadd" onclick="redirectToFormAddrop()">แบบฟอร์มคำร้องขอเพิ่ม-ถอน รายวิชา</label>
+    <label id="condi" onclick="redirectToCondition()">เงื่อนไขคำร้องขอ</label>
 </div>
 
 <script>
@@ -57,6 +62,9 @@
 
     function redirectToFormAddrop() {
         window.location.href = 'TemAdd.html'; // แก้ไปยัง URL ที่ต้องการ
+    }
+    function redirectToCondition() {
+        window.location.href = 'Condition.html'; // แก้ไปยัง URL ที่ต้องการ
     }
 
 </script>
