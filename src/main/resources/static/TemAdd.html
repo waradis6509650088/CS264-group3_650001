@@ -25,7 +25,7 @@
     <a href="index.html">ออกจากระบบ</a>
 </nav>
 
-<div class="container">
+<div class="popup-container">
         <div class ="content">
              <h2>แบบฟอร์มคำร้องขอเพิ่ม-ถอนรายวิชา</h2>
              <img src="pic/TemAdd.png" id="PicTem">
@@ -43,12 +43,9 @@
         window.location.href = 'addDrop.html'; // แก้ไปยัง URL ที่ต้องการ
     }
    document.addEventListener("DOMContentLoaded", function() {
-    // เพิ่ม class 'show' เพื่อแสดงผล content อย่างช้าๆ
     var contentDiv = document.querySelector('.content');
     contentDiv.classList.add('show');
 });
-
-
 
 
 </script>
