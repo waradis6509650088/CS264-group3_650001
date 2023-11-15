@@ -82,32 +82,32 @@ nav {
             flex-direction: column;
             align-items: center;
             justify-content: center; /* ทำให้เนื้อหาตรงกลางตามแนวนอน */
+            /* ตั้งค่าตำแหน่งเริ่มต้นของ content และการแสดงผล */
             opacity: 0;
-            transform: scale(0.5);
-            transition: opacity 1s ease-in-out, transform 2s ease-in-out;
+            transform: translateY(-50px); /* ขยับขึ้นจากตำแหน่งเริ่มต้น */
+            transition: all 1s ease; /* กำหนดเวลาและประเภทของ animation */
 
 }
 .popup-container {
+    /* ตั้งค่าตำแหน่งของ container */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* พื้นหลังเป็นสีดำอ่อนๆ */
 }
 
-.content.show {
+
+.content.active {
+    /* กำหนดสไตล์เมื่อ content แสดง */
     opacity: 1;
-    transform: scale(1);
-    animation: fadeIn 1s ease-in-out;
+    transform: translateY(0);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
 
 
  h2 {

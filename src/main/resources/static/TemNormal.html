@@ -39,9 +39,14 @@
         window.location.href = 'normalForm.html'; // แก้ไปยัง URL ที่ต้องการ
     }
     document.addEventListener("DOMContentLoaded", function() {
-      var contentDiv = document.querySelector('.content');
-      contentDiv.classList.add('show');
-   });
+    // เพิ่ม class 'active' ให้กับ .content หลังจากหน้าเว็บโหลดเสร็จ
+    var contentElement = document.querySelector('.content');
+    if(contentElement) {
+        contentElement.classList.add('active');
+    }
+});
+
+
 
 </script>
 
