@@ -1,6 +1,5 @@
 package com.tu.ac.th.services.Controllers;
 
-import java.time.Clock;
 import java.util.List;
 
 import org.json.simple.JSONObject;
@@ -25,13 +24,14 @@ public class AuthController {
         try{
             Auth AuthObj = new Auth(authJsonString);
             List<Auth> db = authRepository.findById(AuthObj.getId());
-            if(db.isEmpty()){
-                return AuthObj.toString() + authRepository.save(AuthObj);
-            }
-            else{   
-                // authRepository.update(AuthObj);
-                return db.toString();
-            }
+            
+            // if(db.isEmpty()){
+                return authRepository.save(AuthObj);
+            // }
+            // else{   
+            //     // authRepository.update(AuthObj);
+            //     return db.toString();
+            // }
         }catch(Exception e){
             return e.getMessage();
         }
@@ -45,7 +45,7 @@ public class AuthController {
             JSONObject json = (JSONObject) parser.parse(id);
             List<Auth> db = authRepository.findById((String) json.get("id"));
             if(db == null){
-                return "auth failed, unknown info: " + Long.parseLong((String) json.get("id"));
+                return "auth failed, unknown info: " + (String) json.get("id");
             }
             if(Long.parseLong(db.get(0).getLoginTime()) < System.currentTimeMillis()){
                 authRepository.removeById(Long.parseLong(id));

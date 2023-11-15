@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 F:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\Controllers\AuthController.java
 F:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\Repository\NormalFormRepository.java
 F:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\JDBCRepository\JdbcAuthRepository.java
@@ -26,3 +27,19 @@ C:\Users\Asus\Desktop\CS264-group3_650001\src\main\java\com\tu\ac\th\services\Co
 C:\Users\Asus\Desktop\CS264-group3_650001\src\main\java\com\tu\ac\th\services\Repository\JdbcNormalFormREpository.java
 C:\Users\Asus\Desktop\CS264-group3_650001\src\main\java\com\tu\ac\th\services\Repository\FormRepository.java
 >>>>>>> origin/DevelopmentUI
+=======
+E:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\JDBCRepository\JdbcAddDropFormRepository.java
+E:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\Repository\NormalFormRepository.java
+E:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\Models\NormalForm.java
+E:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\JDBCRepository\JdbcAuthRepository.java
+E:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\Controllers\AuthController.java
+E:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\Controllers\NormalFormController.java
+E:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\JDBCRepository\JdbcNormalFormRepository.java
+E:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\JdbcRowMapper\AuthMapper.java
+E:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\Controllers\addDropFormController.java
+E:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\Repository\AddDropFormRepository.java
+E:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\Models\AddDropForm.java
+E:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\Repository\AuthRepository.java
+E:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\Models\Auth.java
+E:\cs111\CS264-group3_650001\src\main\java\com\tu\ac\th\services\ServicesApplication.java
+>>>>>>> origin/DevelopmentDBrepo
