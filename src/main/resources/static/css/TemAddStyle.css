@@ -80,25 +80,30 @@ nav {
             flex-direction: column;
             align-items: center;
             justify-content: center; /* ทำให้เนื้อหาตรงกลางตามแนวนอน */
-            opacity: 0; /* ตั้งค่าความทึบของ content เริ่มต้น */
-            transform: scale(0.5); /* ลดขนาด content เริ่มต้น */
-            transition: opacity 1s ease-in-out, transform 2s ease-in-out; /* เพิ่ม transition ใน opacity และ transform (2 วินาที) */
 
-
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 1s ease-in-out, transform 2s ease-in-out;
 
 }
 
-.container {
+.popup-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* ให้ container เต็มจอ */
+    height: 100vh;
+}
+
+.content {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 1s ease-in-out, transform 2s ease-in-out;
 }
 
 .content.show {
-    opacity: 1; /* เปลี่ยนความทึบเมื่อมี class 'show' */
-    transform: scale(1); /* ขยายขนาดเท่าขนาดเดิมเมื่อมี class 'show' */
-    animation: fadeIn 1s ease-in-out; /* เพิ่ม animation เมื่อมี class 'show' */
+    opacity: 1;
+    transform: scale(1);
+    animation: fadeIn 1s ease-in-out;
 }
 
 @keyframes fadeIn {
