@@ -211,6 +211,14 @@
 
         <button id="submitButton">ส่งแบบฟอร์ม</button>
         <!-- เพิ่มสคริปต์ JavaScript สำหรับการเด้งไปยังหน้าใหม่ (successForm.html) -->
+        <script>
+            // ฟังก์ชันที่ถูกเรียกเมื่อกดปุ่ม "ส่งแบบฟอร์ม"
+                document.getElementById("submitButton").addEventListener("click", function () {
+
+                    // เด้งไปยังหน้าใหม่ (successForm.html)
+                    window.location.href = "successForm.html";
+                });
+        </script>
 
 
 
