@@ -168,9 +168,9 @@
 
         <label id="meewi">มีความประสงค์จะยื่นคำร้องเรื่อง<star>*</star></label>
         <div>
-            <input type="radio" id="wantTU" name="leaveOption" value="leave">ขอลาออก
+            <input type="radio" id="wantTU" name="leaveOption" value="wantTU">ขอลาออก
             <input type="radio" id="Deferment" name="leaveOption" value="Deferment">ขอผ่อนผันค่าเทอมจดทะเบียนเรียน
-            <input type="radio" id="OtherOption" name="leaveOption" value="Other">อื่นๆโปรดระบุ
+            <input type="radio" id="OtherOption" name="leaveOption" value="OtherOption">อื่นๆโปรดระบุ
         </div>
 
 
@@ -256,11 +256,11 @@
                     leaveOther.classList.add("hidden");
 
                     // แสดงส่วนที่ถูกเลือก
-                    if (button.value === "leave") {
+                    if (button.value === "wantTU") {
                         leaveDetails.classList.remove("hidden");
                     } else if (button.value === "Deferment") {
                         leaveDefer.classList.remove("hidden");
-                    } else if (button.value === "Other") {
+                    } else if (button.value === "OtherOption") {
                         leaveOther.classList.remove("hidden");
                     }
                 });

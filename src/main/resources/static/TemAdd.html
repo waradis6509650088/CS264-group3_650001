@@ -41,10 +41,14 @@
         window.location.href = 'addDrop.html'; // แก้ไปยัง URL ที่ต้องการ
     }
 
-    document.addEventListener("DOMContentLoaded", function() {
-      var contentDiv = document.querySelector('.content');
-      contentDiv.classList.add('show');
-   });
+   document.addEventListener('DOMContentLoaded', function () {
+    showPopup();
+    });
+
+    function showPopup() {
+    var popup = document.querySelector('.popup-container');
+    popup.style.display = 'block';
+    }
 
 </script>
 
