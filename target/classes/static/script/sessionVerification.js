@@ -34,9 +34,9 @@ function authVerification(){
             sessionStorage.clear()
             window.location.href = 'Index.html'
         }
-        
     })
     .catch(error => {
         console.error('Error:', error);
     });
 }
+

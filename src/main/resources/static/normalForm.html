@@ -183,25 +183,25 @@
                 var leaveDefer = document.getElementById("leaveDefer");
                 var leaveOther = document.getElementById("leaveOther");
 
-            // เพิ่ม Event Listener สำหรับ Radio Buttons
-            var radioButtons = document.querySelectorAll('input[name="leaveOption"]');
-            radioButtons.forEach(function (button) {
-                button.addEventListener("click", function () {
-                    // ซ่อนทุกส่วน
-                    leaveDetails.classList.add("hidden");
-                    leaveDefer.classList.add("hidden");
-                    leaveOther.classList.add("hidden");
+                // เพิ่ม Event Listener สำหรับ Radio Buttons
+                var radioButtons = document.querySelectorAll('input[name="leaveOption"]');
+                radioButtons.forEach(function (button) {
+                    button.addEventListener("click", function () {
+                        // ซ่อนทุกส่วน
+                        leaveDetails.classList.add("hidden");
+                        leaveDefer.classList.add("hidden");
+                        leaveOther.classList.add("hidden");
 
-                    // แสดงส่วนที่ถูกเลือก
-                    if (button.value === "wantTU") {
-                        leaveDetails.classList.remove("hidden");
-                    } else if (button.value === "Deferment") {
-                        leaveDefer.classList.remove("hidden");
-                    } else if (button.value === "OtherOption") {
-                        leaveOther.classList.remove("hidden");
-                    }
+                        // แสดงส่วนที่ถูกเลือก
+                        if (button.value === "wantTU") {
+                            leaveDetails.classList.remove("hidden");
+                        } else if (button.value === "Deferment") {
+                            leaveDefer.classList.remove("hidden");
+                        } else if (button.value === "OtherOption") {
+                            leaveOther.classList.remove("hidden");
+                        }
+                    });
                 });
-            });
             </script>
 
             <label>เหตุผล เพราะ</label>
