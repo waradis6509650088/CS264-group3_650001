@@ -10,7 +10,7 @@ body {
           font-family: Arial, sans-serif;
           margin: 0;
           padding: 0;
-          background-image: url("../pic/Back.jpg");
+          background-color : #F8F8F8 ;
           background-size: cover;
           background-repeat: no-repeat;
           background-attachment: fixed;
@@ -77,6 +77,11 @@ nav {
  header img {
      width :45px ;
 }
+.AccountLogin {
+    justify-content: flex-end;
+    margin-left: 60% ;
+}
+
 /* เนื้อหาหลัก */
 
 h2 {
@@ -90,70 +95,107 @@ h2 {
 }
 
 .content {
-        display: flex;
-        width: 100%; /* กำหนดความกว้างของ content เป็น 80% ของพื้นที่ทั้งหมด */
-        height: 500px; /* กำหนดความสูงของ content เป็น 200px หรือตามที่ต้องการ */
-        gap: 50px;
-        margin-top: -5% ;
-        margin-left: 25% ;
-        align-items: center; /* จัดวางตรงกลางในแนวดิ่ง */
-        flex-direction: row; /* จัดเรียงเนื้อหาในแถวเดียวกัน */
-        background-color: transparent;
+  display: flex;
+  flex-direction: row; /* Change to column to align items vertically */
+  align-items: center; /* This will center the items horizontally */
+  max-width: 80%;
+  margin-top: 2%; /* Adjust this to position your content lower or higher */
+  margin-left: auto;
+  margin-right: auto;
+  gap: 100px; /* Adjust this to manage the space between the icons and text labels */
+  background-color: transparent;
 }
 
 
- .TemNormal {
-        width: 19vw; /* ปรับขนาดของวงกลมตามที่ต้องการ */
-        height: 35vh;
-        border-radius: 50%; /* ทำให้มีรูปร่างเป็นวงกลม */
+/* Consolidated styles for TemNormal, TemAdd, Condition */
+.TemNormal, .TemAdd, .Condition {
+        width: 19vw;
+        height: 37vh;
+        border-radius: 50%;
         border: 5px solid #8B0000;
         cursor: pointer;
         position: relative;
         overflow: hidden;
+
+
+
+}
+.TemNormal:hover, .TemAdd:hover, .Condition:hover {
+    background-color: #8B0000; /* Hover effect for all circle elements */
 }
 
-.TemAdd {
-        width: 19vw; /* ปรับขนาดของวงกลมตามที่ต้องการ */
-        height: 35vh;
-        border-radius: 50%; /* ทำให้มีรูปร่างเป็นวงกลม */
-        border: 5px solid #8B0000;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
+.TemNormal img, .TemAdd img , .Condition img {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.TemNormal:hover, .TemAdd:hover {
-    background-color: #8B0000; /* เมื่อ hover ก็จะเปลี่ยนสีพื้นหลัง */
-}
- .TemNormal img, .TemAdd img {
-        width: 50%; /* ทำให้รูปภาพเต็มขนาดของวงกลม */
-        height: 50%; /* ทำให้รูปภาพเต็มขนาดของวงกลม */
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
- }
-.TextBox {
+.TextBox   {
     display: flex;
-    width: 95%;
+    width: 90%; /* Adjusted for better alignment */
     height: 500px;
-    gap: 110px;
-    margin-top: -22% ;
-    margin-left: 30% ;
-    align-items: center; /* จัดวางตรงกลางในแนวดิ่ง */
-    flex-direction: row; /* จัดเรียงเนื้อหาในแถวเดียวกัน */
+    gap: 5px; /* Adjusted gap for consistency */
+    margin-top: -1%;
+    margin-left: 5%; /* Centered horizontally */
+    margin-right: auto; /* Centered horizontally */
+    align-items: center;
+    flex-direction: row;
     background-color: transparent;
+}
 
-}
 .TextBox label {
-    display: inline-block;
-    border: 1px solid # ; /* เพิ่มขอบ */
-    padding: 10px; /* เพิ่มขอบใน label */
-    margin: 5px 0; /* ระยะห่างระหว่างแต่ละ label */
-    background-color: #8B0000 ;
+    border: 5px solid transparent; /* Transparent border for consistent sizing */
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #8B0000;
     cursor: pointer;
-    fonts-size : 30px ;
+    color: white; /* Added for better visibility */
+    font-weight: bold; /* Labels are bold by default */
 }
+
 .TextBox label:hover {
-    background-color: #F8F8F8 ; /* สีที่ต้องการเมื่อ hover */
+    background-color: #F8F8F8;
+    color: #8B0000; /* Text color change on hover */
 }
+
+/* Specific adjustments for labels */
+#Temnor, #Temadd, #condi {
+    margin: 100px; /* Uniform margin for specific labels */
+    margin-top: -20%;
+}
+
+#Temnor {
+    position:relative;
+    left: 26px;
+}
+
+#Temadd {
+    position:relative;
+    left: -8px;
+}
+
+#condi {
+    position:relative;
+    left: -9px;
+}
+
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .content, .TextBox {
+        flex-direction: column; /* Stack elements on smaller screens */
+        width: 90%; /* Wider width on smaller screens */
+    }
+
+    .circle {
+        width: 50vw; /* Adjust size for smaller screens */
+        height: 50vh;
+    }
+}
+
+
+
+

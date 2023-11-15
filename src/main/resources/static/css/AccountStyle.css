@@ -9,7 +9,8 @@ body {
           font-family: Arial, sans-serif;
           margin: 0;
           padding: 0;
-          background-image: url("../pic/Back.jpg");
+          /*background-image: url("../pic/Back.jpg");*/
+          background-color : #F8F8F8 ;
           background-size: cover;
           background-repeat: no-repeat;
           background-attachment: fixed;
@@ -67,6 +68,11 @@ header img {
      width :45px ;
 }
 
+.AccountLogin {
+    justify-content: flex-end;
+    margin-left: 60% ;
+}
+
 /* ตัวเนื้อหา */
 
 .content {
@@ -80,6 +86,8 @@ header img {
             margin-top: 7% ;
             margin-left: 25% ;
             font-size: 20px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+
  }
 
 .AccountName {
@@ -99,9 +107,10 @@ header img {
 
 .AccountData {
 
-}
-hr {
 
+}
+.content label {
+    margin-bottom: 50% ; /* ปรับระยะห่างระหว่าง label ใน .content */
 }
 
 

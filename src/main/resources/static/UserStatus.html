@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <title>สืบค้นสถานะนักศึกษา</title>
     <link rel="icon" href="pic/TU.png" type="image/png">
 </head>
@@ -16,6 +17,11 @@
     <header>
         <img src= "pic/TU.png">
         <h1>TU GROUP3</h1>
+        <div class="AccountLogin">
+            <label id = username1 >6509650567</label>
+            <label id = displayname_en1>Promporn Promjan </label>
+            <img src="pic/Login.png">
+        </div>
     </header>
     <nav>
         <a href="MainPage.html">เมนูหลัก</a><br>
@@ -29,26 +35,75 @@
     </nav>
     <br>
     <div class="information">
+
+        <div class ="Cancel">
+        </div>
+    <br>
         <table>
             <tr>
               <th>ลำดับ</th>
               <th>รายการคำร้อง</th>
               <th>วันที่</th>
               <th>สถานะคำร้อง</th>
+              <th>ยกเลิกคำร้อง</th>
             </tr>
             <tr>
               <th>1</th>
               <th>คำร้องขอทั่วไป</th>
               <th>18/02/2566</th>
               <th>กำลังดำเนินการ</th>
+              <th><button id="Cancel1">ยกเลิกการส่งคำร้อง</button></th>
             </tr>
             <tr>
                 <th>2</th>
                 <th>คำร้องขอเพิ่ม-ถอนรายวิชา</th>
                 <th>19/02/2566</th>
                 <th>กำลังดำเนินการ</th>
+                <th> <button id="Cancel2">ยกเลิกการส่งคำร้อง</button></th>
             </tr>
           </table>
     </div>
+
+    <div class="popup center">
+        <div class="icon">
+            <i class="fa fa-check"></i>
+        </div>
+    <div class="title">
+        Are you sure?
+    </div>
+    <div class="description">
+        ต้องการดำเนินการต่อหรือไม่?
+    </div>
+        <div class = "send-btn">
+            <button id="send-popup-btn">
+                ดำเนินการต่อ
+            </button>
+        </div>
+        <div class="dismiss-btn">
+            <button id="dismiss-popup-btn">
+                ยกเลิก
+            </button>
+        </div>
+
+    </div>
+
+<script>
+    document.getElementById("Cancel1").addEventListener("click", function () {
+    document.getElementsByClassName("popup")[0].classList.add("active");
+});
+
+    document.getElementById("Cancel2").addEventListener("click", function () {
+    document.getElementsByClassName("popup")[0].classList.add("active");
+});
+
+    document.getElementById("dismiss-popup-btn").addEventListener("click", function () {
+    document.getElementsByClassName("popup")[0].classList.remove("active");
+});
+
+    document.getElementById("send-popup-btn").addEventListener("click", function () {
+    document.getElementsByClassName("popup")[0].classList.remove("active");
+});
+</script>
+
 </body>
 </html>

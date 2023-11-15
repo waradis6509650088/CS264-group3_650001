@@ -2,9 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>แบบฟอร์มคำร้องขอทั่วไป</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <title>แบบฟอร์มคำร้องเพิ่ม-ถอน รายวิชา</title>
+    <link rel="icon" href="pic/TU.png" type="image/png">
 </head>
 <body>
+<link rel="stylesheet" type="text/css" href="css/TemNormal.css">
+<header>
+    <img src= "pic/TU.png">
+    <h1>TU GROUP3</h1>
+
+</header>
+
+<nav>
+    <a href="MainPage.html">เมนูหลัก</a><br>
+    <a href="Account.html">ข้อมูลส่วนตัวผู้ใช้</a><br>
+    <a href="LinkTU.html">ข้อบังคับมหาวิทยาลัยธรรมศาสตร์</a><br>
+    <a href="Template.html">แบบฟอร์มยื่นคำร้องขอ</a>
+    <a href="UserStatus.html">สืบค้นสถานะคำร้องของนักศึกษา</a>
+    <a href="HisForm.html">ประวัติการเขียนคำร้อง</a>
+    <a href="PayMentHis.html">รายการชำระเงิน</a>
+    <a href="index.html">ออกจากระบบ</a>
+</nav>
+<div class="popup-container">
+    <div class ="content">
+        <h2>แบบฟอร์มคำร้องขอทั่วไป</h2>
+        <img src="pic/TemNormal.png" id="PicTem">
+        <label onclick= "GoToFormNormal()">เขียนคำร้องขอ</label>
+
+    </div>
+</div>
+<script>
+
+    function GoToFormNormal(){
+        window.location.href = 'normalForm.html'; // แก้ไปยัง URL ที่ต้องการ
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+    var contentDiv = document.querySelector('.content');
+    contentDiv.classList.add('show');
+});
+
+
+
+</script>
 
 </body>
+
 </html>

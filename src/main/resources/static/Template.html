@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <title>แบบฟอร์มยื่นคำร้อง</title>
     <link rel="icon" href="pic/TU.png" type="image/png">
 </head>
@@ -16,6 +17,11 @@
 <header>
     <img src= "pic/TU.png">
     <h1>TU GROUP3</h1>
+    <div class="AccountLogin">
+        <label id = username1 >6509650567</label>
+        <label id = displayname_en1>Promporn Promjan </label>
+        <img src="pic/Login.png">
+    </div>
 </header>
 
 <nav>
@@ -36,25 +42,34 @@
         <img src="pic/iconForm.png" alt="iconForm">
     </div>
 
-    <div class="TemAdd" onclick="redirectToFormAdddrop()" >
+    <div class="TemAdd" onclick="redirectToFormAddrop()" >
         <img src="pic/iconForm.png" alt="iconForm">
+    </div>
+
+    <div class="Condition" onclick="redirectToCondition()">
+        <img src="pic/condition.png" alt="iconForm">
     </div>
 
 </div>
 
 <!--กล่องข้อความ-->
 <div class="TextBox" >
-     <label onclick="redirectToFormNormal()" >แบบฟอร์มคำร้องขอทั่วไป</label>
-    <label onclick="redirectToFormAdddrop()" >แบบฟอร์มคำร้องขอเพิ่ม-ถอน รายวิชา</label>
+
+     <label id="Temnor" onclick="redirectToFormNormal()"> แบบฟอร์มคำร้องขอทั่วไป</label>
+    <label id="Temadd" onclick="redirectToFormAddrop()">แบบฟอร์มคำร้องขอเพิ่ม-ถอน รายวิชา</label>
+    <label id="condi" onclick="redirectToCondition()">เงื่อนไขคำร้องขอ</label>
 </div>
 
 <script>
     function redirectToFormNormal() {
-        window.location.href = 'normalForm.html'; // แก้ไปยัง URL ที่ต้องการ
+        window.location.href = 'TemNormal.html'; // แก้ไปยัง URL ที่ต้องการ
     }
 
-    function redirectToFormAdddrop() {
-        window.location.href = 'addDrop.html'; // แก้ไปยัง URL ที่ต้องการ
+    function redirectToFormAddrop() {
+        window.location.href = 'TemAdd.html'; // แก้ไปยัง URL ที่ต้องการ
+    }
+    function redirectToCondition() {
+        window.location.href = 'Condition.html'; // แก้ไปยัง URL ที่ต้องการ
     }
 
 </script>
