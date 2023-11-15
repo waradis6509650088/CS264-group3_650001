@@ -1,0 +1,220 @@
+    <!DOCTYPE html>
+    <html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฟอร์มคำร้องขอทั่วไป</title>
+    <link rel="icon" href="pic/TU.png" type="image/png">
+</head>
+<script src="script/formSubmit.js"></script>
+<script src="script/sessionVerification.js"></script> 
+<script src="script/pullFromSessionStorage.js"></script>
+<body onload="authVerification();tobbarNameID()">
+    <link rel="stylesheet" type="text/css" href="css/normalForm.css">
+    <form id="form">
+        <img src="pic/TU.png" alt="คำร้องขอเพิ่ม-ถอน รายวิชา">
+        <h1 style="text-align: center;">คำร้องทั่วไป</h1>
+        <h2 style="text-align: center;">คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</h2>
+
+        <label>วันที่<star>*</star></label>
+        <input type="date" id="date" name="date" required>
+
+        <label>เรื่อง<star>*</star></label>
+        <input type="text" id="topic" name="topic" required><br>
+        <label>เรียน คณบดีคณะวิทยาศาสตร์แลเทคโนโลยี</label>
+        <label id="menuinfo">ข้อมูลส่วนตัว</label>
+        <div class="name">
+            <label>ข้าพเจ้า<star>*</star></label>
+            <select id="prefix" name="prefix">
+                <option value="นาย">นาย</option>
+                <option value="นาง">นาง</option>
+                <option value="นางสาว">นางสาว</option>
+            </select>
+            <label>ชื่อ<star>*</star></label>
+            <input type="text" id="studentFirstName" name="studentFirstName" required>
+            <label>นามสกุล<star>*</star></label>
+            <input type="text" id="studentLastName" name="studentLastName" required>
+        </div>
+        <div class="numnum">
+            <label id="numID">เลขทะเบียน<star>*</star></label>
+            <input type="text" id="stdID" placeholder="รหัสนักศึกษา 10 หลัก" name="studentId" maxlength="10"
+                pattern="[0-9]{10}" required>
+            <label for="studentYear" id="stdYear" name="studentYear">ชั้นปีที่<star>*</star></label>
+            <select id="studentYear">
+                <option value="">-- กรุณาเลือกชั้นปี --</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+            <label id="stdField">สาขาวิชา<star>*</star></label>
+            <select id="studyField" name="studyField">
+                <option value="">------------------------------------ กรุณาเลือกสาขา ------------------------------------</option>
+                <option>สาขาวิชาฟิสิกส์</option>
+                <option>สาขาวิชาฟิสิกส์อิเลกทรอนิกส์</option>
+                <option>สาขาวิชาคณิตศาสตร์</option>
+                <option>สาขาวิชาคณิตศาสตร์ประยุกต์</option>
+                <option>สาขาวิชาคณิตศาสตร์การจัดการ (ตรีควบโท)</option>
+                <option>สาขาวิชาเคมี</option>
+                <option>สาขาวิชาเทคโนโลยีชีวภาพ</option>
+                <option>สาขาวิชาเทคโนโลยีการเกษตร</option>
+                <option>สาขาวิชาเทคโนโลยีพลังงานชีวภาพและการแปรรูปเคมีชีวภาพ</option>
+                <option>สาขาวิชาเทคโนโลยีเพื่อการพัฒนายั่งยืน</option>
+                <option>สาขาวิชาเทคโนโลยีดิจิทัลแนวสร้างสรรค์ (หลักสูตรนานาชาติ)</option>
+                <option>สาขาวิชาวิทยาศาสตร์และนวัตกรรมทางอาหาร</option>
+                <option>สาขาวิชาวิทยาศาสตร์และเทคโนโลยีการอาหาร</option>
+                <option>สาขาวิชาวิทยาศาสตร์และเทคโนโลยีสิ่งทอ</option>
+                <option>สาขาวิชาสถิติ</option>
+                <option>สาขาวิชาการออกแบบเชิงนวัตกรรมดิจิทัล (หลักสูตรนานาชาติ)</option>
+                <option>สาขาวิชาวัสดุศาสตร์</option>
+                <option>สาขาวิชาวิทยาการคอมพิวเตอร์</option>
+                <option>สาขาวิชาวิทยาศาสตร์อุตสาหการและการจัดการ (หลักสูตรนานาชาติ)</option>
+                <option>สาขาวิชาวิทยาการประกันภัย</option>
+            </select>
+        </div>
+        <hr>
+
+        <label id="place">ที่อยู่ที่สามารถติดต่อได้ทางไปรษณีย์</label>
+        <div class="placeline1">
+            <label id="homeID">บ้านเลขที่<star>*</star></label>
+            <input type="text" id="addressNumber" name="addressNumber">
+            <label id="nummoo">หมู่ที่<star>*</star></label>
+            <input type="text" id="moo" name="moo">
+            <label>ตำบล<star>*</star></label>
+            <input type="text" id="tumbol" name="tumbol"><br>
+            <label>อำเภอ<star>*</star></label>
+            <input type="text" id="amphur" name="amphur">
+        </div>
+        <div class="placeline2">
+            <label>จังหวัด<star>*</star></label>
+            <input type="text" id="province" name="province" required>
+            <label id="ptCode">รหัสไปรษณีย์<star>*</star></label>
+            <input type="text" id="postalCode" name="postalCode" maxlength="5" pattern="[0-9]{5}" required><br>
+            <label id="myphone">โทรศัพท์มือถือ<star>*</star></label>
+            <input type="text" id="mobilePhone" name="mobilePhone" maxlength="10" pattern="[0-9]{10}" required>
+            <label id="homephone">โทรศัพท์บ้าน(ถ้ามี)</label>
+            <input type="text" id="phone" name="phone" maxlength="10" pattern="[0-9]{10}">
+        </div>
+        <label>อาจารย์ที่ปรึกษา<star>*</star></label>
+        <input type="text" id="adivsor" name="adivsor">
+        <hr>
+
+        <label id="meewi">มีความประสงค์จะยื่นคำร้องเรื่อง<star>*</star></label>
+        <div>
+            <input type="radio" id="wantTU" name="leaveOption" value="wantTU">ขอลาออก
+            <input type="radio" id="Deferment" name="leaveOption" value="Deferment">ขอผ่อนผันค่าเทอมจดทะเบียนเรียน
+            <input type="radio" id="OtherOption" name="leaveOption" value="OtherOption">อื่นๆโปรดระบุ
+        </div>
+
+
+        <div id="leaveDetails" class="hidden">
+            <label>ในภาคเรียนที่</label>
+            <input type="text" id="term">
+            <label>ปีการศึกษา</label>
+            <input type="text" id="year"><br><br>
+
+            <label id="what">เหตุผล เพราะ</label>
+            <div class="selecttwo">
+                <input type="radio" id="causeTamasat" name="cause" value="มหาวิทยาลัยธรรมศาสตร์">ศึกษาต่อที่
+                มหาวิทยาลัยธรรมศาสตร์
+                <label>คณะ</label>
+                <input type="text" id="TamasatFac" placeholder="คณะ">
+                <label>สาขา</label>
+                <input type="text" id="TamasatField" placeholder="สาขา"><br>
+            </div>
+
+            <div class="selectthree">
+                <input type="radio" id="causeOther" name="cause" value="มหาวิทยาลัยอื่น">ศึกษาต่อที่ มหาวิทยาลัยอื่น
+                <label>คณะ</label>
+                <input type="text" id="OtherFac" placeholder="คณะ">
+                <label>สาขา</label>
+                <input type="text" id="OtherField" placeholder="สาขา">
+                <br><br>
+            </div>
+
+            <label id="retried">กรณีลาออก</label>
+            <label id="retriedone">1.มีหนี้ค้างกับ มธ/หน่วยงานภายใน มธ หรือไม่ ถ้ามีโปรดระบุ</label>
+            <input type="text" id="numDebt">
+            <label>(หากไม่มีกรุณา -)</label><br>
+            <label id="retriedtwo">2.ต้องการเกรดในภาคเรียนที่ยื่นคำร้องลาออกหรือไม่</label>
+            <input type="radio" id="grade" name="choice" value="grade">ต้องการ
+            <input type="radio" id="Nograde" name="choice" value="Nograde">ไม่ต้องการ
+            <br><br>
+        </div>
+
+
+
+        <div id="leaveDefer" class="hidden">
+            <label>ในภาคเรียนที่</label>
+            <input type="text" id="DefermentTerm">
+            <label>ปีการศึกษา</label>
+            <input type="text" id="DefermentYear"><br>
+            <label>คาดว่าจะสามารถชำระเงินได้ภายใน</label>
+            <label>เดือน</label>
+            <select id="Defermentmonth" name="DefermentMouth">
+                <option value="">-- กรุณาเลือกเดือน --</option>
+                <option>มกราคม</option>
+                <option value="มกราคม">มกราคม</option>
+                <option value="กุมภาพันธ์">กุมภาพันธ์</option>
+                <option value="มีนาคม">มีนาคม</option>
+                <option value="เมษายน">เมษายน</option>
+                <option value="พฤษภาคม">พฤษภาคม</option>
+                <option value="มิถุนายน">มิถุนายน</option>
+                <option value="กรกฎาคม">กรกฎาคม</option>
+                <option value="สิงหาคม">สิงหาคม</option>
+                <option value="กันยายน">กันยายน</option>
+                <option value="ตุลาคม">ตุลาคม</option>
+                <option value="พฤศจิกายน">พฤศจิกายน</option>
+                <option value="ธันวาคม">ธันวาคม</option>
+            </select><br>
+            <label>(ทั้งนี้ต้องไม่มีหนี้ค้างชำระค่าจดทะเบียนเรียนในภาคเรียนก่อนหน้า)</label>
+        </div>
+
+            <div id="leaveOther" class="hidden">
+                <input type="text" id="OtherOptionTopic">
+            </div>
+
+            <script>
+                var leaveDetails = document.getElementById("leaveDetails");
+                var leaveDefer = document.getElementById("leaveDefer");
+                var leaveOther = document.getElementById("leaveOther");
+
+            // เพิ่ม Event Listener สำหรับ Radio Buttons
+            var radioButtons = document.querySelectorAll('input[name="leaveOption"]');
+            radioButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    // ซ่อนทุกส่วน
+                    leaveDetails.classList.add("hidden");
+                    leaveDefer.classList.add("hidden");
+                    leaveOther.classList.add("hidden");
+
+                    // แสดงส่วนที่ถูกเลือก
+                    if (button.value === "wantTU") {
+                        leaveDetails.classList.remove("hidden");
+                    } else if (button.value === "Deferment") {
+                        leaveDefer.classList.remove("hidden");
+                    } else if (button.value === "OtherOption") {
+                        leaveOther.classList.remove("hidden");
+                    }
+                });
+            });
+            </script>
+
+            <label>เหตุผล เพราะ</label>
+            <input type="text" id="ฺฺBecause" name="because">
+            <label for="additionalFile">เอกสารเพิ่มเติม:</label>
+            <input type="file" id="additionalFile" name="additionalFile" multiple>
+
+        <button id="submitButton">ส่งแบบฟอร์ม</button>
+        <!-- เพิ่มสคริปต์ JavaScript สำหรับการเด้งไปยังหน้าใหม่ (successForm.html) -->
+
+
+
+    </form>
+</body>
+
+</html>

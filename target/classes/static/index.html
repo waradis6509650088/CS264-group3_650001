@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="icon" href="pic/TU.png" type="image/png">
+
+<!-- script for login -->
+<script src="script/login.js"></script>
+<body onload="sessionStorage.clear();">
+<img src="pic/TU3.png" >
+
+<div class="login">
+    <from method="post" >
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+
+
+        <h2>LOGIN</h2>
+        <label id="apiRes"></label>
+        <label for="username">ชื่อผู้ใช้:</label>
+        <input type="text" id="username" name="username" placeholder="รหัศนักศึกษา" required><br>
+        
+        <label for="password">รหัสผ่าน:</label>
+        <input type="password" id="password" name="password" placeholder="เลขประจำตัวบัตรประชาชน"required><br>
+        <button onclick="login()">เข้าสู่ระบบ</button>
+        
+
+    </from>
+</div>
+</body>
+<script src ="script/login.js">
+    function handleEnterKey(event) {
+       if (event.keyCode === 13) {
+           login();
+       }
+   }
+</script>
+
+</html>
