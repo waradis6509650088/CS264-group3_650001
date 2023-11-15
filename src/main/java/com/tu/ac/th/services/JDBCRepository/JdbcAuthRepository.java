@@ -1,6 +1,5 @@
 package com.tu.ac.th.services.JDBCRepository;
 
-import com.tu.ac.th.services.JdbcRowMapper.AuthMapper;
 import com.tu.ac.th.services.Models.Auth;
 import com.tu.ac.th.services.Repository.AuthRepository;
 
