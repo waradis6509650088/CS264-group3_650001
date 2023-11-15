@@ -68,6 +68,6 @@ public class AuthController {
 
     @PostMapping("/api/deleteAuth")
     public void deleteAuth(String id){
-        
+        authRepository.removeById(id);
     }
 }

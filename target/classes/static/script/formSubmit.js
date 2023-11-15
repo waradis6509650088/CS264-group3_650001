@@ -129,7 +129,7 @@ function submitAddDropFormAPI(){
         alert("กรุณาเพิ่ม/ถอนอย่างน้อย 1 วิชาก่อนยืนยัน");
     } else {
         studentString = combineFormAndTable();
-        url = 'http://example.com/api/form/saveAddDropForm';
+        url = 'http://localhost:8080/api/form/saveAddDropForm';
         fetch(url, {
         method: 'POST',
         headers: {

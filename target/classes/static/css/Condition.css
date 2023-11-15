@@ -72,3 +72,29 @@ header img {
     justify-content: flex-end;
     margin-left: 60% ;
 }
+/* เนื้อหาหลัก */
+
+.content {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top : 5% ;
+}
+
+ h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+}
+
+.content label {
+            display: block;
+            margin-bottom: 15px;
+}
+
+.content label:last-child {
+            margin-bottom: 0;
+}
