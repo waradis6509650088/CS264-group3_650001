@@ -22,7 +22,7 @@ function authVerification(){
     .then(text => {
         try{
             if(text == "success"){
-                console.log("success: " + text)
+                console.log("Auth status: " + text)
             }
             else{
                 alert(text)

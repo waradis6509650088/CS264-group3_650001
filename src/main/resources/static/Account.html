@@ -8,10 +8,10 @@
 
     <link rel="icon" href="pic/TU.png" type="image/png">
 </head>
-<script src="script/accountInfo.js"></script>
+<script src="script/pullFromSessionStorage.js"></script>
 <script src="script/sessionVerification.js"></script> 
 
-<body onload="authVerification();pullInfoFromSession()">
+<body onload="authVerification();account()">
 <link rel="stylesheet" type="text/css" href="css/AccountStyle.css">
 <header>
 <img src= "pic/TU.png">
@@ -20,6 +20,9 @@
          <label id = username1 >6509650567</label>
          <label id = displayname_en1>Promporn Promjan </label>
          <img src="pic/Login.png">
+         <script src="script/pullFromSessionStorage.js">
+            tobbarNameID()
+         </script>
     </div>
 
 </header>
@@ -38,18 +41,18 @@
 <div class ="content" >
     <div class ="AccountName">
     <img src="pic/Account.png">
-        <label id = username1 >6509650567</label>
-        <label id = displayname_en1 >Promporn Promjan </label>
+        <label id = username2 >6509650567</label>
+        <label id = displayname_en2 >Promporn Promjan </label>
     </div>
     <hr>
    <div class = "AccountData">
     <label id = type >asdasd</label>
     <label>ชื่อ นามสกุล :</label>
-    <label id = displayname_th3 >พรหมพร พรมจันทร์</label><br>
+    <label id = displayname_th >พรหมพร พรมจันทร์</label><br>
     <label>Name :</label>
     <label id = displayname_en3 >Promporn Promjan </label><br>
     <label>รหัสนักศึกษา :</label>
-    <label id = username2 >6509650567</label><br>
+    <label id = username3 >6509650567</label><br>
     <label>สถานะ :</label>
     <label id = tu_status >กำลังศึกษา </label><br>
     <label>Email :</label>

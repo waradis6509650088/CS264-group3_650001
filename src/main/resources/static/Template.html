@@ -7,7 +7,8 @@
     <title>แบบฟอร์มยื่นคำร้อง</title>
     <link rel="icon" href="pic/TU.png" type="image/png">
 </head>
-<body>
+<script src="script/pullFromSessionStorage.js"></script>
+<body onload="authVerification();tobbarNameID()">
 <script src="script/sessionVerification.js">
     window.onload = function (){
         verification();
@@ -21,7 +22,10 @@
         <label id = username1 >6509650567</label>
         <label id = displayname_en1>Promporn Promjan </label>
         <img src="pic/Login.png">
-    </div>
+        <script src="script/pullFromSessionStorage.js">
+           tobbarNameID()
+        </script>
+   </div>
 </header>
 
 <nav>

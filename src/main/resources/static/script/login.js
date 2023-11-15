@@ -64,7 +64,7 @@ function sendDataToTUAPI(data) {
             // ทำการนำทางไปยังหน้าอื่น ๆ หากมีข้อมูลถูกต้อง
             addToSessionStorage(responseData);
             console.log("username: " + sessionStorage.getItem("username"));
-            // window.location.href = 'MainPage.html';
+            window.location.href = 'MainPage.html';
         } else {
             document.getElementById("apiRes").innerHTML = 'ไม่พบข้อมูลหรือข้อมูลไม่ถูกต้อง';
         }
