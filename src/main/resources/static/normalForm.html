@@ -248,7 +248,7 @@
                 // ตรวจสอบความถูกต้องของแบบฟอร์มก่อนที่จะส่ง
                 if (validateForm() ) {
                     // ถ้าแบบฟอร์มถูกต้อง เปลี่ยนทิศทางไปยัง successForm.html
-                    window.location.href = "SuccessForm.html";
+                   document.location.assign("SuccessForm.html");
                 } else {
                     // ถ้าแบบฟอร์มไม่ถูกต้อง แสดงการแจ้งเตือนหรือจัดการตามที่เห็นสมควร
                     alert("กรุณากรอกข้อมูลในช่องที่มี * ให้ครบ");
