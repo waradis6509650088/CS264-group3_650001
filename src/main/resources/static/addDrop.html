@@ -183,52 +183,16 @@
             <label for="cause">เหตุผลที่ขอการเพิ่มถอน<star>*</star></label>
             <textarea id="cause" name="cause" required></textarea><br>
 
-            <button id="submitButton"  onclick="submitAddDropFormAPI()">ส่งแบบฟอร์ม</button>
+            <button onclick="submitAddDropFormAPI()">ส่งแบบฟอร์ม</button>
 
             <!-- เพิ่มสคริปต์ JavaScript สำหรับการเด้งไปยังหน้าใหม่ (successForm.html) -->
             <script>
+                // ฟังก์ชันที่ถูกเรียกเมื่อกดปุ่ม "ส่งแบบฟอร์ม"
+                document.getElementById("submitButton").addEventListener("click", function () {
 
-            function validateForm() {
-                // ดึงค่าจากช่องที่ต้องการตรวจสอบ
-                var date = document.getElementById("date").value;
-                var topic = document.getElementById("topic").value;
-                var studentFirstName = document.getElementById("studentFirstName").value;
-                var studentLastName = document.getElementById("studentLastName").value;
-                var stdID = document.getElementById("stdID").value;
-                var studentYear = document.getElementById("studentYear").value;
-                var studyField = document.getElementById("studyField").value;
-                var addressNumber = document.getElementById("addressNumber").value;
-                var moo = document.getElementById("moo").value;
-                var tumbol = document.getElementById("tumbol").value;
-                var amphur = document.getElementById("amphur").value;
-                var province = document.getElementById("province").value;
-                var postalCode = document.getElementById("postalCode").value;
-                var mobilePhone = document.getElementById("mobilePhone").value;
-
-                // ตรวจสอบว่ามีช่องที่ต้องการตรวจสอบว่าเป็นค่าว่างหรือไม่
-                if (date === "" || topic === "" || studentFirstName === "" || studentLastName === "" ||
-                    stdID === "" || studentYear === "" || studyField === "" || addressNumber === "" ||
-                    moo === "" || tumbol === "" || amphur === "" || province === "" || postalCode === "" ||
-                    mobilePhone === "") {
-                    return false; // แบบฟอร์มไม่ถูกต้อง
-                }
-
-                // สามารถเพิ่มตรวจสอบเพิ่มเติมได้ที่นี่ถ้าต้องการ
-
-                return true; // แบบฟอร์มถูกต้อง
-            }
-
-            document.getElementById("submitButton").addEventListener("click", function () {
-                // ตรวจสอบความถูกต้องของแบบฟอร์มก่อนที่จะส่ง
-                if (validateForm() ) {
-                    // ถ้าแบบฟอร์มถูกต้อง เปลี่ยนทิศทางไปยัง successForm.html
-                   document.location.assign("SuccessForm.html");
-                } else {
-                    // ถ้าแบบฟอร์มไม่ถูกต้อง แสดงการแจ้งเตือนหรือจัดการตามที่เห็นสมควร
-                    alert("กรุณากรอกข้อมูลในช่องที่มี * ให้ครบ");
-                }
-            });
-
+                    // เด้งไปยังหน้าใหม่ (successForm.html)
+                    window.location.href = "successForm.html";
+                });
             </script>
 
 
