@@ -200,10 +200,10 @@ function normalFormToJSON() {
     };
 
     // ระบุประเภทที่ถูกเลือกตาม ID ของปุ่มรัฟิโอ
-    const selectedCaseId = document.querySelector('input[name="requestType"]:checked').id;
+    const selectedCaseId = document.querySelector('input[name="leaveOption"]:checked').id;
 
     // จัดการกับกรณีที่แตกต่างกัน
-    caseData = {}
+    const caseData = {};
     if (selectedCaseId === "wantTU") {
         // จัดการข้อมูลสำหรับกรณี 'wantTU' (ลาออก)
         caseData["requestType"] = "ขอลาออก";
@@ -236,29 +236,31 @@ function normalFormToJSON() {
         caseData["otherOptionTopic"] = document.getElementById("OtherOptionTopic").value;
         caseData["because"] = document.getElementById("Because").value;
     }
-    jsonData['caseData'] = JSON.stringify(caseData)
+    jsonData['caseData'] = caseData;
+
     // คืนข้อมูล JSON
     return jsonData;
 }
 
-function sendNormalFormToAPI(){
+function sendNormalFormToAPI() {
     const formData = normalFormToJSON();
-    studentString = combineFormAndTable();
-    url = 'http://localhost:8080/api/form/saveNormalForm';
-    fetch(url, {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(studentString)
-    })
-    .then(response => response.text())
-    .then(text => {
-        console.log(text)
-        // window.location.href = "successForm.html";
-    })
-    .catch(error => {
-        console.error(error)
-    });
-}
+    console.log(formData);
+    const url = 'http://localhost:8080/api/form/saveNormalForm';
 
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    })
+        .then(response => response.text())
+        .then(text => {
+            console.log(text);
+            // Redirect to success page or handle success
+        })
+        .catch(error => {
+            console.error(error);
+            // Handle error
+        });
+}

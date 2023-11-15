@@ -14,18 +14,25 @@ public class JdbcNormalFormRepository implements NormalFormRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-    
-    @Override
-    public void save(NormalForm normalForm) {
-        String sql = "INSERT INTO normalForm (topic, studentInfo, address, advisor, caseData) " +
-                "VALUES (?, ?, ?, ?, ?)";
 
-        jdbcTemplate.update(sql,
-                normalForm.getTopic(),
-                normalForm.getStudentInfo(),
-                normalForm.getAddress(),
-                normalForm.getAdvisor(),
-                normalForm.getCaseData());
+    @Override
+    public int save(NormalForm normalForm) {
+        // Implement the SQL INSERT statement to save the entity
+        return jdbcTemplate.update(
+                "INSERT INTO normalForm " +
+                        "(id, date, studentFirstName, studentLastName, studentId, studentYear, studyField, advisor, " +
+                        "addressNumber, moo, tumbol, amphur, province, postalCode, mobilePhone, phone, cause, " +
+                        "tamasatFac, tamasatField, otherFac, otherField, otherOptionTopic, otherCause) " +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                new Object[]{
+                        normalForm.getId(), normalForm.getDate(), normalForm.getStudentFirstName(), normalForm.getStudentLastName(),
+                        normalForm.getStudentId(), normalForm.getStudentYear(), normalForm.getStudyField(), normalForm.getAdvisor(),
+                        normalForm.getAddressNumber(), normalForm.getMoo(), normalForm.getTumbol(), normalForm.getAmphur(),
+                        normalForm.getProvince(), normalForm.getPostalCode(), normalForm.getMobilePhone(), normalForm.getPhone(),
+                        normalForm.getCause(), normalForm.getTamasatFac(), normalForm.getTamasatField(),
+                        normalForm.getOtherFac(), normalForm.getOtherField(), normalForm.getOtherOptionTopic(), normalForm.getOtherCause()
+                }
+        );
     }
     // @Override
     // public List<NormalForm> getAll() {
