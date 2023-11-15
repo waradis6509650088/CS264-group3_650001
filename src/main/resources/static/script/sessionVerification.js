@@ -6,7 +6,7 @@ function authVerification(){
     }
 
     const AuthJSON = {
-        'id': username.replace(/"/g, ''),
+        'id': username,
     };
 
     console.log(JSON.stringify(AuthJSON));
@@ -22,7 +22,7 @@ function authVerification(){
     .then(text => {
         try{
             if(text === "auth success"){
-                console.log(text)
+                console.log("success: " + text)
             }
             else
                 console.log(text)

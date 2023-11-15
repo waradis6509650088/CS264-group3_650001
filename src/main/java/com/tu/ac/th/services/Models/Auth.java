@@ -13,7 +13,7 @@ public class Auth {
         try{
             JSONObject jsonObject = (JSONObject) parser.parse(authInfoString);
             this.id = (String) jsonObject.get("id");
-            this.loginTime = (String) jsonObject.get("time");
+            this.loginTime = Long.toString(System.currentTimeMillis());
         }   catch (ParseException e) {
                 System.out.println("Failed to parse JSON string.");
         }
@@ -34,6 +34,11 @@ public class Auth {
     }
     public void setLoginTime(String loginTime) {
         this.loginTime = loginTime;
+    }
+
+    @Override
+    public String toString(){
+        return this.id + " " + this.loginTime + " ";
     }
 
     

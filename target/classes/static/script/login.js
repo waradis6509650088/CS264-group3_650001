@@ -23,11 +23,12 @@ function sendLoginDataToAuth() {
     
     loginData = {
         "time" : timeNow,
-        "id" : sessionStorage.getItem('username')
+        "id" : document.getElementById("username").value
     }
+    console.log(loginData)
 
     // URL ของ API saveAuth
-    const apiUrl = 'http://localhost:8080/api/saveAuth';
+    apiUrl = 'http://localhost:8080/api/saveAuth';
 
     // ส่งข้อมูล studentID และ timeNow ไปยัง API saveAuth
     fetch(apiUrl, {
@@ -36,6 +37,10 @@ function sendLoginDataToAuth() {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(loginData),
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("data recieve is: " + data)
     })
 }
 
@@ -56,18 +61,18 @@ function sendDataToTUAPI(data) {
     .then(response => response.json())
     .then(responseData  => {
         if (responseData.status && responseData.type == "student") {
-        // ทำการนำทางไปยังหน้าอื่น ๆ หากมีข้อมูลถูกต้อง
-        window.location.href = 'MainPage.html';
+            // ทำการนำทางไปยังหน้าอื่น ๆ หากมีข้อมูลถูกต้อง
+            addToSessionStorage(responseData);
+            console.log("username: " + sessionStorage.getItem("username"));
+            // window.location.href = 'MainPage.html';
         } else {
-        // ไม่พบข้อมูลหรือข้อมูลไม่ถูกต้อง
-        // apiResponse.innerHTML = 'ไม่พบข้อมูลหรือข้อมูลไม่ถูกต้อง';
+            document.getElementById("apiRes").innerHTML = 'ไม่พบข้อมูลหรือข้อมูลไม่ถูกต้อง';
         }
-        addToSessionStorage(responseData);
-        // console.log(responseData);
+        
     })
     .catch(error => {
         console.error('เกิดข้อผิดพลาดในการเรียกใช้ API:', error);
-        // apiResponse.innerHTML = 'เกิดข้อผิดพลาดในการเรียกใช้ API';
+        document.getElementById("apiRes").innerHTML = 'เกิดข้อผิดพลาดในการเรียกใช้ API';
     });
     }
     //sent json to session storage
@@ -77,7 +82,7 @@ function sendDataToTUAPI(data) {
         for (const key in jsonObject) {
         if (jsonObject.hasOwnProperty(key)) {
             // Convert the value to a string before storing in session storage
-            const valueString = JSON.stringify(jsonObject[key]);
+            const valueString = JSON.stringify(jsonObject[key]).replace(/"/g, '');
             
             // Add the key-value pair to session storage
             sessionStorage.setItem(key, valueString);

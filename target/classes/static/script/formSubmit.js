@@ -238,12 +238,12 @@ function normalFormToJSON() {
     }
     jsonData['caseData'] = JSON.stringify(caseData)
     // คืนข้อมูล JSON
+    console.log(jsonData)
     return jsonData;
 }
 
 function sendNormalFormToAPI(){
     const formData = normalFormToJSON();
-    studentString = combineFormAndTable();
     url = 'http://localhost:8080/api/form/saveNormalForm';
     fetch(url, {
     method: 'POST',
@@ -255,7 +255,6 @@ function sendNormalFormToAPI(){
     .then(response => response.text())
     .then(text => {
         console.log(text)
-        // window.location.href = "successForm.html";
     })
     .catch(error => {
         console.error(error)

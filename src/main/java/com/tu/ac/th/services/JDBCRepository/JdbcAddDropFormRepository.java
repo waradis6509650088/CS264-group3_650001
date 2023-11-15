@@ -17,7 +17,6 @@ public class JdbcAddDropFormRepository implements AddDropFormRepository{
 
     @Override
     public int save(AddDropForm addDropForm) {
-        // Implement the SQL INSERT statement to save the entity
         return jdbcTemplate.update(
                 "INSERT INTO addDropForm " +
                         "(id, date, studentFirstName, studentLastName, studentId, studentYear, studyField, advisor, " +

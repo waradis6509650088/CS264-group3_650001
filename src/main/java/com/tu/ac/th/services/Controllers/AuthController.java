@@ -1,6 +1,7 @@
 package com.tu.ac.th.services.Controllers;
 
 import java.time.Clock;
+import java.util.List;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -20,12 +21,19 @@ public class AuthController {
     AuthRepository authRepository;
     
     @PostMapping("/api/saveAuth")
-    public void saveAuth(@RequestBody String authJsonString){
+    public String saveAuth(@RequestBody String authJsonString){
         try{
             Auth AuthObj = new Auth(authJsonString);
-            authRepository.save(AuthObj);
+            List<Auth> db = authRepository.findById(AuthObj.getId());
+            if(db.isEmpty()){
+                return AuthObj.toString() + authRepository.save(AuthObj);
+            }
+            else{   
+                // authRepository.update(AuthObj);
+                return db.toString();
+            }
         }catch(Exception e){
-            return;
+            return e.getMessage();
         }
     }
 
@@ -35,16 +43,16 @@ public class AuthController {
         JSONParser parser = new JSONParser();
         try{
             JSONObject json = (JSONObject) parser.parse(id);
-            Auth db = authRepository.findById(Long.parseLong((String) json.get("id")));
+            List<Auth> db = authRepository.findById((String) json.get("id"));
             if(db == null){
-                return "auth failed, unknown info";
+                return "auth failed, unknown info: " + Long.parseLong((String) json.get("id"));
             }
-            if(Long.parseLong(db.getLoginTime()) < System.currentTimeMillis()){
+            if(Long.parseLong(db.get(0).getLoginTime()) < System.currentTimeMillis()){
                 authRepository.removeById(Long.parseLong(id));
                 return "Timed out, please login again.";
             }
             else{
-                Auth newAuth = new Auth(id,Long.toString(Long.parseLong(db.getLoginTime()) + 1800000));//add 30 min to old db time
+                Auth newAuth = new Auth(id,Long.toString(Long.parseLong(db.get(0).getLoginTime()) + 1800000));//add 30 min to old db time
                 authRepository.update(newAuth);
                 return "auth success";
             }
