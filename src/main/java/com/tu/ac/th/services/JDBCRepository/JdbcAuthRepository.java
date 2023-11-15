@@ -30,10 +30,10 @@ public class JdbcAuthRepository implements AuthRepository {
     public List<Auth> findById(String id) {
         try{
             String sql = "select * from authTable WHERE studentId = ?";
-            List<Auth> auth =  jdbcTemplate.query(sql, new AuthMapper(), id);
+            List<Auth> auth = jdbcTemplate.query(sql, new AuthMapper(), id);
             return auth;
         }catch(Exception e){
-            return null;
+            throw e;
         }
         
     }
@@ -48,7 +48,7 @@ public class JdbcAuthRepository implements AuthRepository {
     }
 
     @Override
-    public int removeById(long id) {
+    public int removeById(String id) {
         return jdbcTemplate.update("DELETE FROM authTable WHERE studentId=?", id);
     }
 

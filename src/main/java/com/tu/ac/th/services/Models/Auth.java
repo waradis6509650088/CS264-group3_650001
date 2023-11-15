@@ -23,6 +23,7 @@ public class Auth {
         id = inId;
         loginTime = inLoginTime;
     }
+    
     public String getId() {
         return id;
     }

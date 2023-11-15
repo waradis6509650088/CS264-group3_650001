@@ -23,15 +23,16 @@ public class AuthController {
     public String saveAuth(@RequestBody String authJsonString){
         try{
             Auth AuthObj = new Auth(authJsonString);
+            AuthObj.setLoginTime(Long.toString(Long.parseLong(AuthObj.getLoginTime()) + 1800000));
             List<Auth> db = authRepository.findById(AuthObj.getId());
-            
-            // if(db.isEmpty()){
-                return authRepository.save(AuthObj);
-            // }
-            // else{   
-            //     // authRepository.update(AuthObj);
-            //     return db.toString();
-            // }
+            if(db.isEmpty()){
+                authRepository.save(AuthObj);
+                return "saved " + AuthObj.toString();
+            }
+            else{   
+                authRepository.update(AuthObj);
+                return "updated " +  AuthObj.toString();
+            }
         }catch(Exception e){
             return e.getMessage();
         }
@@ -44,22 +45,29 @@ public class AuthController {
         try{
             JSONObject json = (JSONObject) parser.parse(id);
             List<Auth> db = authRepository.findById((String) json.get("id"));
-            if(db == null){
-                return "auth failed, unknown info: " + (String) json.get("id");
-            }
-            if(Long.parseLong(db.get(0).getLoginTime()) < System.currentTimeMillis()){
-                authRepository.removeById(Long.parseLong(id));
-                return "Timed out, please login again.";
+            if(db.isEmpty()){
+                return "auth failed, unknown info: " + Long.parseLong((String) json.get("id"));
             }
             else{
-                Auth newAuth = new Auth(id,Long.toString(Long.parseLong(db.get(0).getLoginTime()) + 1800000));//add 30 min to old db time
-                authRepository.update(newAuth);
-                return "auth success";
+                if(Long.parseLong(db.get(0).getLoginTime()) < System.currentTimeMillis()){
+                    authRepository.removeById(id);
+                    return "Timed out, please login again.";
+                }
+                else{
+                    Auth newAuth = new Auth(id,Long.toString(System.currentTimeMillis() + 1800000));//add 30 min to current time and save that as new timeout time
+                    authRepository.update(newAuth);
+                    return "success";
+                }
             }
+            
         }
         catch(Exception e){
-            System.out.println(e.getMessage());
-            return "auth failed, internal error.";
+            return "auth failed, internal error: " + e.getMessage();
         }
+    }
+
+    @PostMapping("/api/deleteAuth")
+    public void deleteAuth(String id){
+        
     }
 }

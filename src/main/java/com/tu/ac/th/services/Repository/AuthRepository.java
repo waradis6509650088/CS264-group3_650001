@@ -8,5 +8,5 @@ public interface AuthRepository {
     String save(Auth authObj);
     List<Auth> findById(String id);
     int update(Auth upAuth);
-    int removeById(long id);
+    int removeById(String id);
 }

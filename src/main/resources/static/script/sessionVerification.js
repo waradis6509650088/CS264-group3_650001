@@ -21,13 +21,18 @@ function authVerification(){
     .then(response => response.text()) //Use response.text() for plain text response
     .then(text => {
         try{
-            if(text === "auth success"){
+            if(text == "success"){
                 console.log("success: " + text)
             }
-            else
-                console.log(text)
+            else{
+                alert(text)
+                sessionStorage.clear()
+                window.location.href = 'Index.html'
+            }
         }catch(error){
             console.error(error)
+            sessionStorage.clear()
+            window.location.href = 'Index.html'
         }
         
     })
