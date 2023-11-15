@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <title>Group3</title>
+    <link rel="icon" href="pic/TU.png" type="image/png">
+</head>
+<script src="script/sessionVerification.js"></script> 
+<script src="script/pullFromSessionStorage.js"></script>
+<body onload="authVerification();tobbarNameID()">
+<link rel="stylesheet" type="text/css" href="css/MainPage.css">
+<header>
+    <img src= "pic/TU.png">
+    <h1>TU GROUP3</h1>
+    
+    <div class="AccountLogin" >
+        <label id = "username1" >6509650567</label>
+        <label id = "displayname_en1">Promporn Promjan </label>
+        <img src="pic/Login.png">
+   </div>
+
+</header>
+
+
+<nav>
+    <a href="MainPage.html">เมนูหลัก</a><br>
+    <a href="Account.html">ข้อมูลส่วนตัวผู้ใช้</a><br>
+    <a href="LinkTU.html">ข้อบังคับมหาวิทยาลัยธรรมศาสตร์</a><br>
+    <a href="Template.html">แบบฟอร์มยื่นคำร้องขอ</a>
+    <a href="UserStatus.html">สืบค้นสถานะคำร้องของนักศึกษา</a>
+    <a href="HisForm.html">ประวัติการเขียนคำร้อง</a>
+    <a href="PayMentHis.htm">รายการชำระเงิน</a>
+    <a onclick="logout()">ออกจากระบบ</a>
+</nav>
+<script>
+    // logout function
+    function logout() {
+        // ลบข้อมูลที่ถูกเก็บใน session storage
+        sessionStorage.clear();
+
+        //ทำการนำทางหน้าไปยังหน้า 'index' หลังจาก logout
+        window.location.href = 'index.html';
+    }
+</script>
+
+<div class="banner">
+    <img src="pic/banner_file.jpg">
+</div>
+
+
+<!-- เนื้อหาหลักขวา -->
+<div class="content">
+
+    <label>***ผู้ใช้สามารถติดต่อสอบถามปัญหาได้ คุณพรหมพร พรมจันทร์ เบอร์ 064xxxxxxx</label><br>
+    <label>Email : Promporn.proo@dome.tu.ac.th</label><br>
+    <br>
+    <br>
+    <label>คำถามที่พบบ่อยการ Upload File ในการยื่นคำร้องขอ</label><br>
+    <label>1. ระบบสามารถ upload file pdf jpg</label><br>
+    <label>2. Upload ได้ขนาดไม่เกิน 100 KB</label><br>
+    <label>3. จํานวนไม่เกิน 5 ไฟล์</label><br>
+    <br>
+    <br>
+    <label>การเข้าใช้งาน</label><br>
+    <label>นักศึกษาสามารถใช้ ระบบ Group3 โดยใช้ข้อมูล User Name & Password  เดียวกับของสำนักงานทะเบียนและประมวลผลมหาลัยธรรมศาสตร์</label><br>
+    <label>ติดต่อผู้ดูแลระบบ  คุณพรหมพร Email : Promporn@dome.tu.ac.th</label><br>
+    <label>กรณีที่ลืมรหัสผ่านสามารถแจ้งได้ที่ คุณพรหมพร Email : Promporn.proo@dome.tu.ac.th</label><br>
+
+</div>
+
+<div class="bottom-frame">
+<<<<<<< HEAD
+    <img src="pic/contact.png">
+    <span>Contact us</span>
+=======
+    <img src="pic/contact.png" id ="contact">
+    <img src="pic/ContactPic.png" id ="contactPic">
+>>>>>>> origin/DevelopmentUI
+</div>
+
+
+</body>
+</html>
