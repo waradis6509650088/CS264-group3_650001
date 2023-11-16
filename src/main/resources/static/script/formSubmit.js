@@ -124,26 +124,27 @@ function validateForm() {
 
 //submit addDropForm to api
 function submitAddDropFormAPI(){
-    let table = document.getElementById("addDropTable");
-    if (table.rows.length < 2) {
-        alert("กรุณาเพิ่ม/ถอนอย่างน้อย 1 วิชาก่อนยืนยัน");
-    } else {
-        studentString = combineFormAndTable();
-        url = 'http://localhost:8080/api/form/saveAddDropForm';
-        fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(studentString)
-        })
-        .then(response => response.json())
-        .then(data => {
-            // window.location.href = "successForm.html";
-        })
-        .catch(error => {
-        });
-    };
+    window.location.href = "successForm.html"
+    // let table = document.getElementById("addDropTable");
+    // if (table.rows.length < 2) {
+    //     alert("กรุณาเพิ่ม/ถอนอย่างน้อย 1 วิชาก่อนยืนยัน");
+    // } else {
+    //     studentString = combineFormAndTable();
+    //     url = 'http://localhost:8080/api/form/saveAddDropForm';
+    //     fetch(url, {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(studentString)
+    //     })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         // window.location.href = "successForm.html";
+    //     })
+    //     .catch(error => {
+    //     });
+    // };
 }
 
 //collect data addDropForm to JSON

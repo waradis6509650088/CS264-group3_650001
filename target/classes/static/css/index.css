@@ -68,5 +68,9 @@ body {
             width: 30%; /* กว้างเท่ากับครอบแบบ */
             height: auto; /* รักษาสัดส่วน */
             margin-bottom: 20px;
-        }
+ }
+
+#apiRes {
+             color: red;
+}
 
