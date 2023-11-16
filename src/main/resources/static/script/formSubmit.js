@@ -45,6 +45,7 @@ function addDropTable_addContent(){
         document.getElementById("studentSection").value = "";
         document.getElementById("subjectDateTime").value = "";
         document.getElementById("subjectCredit").value = "";
+        document.getElementById("subjectProfessor").value = "";
     }
 }
 
@@ -133,8 +134,8 @@ function submitAddDropFormAPI(){
     });
     // check if found an empty child
     if(findEmpty){
-        // if so alert
-        alert("กรอกข้อมูลให้ครบ");
+        // // if so alert
+        // alert("กรอกข้อมูลให้ครบ");
     }else{
         // if not submit form
         let table = document.getElementById("addDropTable");
