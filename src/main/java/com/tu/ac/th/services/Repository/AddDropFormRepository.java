@@ -4,6 +4,6 @@ import com.tu.ac.th.services.Models.AddDropForm;
 
 public interface AddDropFormRepository {
 
-    int save(AddDropForm addDropForm);
+    String save(AddDropForm addDropForm);
     // List<AddDropForm> getAll();
 }

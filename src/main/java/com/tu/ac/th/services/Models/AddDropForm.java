@@ -7,7 +7,7 @@ import org.json.simple.parser.JSONParser;
 
 public class AddDropForm {
     private long id;
-    private Date date;
+    private String date;
     private String studentFirstName;
     private String studentLastName;
     private String studentId;
@@ -32,8 +32,8 @@ public class AddDropForm {
         JSONParser parser = new JSONParser();
         try{
             JSONObject json = (JSONObject) parser.parse(jsonString);
-            this.id = (Long) json.get("ID");
-            this.date = (Date) json.get("date");
+            this.id = (Long) json.get("id");
+            this.date = (String) json.get("date");
             this.studentFirstName = (String) json.get("studentFirstName");
             this.studentLastName = (String) json.get("studentLastName");
             this.studentId = (String) json.get("studentId");
@@ -59,6 +59,31 @@ public class AddDropForm {
     public AddDropForm() {
         super();
     }
+
+    @Override
+    public String toString() {
+        return "addDropForm{" +
+                "id=" + this.id +
+                ", date=" + this.date +
+                ", studentFirstName='" + this.studentFirstName + '\'' +
+                ", studentLastName='" + this.studentLastName + '\'' +
+                ", studentId='" + this.studentId + '\'' +
+                ", studentYear='" + this.studentYear + '\'' +
+                ", studyField='" + this.studyField + '\'' +
+                ", advisor='" + this.advisor + '\'' +
+                ", addressNumber='" + this.addressNumber + '\'' +
+                ", moo='" + this.moo + '\'' +
+                ", tumbol='" + this.tumbol + '\'' +
+                ", amphur='" + this.amphur + '\'' +
+                ", province='" + this.province + '\'' +
+                ", postalCode='" + this.postalCode + '\'' +
+                ", mobilePhone='" + this.mobilePhone + '\'' +
+                ", phone='" + this.phone + '\'' +
+                ", cause='" + this.cause + '\'' +
+                ", addSubjectList='" + this.addSubjectList + '\'' +
+                ", dropSubjectList='" + this.dropSubjectList + '\'' +
+                '}';
+    }
     // Getter and Setter Methods for all fields
     public long getId() {
         return id;
@@ -68,11 +93,11 @@ public class AddDropForm {
         this.id = id;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

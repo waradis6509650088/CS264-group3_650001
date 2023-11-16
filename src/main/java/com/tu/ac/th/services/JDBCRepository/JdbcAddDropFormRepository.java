@@ -16,8 +16,9 @@ public class JdbcAddDropFormRepository implements AddDropFormRepository{
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public int save(AddDropForm addDropForm) {
-        return jdbcTemplate.update(
+    public String save(AddDropForm addDropForm) {
+        try{
+            jdbcTemplate.update(
                 "INSERT INTO addDropForm " +
                         "(id, date, studentFirstName, studentLastName, studentId, studentYear, studyField, advisor, " +
                         "addressNumber, moo, tumbol, amphur, province, postalCode, mobilePhone, phone, cause, addSubjectList, dropSubjectList) " +
@@ -29,34 +30,40 @@ public class JdbcAddDropFormRepository implements AddDropFormRepository{
                         addDropForm.getProvince(), addDropForm.getPostalCode(), addDropForm.getMobilePhone(), addDropForm.getPhone(),
                         addDropForm.getCause(), addDropForm.getAddSubjectList(), addDropForm.getDropSubjectList()
                 }
-        );
+                );
+                return "saved";
+        }catch(Exception e){
+            return e.getMessage();
+        }
+        
+        
     }
-    public List<AddDropForm> getAll() {
-        String sql = "SELECT * FROM addDropForm";
-        List<AddDropForm> addDropForms = jdbcTemplate.query(sql, (rs, rowNum) -> {
-            AddDropForm form = new AddDropForm();
-            form.setId(rs.getLong("id"));
-            form.setDate(rs.getDate("date"));
-            form.setStudentFirstName(rs.getString("studentFirstName"));
-            form.setStudentLastName(rs.getString("studentLastName"));
-            form.setStudentId(rs.getString("studentId"));
-            form.setStudentYear(rs.getString("studentYear"));
-            form.setStudyField(rs.getString("studyField"));
-            form.setAdvisor(rs.getString("advisor"));
-            form.setAddressNumber(rs.getString("addressNumber"));
-            form.setMoo(rs.getString("moo"));
-            form.setTumbol(rs.getString("tumbol"));
-            form.setAmphur(rs.getString("amphur"));
-            form.setProvince(rs.getString("province"));
-            form.setPostalCode(rs.getString("postalCode"));
-            form.setMobilePhone(rs.getString("mobilePhone"));
-            form.setPhone(rs.getString("phone"));
-            form.setCause(rs.getString("cause"));
-            form.setAddSubjectList(rs.getString("addSubjectList"));
-            form.setDropSubjectList(rs.getString("dropSubjectList"));
-            return form;
-        });
+    // public List<AddDropForm> getAll() {
+    //     String sql = "SELECT * FROM addDropForm";
+    //     List<AddDropForm> addDropForms = jdbcTemplate.query(sql, (rs, rowNum) -> {
+    //         AddDropForm form = new AddDropForm();
+    //         form.setId(rs.getLong("id"));
+    //         form.setDate(rs.getDate("date"));
+    //         form.setStudentFirstName(rs.getString("studentFirstName"));
+    //         form.setStudentLastName(rs.getString("studentLastName"));
+    //         form.setStudentId(rs.getString("studentId"));
+    //         form.setStudentYear(rs.getString("studentYear"));
+    //         form.setStudyField(rs.getString("studyField"));
+    //         form.setAdvisor(rs.getString("advisor"));
+    //         form.setAddressNumber(rs.getString("addressNumber"));
+    //         form.setMoo(rs.getString("moo"));
+    //         form.setTumbol(rs.getString("tumbol"));
+    //         form.setAmphur(rs.getString("amphur"));
+    //         form.setProvince(rs.getString("province"));
+    //         form.setPostalCode(rs.getString("postalCode"));
+    //         form.setMobilePhone(rs.getString("mobilePhone"));
+    //         form.setPhone(rs.getString("phone"));
+    //         form.setCause(rs.getString("cause"));
+    //         form.setAddSubjectList(rs.getString("addSubjectList"));
+    //         form.setDropSubjectList(rs.getString("dropSubjectList"));
+    //         return form;
+    //     });
 
-        return addDropForms;
-    }
+    //     return addDropForms;
+    // }
 }

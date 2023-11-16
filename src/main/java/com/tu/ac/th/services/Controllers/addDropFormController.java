@@ -14,11 +14,11 @@ public class addDropFormController {
     AddDropFormRepository ad;
 
     @PostMapping("/api/form/saveAddDropForm")
-    private String saveAddDropForm(@RequestBody String jsonAddDropString){
+    public String saveAddDropForm(@RequestBody String jsonAddDropString){
         try{
             AddDropForm af = new AddDropForm(jsonAddDropString);
-            ad.save(af);
-            return "add drop form saved";
+           
+            return "add drop form saved: "  + af.toString();
         }catch(Exception e){
             return "error add drop form not saved: " + e.getMessage();
         }

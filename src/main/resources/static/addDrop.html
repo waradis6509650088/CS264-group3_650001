@@ -8,10 +8,8 @@
     <link rel="icon" href="pic/TU.png" type="image/png">
 
 </head>
-<script src="script/sessionVerification.js"></script> 
-<script src="script/pullFromSessionStorage.js"></script>
+<script src="script/sessionVerification.js"></script>
 <body onload="authVerification()">
-<script src="script/formSubmit.js"></script>
     <div class="formaddrop">
         <img src="pic/TU.png" alt="คำร้องขอเพิ่ม-ถอน รายวิชา">
         <h1 style="text-align: center;">คำร้องขอเพิ่ม-ถอน รายวิชา</h1>
@@ -22,7 +20,7 @@
         </label>
         <link rel="stylesheet" type="text/css" href="css/addDropStyle.css">
         <hr>
-        <form id="request">
+        <form>
             <label for="date">วันที่<star>*</star></label>
             <input type="date" id="date" name="date" required>
             <hr>
@@ -84,8 +82,8 @@
                 <option>สาขาวิชาวิทยาการประกันภัย</option>
             </select><br>
 
-            <label for="advios">อาจารย์ที่ปรึกษา:<star>*</star></label>
-            <input type="text" id="advios" name="advios" required>
+            <label for="advisor">อาจารย์ที่ปรึกษา:<star>*</star></label>
+            <input type="text" id="advisor" name="advisor" required>
             <hr>
 
             <h3>ข้อมูลที่สามารถติดต่อได้ทางไปรษณีย์</h3>
@@ -175,26 +173,21 @@
 
             </div>
             <br>
-            <input type="button" id="addDropTable_addSubjectButton" onclick="addDropTable_addContent()"
-                value="เพิ่มรายการ">
-            <input type="button" id="DeleteaddDropTable_addSubjectButton" style="width: 25%;"
-                onclick="addDropTable_deleteSubject()" value="ลบรายการล่าสุด">
+            <script src="script/formSubmit.js"></script>
+            <input type="button" id="addDropTable_addSubjectButton" onclick="addDropTable_addContent()" value="เพิ่มรายการ">
+            <input type="button" id="DeleteaddDropTable_addSubjectButton" style="width: 25%;" onclick="addDropTable_deleteSubject()" value="ลบรายการล่าสุด">
             <br><br>
             <label for="cause">เหตุผลที่ขอการเพิ่มถอน<star>*</star></label>
             <textarea id="cause" name="cause" required></textarea><br>
 
-            <button id ="submitButton" onclick="submitAddDropFormAPI()">ส่งแบบฟอร์ม</button>
 
-            <!-- เพิ่มสคริปต์ JavaScript สำหรับการเด้งไปยังหน้าใหม่ (successForm.html) -->
+            <button type="submit">ส่งแบบฟอร์ม</button>
             <script>
-
-                document.getElementById("submitButton").addEventListener("click", function () {
+                document.addEventListener('submit', function(e) {
+                    e.preventDefault();
                     submitAddDropFormAPI()
-                    document.location.assign("SuccessForm.html");
-           });
+                });
             </script>
-
-
         </form>
     </div>
 </body>

@@ -100,7 +100,7 @@ function combineFormAndTable() {
     result = jsonConcat(studentJson,myJson)
     console.log( JSON.stringify(result))
 
-    return JSON.stringify(result);
+    return result;
 }
 
 //concat json object
@@ -126,40 +126,38 @@ function validateForm() {
 //submit addDropForm to api
 function submitAddDropFormAPI(){
 
-    let children = document.querySelectorAll('input, textarea, select');
-    // find if any of them are empty
-    let findEmpty = Array.from(children).find((element)=>{
-        if(element.value.length < 1){return true}
-        return false
-    });
-    // check if found an empty child
-    if(findEmpty){
-        // // if so alert
-        // alert("กรอกข้อมูลให้ครบ");
-    }else{
+//    let children = document.querySelectorAll('input, textarea, select');
+//    // find if any of them are empty
+//    let findEmpty = Array.from(children).find((element)=>{
+//        if(element.value.length < 1){return true}
+//        return false
+//    });
+//    //check if found an empty child
+//    if(findEmpty){
+//        // // if so alert
+//        // alert("กรอกข้อมูลให้ครบ");
+//    }else{
         // if not submit form
         let table = document.getElementById("addDropTable");
-        if (table.rows.length < 2) {
+        studentString = combineFormAndTable();
+        if (table.rows.length < 1) {
             alert("กรุณาเพิ่ม/ถอนอย่างน้อย 1 วิชาก่อนยืนยัน");
         } else {
-            studentString = combineFormAndTable();
-            console.log(studentString)
-            url = 'http://localhost:4567/api/form/saveAddDropForm';
+            url = 'http://localhost:8080/api/form/saveAddDropForm';
             fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(studentString)
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(studentString)
             })
             .then(response => response.text())
             .then(data => {
-                console.log(data);
+                console.log("response dat: " + data)
+                window.location = "SuccessForm.html"
             })
-            document.location.assign("SuccessForm.html");
-        };
-    }
-    
+        }
+        //document.location.assign("SuccessForm.html");
 }
 
 //collect data addDropForm to JSON
@@ -182,7 +180,7 @@ function adInfoFormToJSON(){
             "mobilePhone":document.getElementById("mobilePhone").value,
             "phone":document.getElementById("Phone").value,
             "cause":document.getElementById("cause").value,
-            "ID": sessionStorage.getItem('id')
+            "id": sessionStorage.getItem('username')
         };
 
     return jsonData
