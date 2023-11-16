@@ -218,21 +218,22 @@ function normalFormToJSON() {
             "faculty": document.getElementById("OtherFac").value,
             "field": document.getElementById("OtherField").value,
         };
+        caseData["because"] = document.getElementById("Because").value;
     } else if (selectedCaseId === "Deferment") {
         // จัดการข้อมูลสำหรับกรณี 'Deferment' (ผ่อนผันค่าเทอม)
         caseData["requestType"] = "ขอผ่อนผันค่าเทอม";
         caseData["debtInfo"] = {
             "numDebt": document.getElementById("numDebt").value,
-            "gradeChoice": document.querySelector('input[name="choice"]:checked').value,
+            "gradeChoice": document.querySelector('select[name="DefermentMouth"]').value,
         };
         caseData["defermentInfo"] = {
             "term": document.getElementById("DefermentTerm").value,
             "year": document.getElementById("DefermentYear").value,
             "defermentMonth": document.getElementById("Defermentmonth").value,
         };
+        caseData["because"] = document.getElementById("Because").value;
     } else if (selectedCaseId === "OtherOption") {
-        // จัดการข้อมูลสำหรับกรณี 'OtherOption' (อื่นๆ)
-        caseData["requestType"] = document.querySelector('input[name="OtherOption"]:checked').value;
+        caseData["requestType"] = "อื่นๆโปรดระบุ";
         caseData["otherOptionTopic"] = document.getElementById("OtherOptionTopic").value;
         caseData["because"] = document.getElementById("Because").value;
     }

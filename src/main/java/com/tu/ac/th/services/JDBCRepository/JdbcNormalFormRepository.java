@@ -2,12 +2,9 @@ package com.tu.ac.th.services.JDBCRepository;
 
 import com.tu.ac.th.services.Models.NormalForm;
 import com.tu.ac.th.services.Repository.NormalFormRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public class JdbcNormalFormRepository implements NormalFormRepository {
@@ -19,41 +16,34 @@ public class JdbcNormalFormRepository implements NormalFormRepository {
     public int save(NormalForm normalForm) {
         // Implement the SQL INSERT statement to save the entity
         return jdbcTemplate.update(
-                "INSERT INTO normalForm " +
-                        "(id, date, studentFirstName, studentLastName, studentId, studentYear, studyField, advisor, " +
-                        "addressNumber, moo, tumbol, amphur, province, postalCode, mobilePhone, phone, cause, " +
-                        "tamasatFac, tamasatField, otherFac, otherField, otherOptionTopic, otherCause) " +
-                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                new Object[]{
-                        normalForm.getId(), normalForm.getDate(), normalForm.getStudentFirstName(), normalForm.getStudentLastName(),
-                        normalForm.getStudentId(), normalForm.getStudentYear(), normalForm.getStudyField(), normalForm.getAdvisor(),
-                        normalForm.getAddressNumber(), normalForm.getMoo(), normalForm.getTumbol(), normalForm.getAmphur(),
-                        normalForm.getProvince(), normalForm.getPostalCode(), normalForm.getMobilePhone(), normalForm.getPhone(),
-                        normalForm.getCause(), normalForm.getTamasatFac(), normalForm.getTamasatField(),
-                        normalForm.getOtherFac(), normalForm.getOtherField(), normalForm.getOtherOptionTopic(), normalForm.getOtherCause()
-                }
+                "INSERT INTO normal_form " +
+                        "(date, topic, advisor, student_prefix, student_first_name, " +
+                        "student_last_name, student_id, student_year, study_field, address_number, moo, tumbol, " +
+                        "amphur, province, postal_code, mobile_phone, phone, request_type, term, year, cause, " +
+                        "tamasat_faculty, tamasat_field, other_faculty, other_field, because, num_debt, grade_choice, " +
+                        "deferment_term, deferment_year, deferment_month, other_option_topic) " +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                normalForm.getDate(), normalForm.getTopic(), normalForm.getAdvisor(),
+                normalForm.getStudentInfo().getPrefix(), normalForm.getStudentInfo().getStudentFirstName(),
+                normalForm.getStudentInfo().getStudentLastName(), normalForm.getStudentInfo().getStudentId(),
+                normalForm.getStudentInfo().getStudentYear(), normalForm.getStudentInfo().getStudyField(),
+                normalForm.getAddress().getAddressNumber(), normalForm.getAddress().getMoo(),
+                normalForm.getAddress().getTumbol(), normalForm.getAddress().getAmphur(),
+                normalForm.getAddress().getProvince(), normalForm.getAddress().getPostalCode(),
+                normalForm.getAddress().getMobilePhone(), normalForm.getAddress().getPhone(),
+                normalForm.getCaseData().getRequestType(), normalForm.getCaseData().getTerm(),
+                normalForm.getCaseData().getYear(), normalForm.getCaseData().getCause(),
+                normalForm.getCaseData().getTamasatInfo().getFaculty(), normalForm.getCaseData().getTamasatInfo().getField(),
+                normalForm.getCaseData().getOtherInfo().getFaculty(), normalForm.getCaseData().getOtherInfo().getField(),
+                normalForm.getCaseData().getBecause(), normalForm.getCaseData().getDebtInfo().getNumDebt(),
+                normalForm.getCaseData().getDebtInfo().getGradeChoice(),
+                normalForm.getCaseData().getDefermentInfo().getTerm(),
+                normalForm.getCaseData().getDefermentInfo().getYear(),
+                normalForm.getCaseData().getDefermentInfo().getDefermentMonth(),
+                normalForm.getCaseData().getOtherOptionTopic()
         );
     }
-    // @Override
-    // public List<NormalForm> getAll() {
-    //     String sql = "SELECT * FROM normalForm";
-    //     List<NormalForm> addDropForms = jdbcTemplate.query(sql, (rs, rowNum) -> {
-    //         NormalForm form = new NormalForm();
-    //         form.setId(rs.getString("id"));
-    //         form.setFname(rs.getString("fname"));
-    //         form.setLname(rs.getString("lname"));
-    //         form.setDate(rs.getDate("date"));
-    //         form.setTime(rs.getTime("time"));
-    //         form.setTopic(rs.getString("topic"));
-    //         form.setTopicInfo(rs.getString("topicInfo"));
-    //         form.setProfOp(rs.getString("profOp"));
-    //         form.setHeadOp(rs.getString("headOp"));
-    //         form.setDeanAssistOp(rs.getString("deanAssistOp"));
-    //         form.setDeanOp(rs.getString("deanOp"));
-    //         return form;
-    //     });
 
-    //     return addDropForms;
-    // }
-
+    // Retrieve NormalForm object from the database based on a specific condition (e.g., student ID)
+    // (You can implement a similar method as in the previous example)
 }
