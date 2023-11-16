@@ -136,6 +136,7 @@ function submitAddDropFormAPI(){
     if(findEmpty){
         // // if so alert
         // alert("กรอกข้อมูลให้ครบ");
+        return false;
     }else{
         // if not submit form
         let table = document.getElementById("addDropTable");
@@ -153,7 +154,8 @@ function submitAddDropFormAPI(){
             })
             document.location.assign("SuccessForm.html");
         };
-        }
+        return true;
+    }
     
 }
 
