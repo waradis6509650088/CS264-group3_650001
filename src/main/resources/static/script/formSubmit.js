@@ -150,7 +150,7 @@ function submitAddDropFormAPI(){
             },
             body: JSON.stringify(studentString)
             })
-            window.location.href = "successForm.html"
+            document.location.assign("SuccessForm.html");
         };
         }
     
