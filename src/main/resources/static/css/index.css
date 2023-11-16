@@ -19,9 +19,13 @@ body {
 
 }
 
+
+
 .login {
+
     font-family: 'Kanit', sans-serif;
-    width: 300px;
+    width: 20%;
+    height : 40%;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
@@ -41,6 +45,7 @@ body {
 .login input,
 .login button {
     font-family: 'Kanit', sans-serif;
+
 }
 
 .login input[type="text"],
@@ -52,6 +57,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 10px;
+
 }
 
 .login button {
@@ -62,6 +68,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     margin-top: 10px;
+
 }
  /* CSS เพื่อกำหนดความกว้างของรูปภาพเท่ากับครอบแบบ */
         img {

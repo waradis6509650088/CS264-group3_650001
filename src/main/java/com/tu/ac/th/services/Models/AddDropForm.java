@@ -49,8 +49,8 @@ public class AddDropForm {
             this.mobilePhone = (String) json.get("mobilePhone");
             this.phone = (String) json.get("phone");
             this.cause = (String) json.get("cause");
-            this.addSubjectList = (String) json.get("addSubjectList");
-            this.dropSubjectList = (String) json.get("dropSubjectList");
+            this.addSubjectList = (String) json.get("addSubjectList").toString();
+            this.dropSubjectList = (String) json.get("dropSubjectList").toString();
         }catch(Exception e){
             System.out.println("Failed to parse json string");
         }
