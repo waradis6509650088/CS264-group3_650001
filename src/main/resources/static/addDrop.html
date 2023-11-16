@@ -183,16 +183,21 @@
             <label for="cause">เหตุผลที่ขอการเพิ่มถอน<star>*</star></label>
             <textarea id="cause" name="cause" required></textarea><br>
 
-            <button onclick="submitAddDropFormAPI()">ส่งแบบฟอร์ม</button>
+            <button id ="submitButton" onclick="submitAddDropFormAPI()">ส่งแบบฟอร์ม</button>
 
             <!-- เพิ่มสคริปต์ JavaScript สำหรับการเด้งไปยังหน้าใหม่ (successForm.html) -->
             <script>
-                // ฟังก์ชันที่ถูกเรียกเมื่อกดปุ่ม "ส่งแบบฟอร์ม"
-                document.getElementById("submitButton").addEventListener("click", function () {
 
-                    // เด้งไปยังหน้าใหม่ (successForm.html)
-                    window.location.href = "successForm.html";
-                });
+                document.getElementById("submitButton").addEventListener("click", function () {
+               // ตรวจสอบความถูกต้องของแบบฟอร์มก่อนที่จะส่ง
+               if (submitAddDropFormAPI()) {
+                   // ถ้าแบบฟอร์มถูกต้อง เปลี่ยนทิศทางไปยัง successForm.html
+                  document.location.assign("SuccessForm.html");
+               } else {
+                   // ถ้าแบบฟอร์มไม่ถูกต้อง แสดงการแจ้งเตือนหรือจัดการตามที่เห็นสมควร
+                   alert("กรุณากรอกข้อมูลในช่องที่มี * ให้ครบ");
+               }
+           });
             </script>
 
 
