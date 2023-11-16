@@ -124,27 +124,36 @@ function validateForm() {
 
 //submit addDropForm to api
 function submitAddDropFormAPI(){
-    window.location.href = "successForm.html"
-    // let table = document.getElementById("addDropTable");
-    // if (table.rows.length < 2) {
-    //     alert("กรุณาเพิ่ม/ถอนอย่างน้อย 1 วิชาก่อนยืนยัน");
-    // } else {
-    //     studentString = combineFormAndTable();
-    //     url = 'http://localhost:8080/api/form/saveAddDropForm';
-    //     fetch(url, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(studentString)
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         // window.location.href = "successForm.html";
-    //     })
-    //     .catch(error => {
-    //     });
-    // };
+
+    let children = document.querySelectorAll('input, textarea, select');
+    // find if any of them are empty
+    let findEmpty = Array.from(children).find((element)=>{
+        if(element.value.length < 1){return true}
+        return false
+    });
+    // check if found an empty child
+    if(findEmpty){
+        // if so alert
+        alert("กรอกข้อมูลให้ครบ");
+    }else{
+        // if not submit form
+        let table = document.getElementById("addDropTable");
+        if (table.rows.length < 2) {
+            alert("กรุณาเพิ่ม/ถอนอย่างน้อย 1 วิชาก่อนยืนยัน");
+        } else {
+            studentString = combineFormAndTable();
+            url = 'http://localhost:8080/api/form/saveAddDropForm';
+            fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(studentString)
+            })
+            window.location.href = "successForm.html"
+        };
+        }
+    
 }
 
 //collect data addDropForm to JSON
