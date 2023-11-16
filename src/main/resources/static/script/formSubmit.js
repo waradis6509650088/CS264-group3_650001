@@ -136,7 +136,6 @@ function submitAddDropFormAPI(){
     if(findEmpty){
         // // if so alert
         // alert("กรอกข้อมูลให้ครบ");
-        return false;
     }else{
         // if not submit form
         let table = document.getElementById("addDropTable");
@@ -144,6 +143,7 @@ function submitAddDropFormAPI(){
             alert("กรุณาเพิ่ม/ถอนอย่างน้อย 1 วิชาก่อนยืนยัน");
         } else {
             studentString = combineFormAndTable();
+            console.log(studentString)
             url = 'http://localhost:8080/api/form/saveAddDropForm';
             fetch(url, {
             method: 'POST',
@@ -152,9 +152,12 @@ function submitAddDropFormAPI(){
             },
             body: JSON.stringify(studentString)
             })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+            })
             document.location.assign("SuccessForm.html");
         };
-        return true;
     }
     
 }

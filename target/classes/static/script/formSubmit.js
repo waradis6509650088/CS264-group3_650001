@@ -45,6 +45,7 @@ function addDropTable_addContent(){
         document.getElementById("studentSection").value = "";
         document.getElementById("subjectDateTime").value = "";
         document.getElementById("subjectCredit").value = "";
+        document.getElementById("subjectProfessor").value = "";
     }
 }
 
@@ -133,8 +134,8 @@ function submitAddDropFormAPI(){
     });
     // check if found an empty child
     if(findEmpty){
-        // if so alert
-        alert("กรอกข้อมูลให้ครบ");
+        // // if so alert
+        // alert("กรอกข้อมูลให้ครบ");
     }else{
         // if not submit form
         let table = document.getElementById("addDropTable");
@@ -142,7 +143,8 @@ function submitAddDropFormAPI(){
             alert("กรุณาเพิ่ม/ถอนอย่างน้อย 1 วิชาก่อนยืนยัน");
         } else {
             studentString = combineFormAndTable();
-            url = 'http://localhost:8080/api/form/saveAddDropForm';
+            console.log(studentString)
+            url = 'http://localhost:4567/api/form/saveAddDropForm';
             fetch(url, {
             method: 'POST',
             headers: {
@@ -150,9 +152,13 @@ function submitAddDropFormAPI(){
             },
             body: JSON.stringify(studentString)
             })
-            window.location.href = "successForm.html"
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+            })
+            document.location.assign("SuccessForm.html");
         };
-        }
+    }
     
 }
 
