@@ -126,38 +126,27 @@ function validateForm() {
 //submit addDropForm to api
 function submitAddDropFormAPI(){
 
-//    let children = document.querySelectorAll('input, textarea, select');
-//    // find if any of them are empty
-//    let findEmpty = Array.from(children).find((element)=>{
-//        if(element.value.length < 1){return true}
-//        return false
-//    });
-//    //check if found an empty child
-//    if(findEmpty){
-//        // // if so alert
-//        // alert("กรอกข้อมูลให้ครบ");
-//    }else{
-        // if not submit form
-        let table = document.getElementById("addDropTable");
-        studentString = combineFormAndTable();
-        if (table.rows.length < 1) {
-            alert("กรุณาเพิ่ม/ถอนอย่างน้อย 1 วิชาก่อนยืนยัน");
-        } else {
-            url = 'http://localhost:8080/api/form/saveAddDropForm';
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(studentString)
-            })
-            .then(response => response.text())
-            .then(data => {
-                console.log("response dat: " + data)
-                window.location = "SuccessForm.html"
-            })
-        }
-        //document.location.assign("SuccessForm.html");
+    // if not submit form
+    let table = document.getElementById("addDropTable");
+    studentString = combineFormAndTable();
+    if (table.rows.length < 1) {
+        alert("กรุณาเพิ่ม/ถอนอย่างน้อย 1 วิชาก่อนยืนยัน");
+    } else {
+        url = "http://localhost:8080/api/form/saveAddDropForm";
+        fetch(url, {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(studentString)
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log("response dat: " + data)
+            window.location = "SuccessForm.html"
+        })
+    }
+
 }
 
 //collect data addDropForm to JSON

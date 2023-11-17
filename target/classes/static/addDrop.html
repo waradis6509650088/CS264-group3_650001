@@ -20,7 +20,7 @@
         </label>
         <link rel="stylesheet" type="text/css" href="css/addDropStyle.css">
         <hr>
-        <form>
+        <form id="form">
             <label for="date">วันที่<star>*</star></label>
             <input type="date" id="date" name="date" required>
             <hr>
@@ -183,9 +183,27 @@
 
             <button type="submit">ส่งแบบฟอร์ม</button>
             <script>
+                function checkform(form) {
+                    var inputs = form.getElementsByTagName('input');
+                    for (var i = 0; i < inputs.length; i++) {
+                        // only validate the inputs that have the required attribute
+                        if (inputs[i].hasAttribute("required")) {
+                            // exclude inputs with a specific name attribute
+                            var excludedInputs = ["subjectID", "subjectName", "studentSection", "subjectDateTime", "subjectCredit", "subjectProfessor"]; // Add the names of the inputs to be excluded
+                            if (inputs[i].value == "" && excludedInputs.indexOf(inputs[i].name) === -1) {
+                                // found an empty field that is required and not excluded
+                                alert("กรุณากรองข้อมูลให้ครบ");
+                                return false;
+                            }
+                        }
+                    }
+                    return true;
+                }
                 document.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    submitAddDropFormAPI()
+                    if(checkform(document.getElementById("form"))){
+                        e.preventDefault();
+                        submitAddDropFormAPI()
+                    }
                 });
             </script>
         </form>
