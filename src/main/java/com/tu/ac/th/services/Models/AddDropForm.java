@@ -1,12 +1,10 @@
 package com.tu.ac.th.services.Models;
 
-import java.util.Date;
-
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class AddDropForm {
-    private long id;
+    private String id;
     private String date;
     private String studentFirstName;
     private String studentLastName;
@@ -32,7 +30,7 @@ public class AddDropForm {
         JSONParser parser = new JSONParser();
         try{
             JSONObject json = (JSONObject) parser.parse(jsonString);
-            this.id = (Long) json.get("id");
+            this.id = (String) json.get("id");
             this.date = (String) json.get("date");
             this.studentFirstName = (String) json.get("studentFirstName");
             this.studentLastName = (String) json.get("studentLastName");
@@ -85,11 +83,11 @@ public class AddDropForm {
                 '}';
     }
     // Getter and Setter Methods for all fields
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
